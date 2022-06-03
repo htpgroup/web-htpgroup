@@ -84,7 +84,7 @@
                 <h3 class="title-block-container">Lĩnh vực</h3>
             </div>
             <div class="col-md-4 business-box">
-                <img src="{{asset('themes/htp_group_html/images/bg_group_3.png')}}" alt="">
+                <img class="lazyload" src="{{asset('themes/htp_group_html/images/bg_group_3.png')}}" alt="">
                 <div class="border-box">
                     <div class="box-content">
                         <h3 class="title-box">Trung gian thanh toán</h3>
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="col-md-4 business-box">
-                <img src="{{asset('themes/htp_group_html/images/bg_group_2.png')}}" alt="">
+                <img class="lazyload" src="{{asset('themes/htp_group_html/images/bg_group_2.png')}}" alt="">
                 <div class="border-box">
                     <div class="box-content">
                         <h3 class="title-box">THƯƠNG MẠI VÀ DỊCH VỤ</h3>
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="col-md-4 business-box">
-                <img src="{{asset('themes/htp_group_html/images/bg_group_1.png')}}" alt="">
+                <img class="lazyload" src="{{asset('themes/htp_group_html/images/bg_group_1.png')}}" alt="">
                 <div class="border-box">
                     <div class="box-content">
                         <h3 class="title-box">BẤT ĐỘNG SẢN</h3>
@@ -160,7 +160,7 @@
             <div class="col-md-4 article-box">
                 <a href="">
                     <div class="img-thumb">
-                        <img src="{{asset('themes/htp_group_html/images/article_thumb_1.png')}}" alt="" class="thumbnail">
+                        <img class="lazyload" src="{{asset('themes/htp_group_html/images/article_thumb_1.png')}}" alt="" class="thumbnail">
                         <p class="thumbnail img-hover">
                     </div>
                     <div class="article-info">
@@ -177,7 +177,7 @@
             <div class="col-md-4 article-box">
                 <a href="">
                     <div class="img-thumb">
-                        <img src="{{asset('themes/htp_group_html/images/Rectangle 1485.png')}}" alt="" class="thumbnail">
+                        <img class="lazyload" src="{{asset('themes/htp_group_html/images/Rectangle 1485.png')}}" alt="" class="thumbnail">
                         <p class="thumbnail img-hover">
                     </div>
                     <div class="article-info">
@@ -194,7 +194,7 @@
             <div class="col-md-4 article-box">
                 <a href="">
                     <div class="img-thumb">
-                        <img src="{{asset('themes/htp_group_html/images/Rectangle 1484.png')}}" alt="" class="thumbnail">
+                        <img class="lazyload" src="{{asset('themes/htp_group_html/images/Rectangle 1484.png')}}" alt="" class="thumbnail">
                         <p class="thumbnail img-hover">
                     </div>
                     <div class="article-info">
@@ -238,7 +238,7 @@
                 </div>
             </div>
             <div class="col-6 htp-image">
-                <img src="{{asset('themes/htp_group_html/images/business-corporate-people-working-concept 1.png')}}" alt="">
+                <img class="lazyload" src="{{asset('themes/htp_group_html/images/business-corporate-people-working-concept 1.png')}}" alt="">
             </div>
         </div>
     </div>
@@ -247,7 +247,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <img src="{{asset('themes/htp_group_html/images/Graphics.png')}}" alt="" class="graphics">
+                <img src="{{asset('themes/htp_group_html/images/Graphics.png')}}" alt="" class=" lazyload graphics">
             </div>
             <div class="col-6">
                 <div class="info">

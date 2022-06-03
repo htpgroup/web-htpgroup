@@ -11,6 +11,10 @@
     @yield('style')
     <link href="{{asset('themes/htp_group_html/css/bootstrap.min.css')}}" rel="stylesheet">
 
+    <script src="{{asset('themes/library/lazysizes/lazysizes.min.js')}}" async=""></script>
+    @if(Request::get('send_job'))
+        <script src="https://unpkg.com/mithril/mithril.js"></script>
+    @endif
 </head>
 <body>
 <nav class="flex-div">
