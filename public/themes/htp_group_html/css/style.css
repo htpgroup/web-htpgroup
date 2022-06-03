@@ -1,16 +1,7 @@
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Contactform
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
 *{
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     box-sizing: border-box;
 }
 
@@ -126,26 +117,26 @@ nav {
     height: 541px;
 } 
 
-.carousel-item {
+#slider .carousel-item {
     height: 34rem;
     background: #777;
     color: white;
     position: relative;
 }
-.carousel-item .container {
+#slider .carousel-item .container {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-.carousel-item .container h5 {
+#slider .carousel-item .container h5 {
     text-align: center;
     font-size: 12px;
     margin-bottom: 20px;
     color: #fff;
 }
-.carousel-item .container h2 {
+#slider .carousel-item .container h2 {
     text-align: center;
     font-size: 4rem;
     text-transform: uppercase;
@@ -153,11 +144,11 @@ nav {
     font-weight: bolder;
 }
 
-.carousel-item .container p{
+#slider .carousel-item .container p{
     text-align: center;
 }
 
-.carousel-item .container p {
+#slider .carousel-item .container p {
     text-align: center;
     position: absolute;
     border: 1px solid;
@@ -534,77 +525,6 @@ a.btn-see-now:hover {
     font-size: 14px;
     color: #fff;
     width: 430px;
-}
-
-/*--------------------------------------------------------------
-# Contactform
---------------------------------------------------------------*/
-
-.inforcontact {
-    padding-top: 20px;
-}
-.contactmain{
-    background: #E5E5E5;
-    padding: 45px 0px;
-}
-.sendform button {
-    height: 50px;
-    padding: 0px 92px;
-    background: #FF4655;
-    color: #fff;
-    border: none;
-    outline: none;
-}
-.titlecontact {
-    text-transform: uppercase;
-    /*font-family: 'Anton';*/
-    font-style: normal;
-    font-weight: 400;
-   font-size: 60px;
-    color: #120808;
-    margin-bottom: 30px;
-}
-#contactform input,#contactform textarea{
-    border: 1px solid #62676B;
-}
-#contactform input{
-    height: 60px;
-}
-/*end Contactform*/
-
-/*PC*/
-@media (min-width: 1200px) {
-    #contactform textarea.form-control {
-    min-height: 171px;
-
-}
-}
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-}
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
-    .titlecontact{
-        font-size: 35px;
-    }
-    #contactform input {
-        height: 40px;
-    }
-
-}
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-
-}
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-
-}
-/* Extra small devices (portrait phones, less than 320px) */
-@media (max-width: 320px) {
-
 }
 
 /* @media only screen and (max-width: 962px){
