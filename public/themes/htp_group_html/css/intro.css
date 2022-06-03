@@ -1,0 +1,144 @@
+
+.bg-all.box-feature {
+    padding-top: 170px;
+    padding-bottom: 40px;
+}
+
+.main-feature {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.main-feature a {
+    color: #000;
+}
+
+.main-feature a:hover .img-thumb .title {
+    top: -47px;
+    transition: all 0.3s ease;
+}
+
+.main-feature a:hover {
+    color: #000;
+}
+
+.main-feature .img-thumb {
+    position: relative;
+    display: inline-block;
+    height: 276px;
+}
+
+
+.main-feature .img-thumb img {
+    width: 100%;
+}
+
+.main-feature h1.title {
+    position: absolute;
+    top: 0;
+    font-size: 3.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.main-feature .btn-border {
+    margin-top: 215px;
+    right: 50%;
+}
+
+.main-feature .btn-border a:hover {
+    color: #fff;
+}
+
+.htp-social {
+    background: #212121;
+    height: 450px;
+    color: #fff;
+}
+
+.htp-description, .list-social {
+    padding: 70px 4px;
+}
+
+.htp-description h1 {
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: #ECE8E1;
+}
+.htp-description .shortcut-links a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.htp-description .shortcut-links a p {
+    margin-bottom: 0px;
+}
+
+.shortcut-links a img {
+    width: 30px;
+    margin-right: 20px;
+}
+
+.htp-social .list-social {
+    margin: 50px;
+}
+
+.htp-social .list-social a {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.item-social {
+    margin-bottom: 15px;
+}
+.border-black {
+    border: 1px solid #000;
+}
+
+
+.item-social p {
+    color: #fff;
+    line-height: 60px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 10px;
+}
+.item-social .social-name {
+    width: 215px;
+    height: 60px;
+    background: #232629;
+}
+
+.item-social .social-thumb {
+    width: 80px;
+    height: 60px;
+    background-color: #36393D;
+    display: flex;
+    align-items: center;
+}
+
+.item-social .social-thumb img {
+    transform: translate(70%, 0%);
+}
+
+.item-social .social-thumb .social-thumb-hover {
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
+
+.item-social a:hover .social-name {
+    background-color: #FF4655;
+}
+.item-social a:hover .social-thumb-hover {
+    display: block;
+}
