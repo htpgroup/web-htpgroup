@@ -1,5 +1,11 @@
 @extends('home-htp.layouts.main', ['page' =>2])
+@section('style')
 
+    <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/activity.css.css')}}">
+    <style>
+
+    </style>
+@endsection
 @section('content')
 
     <div class="bg-all introduce" style=" background-image: url({{asset('themes/htp_group_html/images/activity/bg_activity.png')}}); height: 640px;">

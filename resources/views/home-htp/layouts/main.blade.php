@@ -8,8 +8,9 @@
     <title>Htp Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/style.css')}}">
-    <link href="{{asset('themes/htp_group_html/css/bootstrap.min.css')}}" rel="stylesheet">
     @yield('style')
+    <link href="{{asset('themes/htp_group_html/css/bootstrap.min.css')}}" rel="stylesheet">
+
 </head>
 <body>
 <nav class="flex-div">

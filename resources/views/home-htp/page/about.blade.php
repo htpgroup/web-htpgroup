@@ -1,5 +1,11 @@
 @extends('home-htp.layouts.main')
+@section('style')
 
+    <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/intro.css')}}">
+    <style>
+
+    </style>
+@endsection
 @section('content')
 
 
