@@ -23,7 +23,7 @@
         <ul>
             <li class="{{ Route::is('HomeHTP.homeWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.homeWebPay')}}">Trang chủ</a></li>
             <li class="{{ Route::is('HomeHTP.aboutWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.aboutWebPay')}}">Giới thiệu</a></li>
-            <li class="{{ Route::is('HomeHTP.securityPolicyWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.homeWebPay')}}">Lĩnh vực</a></li>
+            <li class="{{ Route::is('HomeHTP.productWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.productWebPay')}}">Lĩnh vực</a></li>
             <li class="{{ Route::is('HomeHTP.newWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.newWebPay')}}">Tin tức</a></li>
             <li class="{{ Route::is('HomeHTP.productCodWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.homeWebPay')}}">Tuyển dụng</a></li>
             <li class="{{ Route::is('HomeHTP.contactWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.contactWebPay')}}">liên hệ</a></li>
