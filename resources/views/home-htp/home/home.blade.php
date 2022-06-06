@@ -255,7 +255,7 @@
                     <h4>Khám phá công nghệ</h4>
                     <p class="description">OmiPay là cổng thanh toán điện tử được nhà nước cấp phép hoạt động ngày 07/01/2022. Với mục tiêu tương lai là trở thành cổng thanh toán uy tín cho người dùng.</p>
                     <p class="btn-border">
-                        <a class="btn btn-lg btn-primary btn-see-now btn-color-gray" href="">
+                        <a class="btn btn-lg btn-primary btn-see-now btn-color-gray" href="https://omipay.vn/">
                             Khám phá ngay
                         </a>
                     </p>
