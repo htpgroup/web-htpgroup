@@ -76,7 +76,7 @@ Route::group(['middleware' => [\App\Http\Middleware\HomeHTPMiddleware::class], '
 
     //New
     Route::get('/news', [HomeHTPBlogController::class, 'index'])->name('newWebPay');
-    Route::get('/news-details', [HomeHTPBlogController::class, 'show'])->name('newShowWebPay');
+    Route::get('/news-details/{id?}', [HomeHTPBlogController::class, 'show'])->name('newShowWebPay');
     //New
     Route::get('/recruitment', [HomeHTPBlogController::class, 'recruitmentIndex'])->name('recruitmentWebPay');
     Route::get('/recruitment-details', [HomeHTPBlogController::class, 'recruitmentShow'])->name('recruitmentShowWebPay');
