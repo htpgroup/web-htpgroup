@@ -41,7 +41,7 @@
                 <h5>Thông minh - Tiện ích - Thân thiện</h5>
                 <h2>htp group</h2>
                 <p>
-                    <a class="btn btn-lg btn-primary btn-see-now" href="">
+                    <a class="btn btn-lg btn-primary btn-see-now" href="{{route('HomeHTP.productWebPay')}}">
                         Khám phá ngay
                     </a>
                 </p>
@@ -54,7 +54,7 @@
                 <h5>Thông minh - Tiện ích - Thân thiện</h5>
                 <h2>htp group</h2>
                 <p>
-                    <a class="btn btn-lg btn-primary btn-see-now" href="">
+                    <a class="btn btn-lg btn-primary btn-see-now" href="{{route('HomeHTP.productWebPay')}}">
                         Khám phá ngay
                     </a>
                 </p>
@@ -67,7 +67,7 @@
                 <h5>Thông minh - Tiện ích - Thân thiện</h5>
                 <h2>htp group</h2>
                 <p>
-                    <a class="btn btn-lg btn-primary btn-see-now" href="">
+                    <a class="btn btn-lg btn-primary btn-see-now" href="{{route('HomeHTP.productWebPay')}}">
                         Khám phá ngay
                     </a>
                 </p>
@@ -138,7 +138,7 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 <p class="btn-border">
-                    <a class="btn btn-lg btn-primary btn-see-now" href="">
+                    <a class="btn btn-lg btn-primary btn-see-now" href="{{route('HomeHTP.productWebPay')}}">
                         Khám phá ngay
                     </a>
                 </p>
@@ -153,14 +153,14 @@
         <div class="row-title">
             <div class="article-title">TIN TỨC</div>
             <div class="article-link-detail">
-                <a href="">ĐẾN TRANG TIN TỨC -></a>
+                <a href="{{route('HomeHTP.newWebPay')}}">ĐẾN TRANG TIN TỨC -></a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 article-box">
                 <a href="">
                     <div class="img-thumb">
-                        <img class="lazyload" src="{{asset('themes/htp_group_html/images/article_thumb_1.png')}}" alt="" class="thumbnail">
+                        <img src="{{asset('themes/htp_group_html/images/article_thumb_1.png')}}" alt="" class="thumbnail">
                         <p class="thumbnail img-hover">
                     </div>
                     <div class="article-info">
@@ -177,7 +177,7 @@
             <div class="col-md-4 article-box">
                 <a href="">
                     <div class="img-thumb">
-                        <img class="lazyload" src="{{asset('themes/htp_group_html/images/Rectangle 1485.png')}}" alt="" class="thumbnail">
+                        <img src="{{asset('themes/htp_group_html/images/Rectangle 1485.png')}}" alt="" class="thumbnail">
                         <p class="thumbnail img-hover">
                     </div>
                     <div class="article-info">
@@ -194,7 +194,7 @@
             <div class="col-md-4 article-box">
                 <a href="">
                     <div class="img-thumb">
-                        <img class="lazyload" src="{{asset('themes/htp_group_html/images/Rectangle 1484.png')}}" alt="" class="thumbnail">
+                        <img src="{{asset('themes/htp_group_html/images/Rectangle 1484.png')}}" alt="" class="thumbnail">
                         <p class="thumbnail img-hover">
                     </div>
                     <div class="article-info">
@@ -231,7 +231,7 @@
                     <h4>THÁCH THỨC MỌI GIỚI HẠN</h4>
                     <p class="description">Với mong muốn đem đến cho thị trường những sản phẩm - dịch vụ hoàn hảo với giá trị cao nhất cho khách hàng, ở bất cứ lĩnh vực nào HTP group với tinh thần dám nghĩ, dám làm luôn nỗ lực nghiên cứu, tìm tòi, ứng dụng những tiến bộ khoa học kỹ thuật mới nhất, chủ dộng cả tiến, nâng cao chất lượng.</p>
                     <p class="btn-border">
-                        <a class="btn btn-lg btn-primary btn-see-now" href="">
+                        <a class="btn btn-lg btn-primary btn-see-now" href="{{route('HomeHTP.productWebPay')}}">
                             Khám phá ngay
                         </a>
                     </p>

@@ -54,21 +54,22 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
-                    <form action="" id="contactform">
+                    <form action="{{route('HomeHTP.contact-form.store')}}" id="contactform">
+                        @csrf
                         <div class="mb-2">
-                            <input type="text" class="form-control" id="inputName" placeholder="Họ tên">
+                            <input type="text" name="full_name" class="form-control" id="inputName" placeholder="Họ tên">
                         </div>
                         <div class="mb-2">
-                            <input type="email" class="form-control" id="FormControlInputEmail" placeholder="Email...">
+                            <input type="email" name="email" class="form-control" id="FormControlInputEmail" placeholder="Email...">
                         </div>
                         <div class="mb-2">
-                            <input type="email" class="form-control" id="FormControlInputEmail" placeholder="Số điện thoại...">
+                            <input type="text" name="phone" class="form-control" id="FormControlInputEmail" placeholder="Số điện thoại...">
                         </div>
                         <div class="mb-2">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <div class="sendform">
-                            <button type="button" class="btn btn-lg">Gửi đi</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Gửi đi</button>
                         </div>
                     </form>
                 </div>
