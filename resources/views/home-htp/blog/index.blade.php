@@ -8,9 +8,10 @@
 
                 <select class="mb-3 formcustom" aria-label=".form-select-lg example">
                     <option selected>Tất cả</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">Chuyên về HTP</option>
+                    <option value="2">Tin tức công nghệ</option>
+                    <option value="3">Tin đời sống</option>
+                    <option value="4">Tin tuyển dụng</option>
                 </select>
             </div>
             <!-- <div class="row">

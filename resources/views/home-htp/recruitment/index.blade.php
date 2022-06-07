@@ -39,9 +39,10 @@
                 <div class="col-3">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Tất cả</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">Phòng sản phẩm</option>
+                        <option value="2">phòng kinh doanh</option>
+                        <option value="3">Phòng kế toán</option>
+                        <option value="4">Phòng nhân sự</option>
                     </select>
                 </div>
                 <div class="col-12">
