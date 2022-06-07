@@ -88,15 +88,15 @@
                     <p>Được thành lập từ 2020, công ty hoạt động trong 3 lĩnh vực kinh doanh cốt lõi:</p>
                     <div class="shortcut-links">
                         <a href="">
-                            <img src="{{asset('themes/htp_group_html/images/vi-flag.png')}}" alt="">
+                            <img src="{{asset('themes/htp_group_html/images/about/Group40302.png')}}" alt="">
                             <p>Bất động sản</p>
                         </a>
                         <a href="">
-                            <img src="{{asset('themes/htp_group_html/images/vi-flag.png')}}" alt="">
+                            <img src="{{asset('themes/htp_group_html/images/about/Group403022.png')}}" alt="">
                             <p>Công nghệ</p>
                         </a>
                         <a href="">
-                            <img src="{{asset('themes/htp_group_html/images/vi-flag.png')}}" alt="">
+                            <img src="{{asset('themes/htp_group_html/images/about/Group4030223.png')}}" alt="">
                             <p>Thương mại và dịch vụ</p>
                         </a>
                     </div>

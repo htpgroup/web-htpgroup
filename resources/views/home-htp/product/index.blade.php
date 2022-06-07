@@ -3,7 +3,12 @@
 
     <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/activity.css')}}">
     <style>
-
+        .titleItem{
+            color: #1a1e21
+        }
+.carousel-item{
+    background-color: #ECE8E1;
+}
     </style>
 @endsection
 @section('content')
@@ -53,19 +58,18 @@
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
+                                <div class="carousel-item active" >
                                     <div class="main-content-activity">
-                                        <h2>Ví điện tử</h2>
+                                        <h2 class="titleItem">BẤT ĐỘNG SẢN</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513.png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle1513_bds.png')}}" alt="">
                                                 <p class="thumbnail img-hover"></p>
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Theo số liệu từ Hội môi giới Bất động sản Khánh Hòa (KAREB), số lượng giao dịch của thị trường bất động sản Nha Trang – Khánh Hòa trong quý 1/2021 chỉ mới có dấu hiệu tăng ở phân khúc chung cư, đất nền, nhà phố giá bình dân. Nguyên nhân chính là do ảnh hưởng kinh tế từ dịch Covid-19 và dư âm của công tác thanh kiểm tra các dự án sai phạm, vướng mắc về mặt pháp lý tại địa phương.      </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -75,16 +79,15 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2>CỔNG THANH TOÁN</h2>
+                                        <h2 class="titleItem">BẤT ĐỘNG SẢN</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle.png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle1513_BDS2.png')}}" alt="">
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Những chuyến đi không chỉ mang lại những cái nhìn mới mẻ về thiên nhiên - văn hóa khắp thế giới mà còn mở ra cơ hội đầu tư, đặc biệt trong lĩnh vực bất động sản. Vì thế, loại hình “du lịch kết hợp thăm thân và khảo sát tiềm năng bất động sản” đang trở thành sản phẩm hấp dẫn, thu hút sự quan tâm của nhiều khách hàng. </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -94,16 +97,15 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2>THU HỘ</h2>
+                                        <h2 class="titleItem">BẤT ĐỘNG SẢN</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513 (1).png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle1513BDS_3.png')}}" alt="">
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Theo số liệu của FiinGroup, quy mô giá trị phát hành sơ cấp trong 9 tháng năm 2021 đạt 430.000 tỷ đồng, tăng 27% so với cùng kỳ năm trước. Trong đó, ngành bất động sản ghi nhận giá trị phát hành đạt 172.000 tỷ đồng, tăng 2% so với cùng kỳ.   </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -139,7 +141,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="main-content-activity">
-                                        <h2>Ví điện tử</h2>
+                                        <h2 class="titleItem">Ví điện tử</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
                                                 <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513.png')}}" alt="">
@@ -158,16 +160,15 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2>CỔNG THANH TOÁN</h2>
+                                        <h2 class="titleItem">CỔNG THANH TOÁN</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle.png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/activity/image16.png')}}" alt="">
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Omipay cung cấp dịch vụ cổng thanh toán điện tử cho các khách hàng doanh nghiệp, khách hàng có thể sử dụng cổng thanh toán Omipay để phục vụ thanh toán cho các khách hàng của mình thanh toán hàng hóa dịch vụ thông qua thẻ ATM của các ngân hàng nội địa ở Việt Nam và 03 thẻ quốc tế Visa, Mastercard, JCB. </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -177,10 +178,10 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2>THU HỘ</h2>
+                                        <h2 class="titleItem">THU HỘ</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513 (1).png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle.png')}}" alt="">
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
@@ -221,7 +222,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="main-content-activity">
-                                        <h2>Ví điện tử</h2>
+                                        <h2 class="titleItem">Ví điện tử</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
                                                 <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513.png')}}" alt="">
@@ -241,7 +242,7 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2>CỔNG THANH TOÁN</h2>
+                                        <h2 class="titleItem">CỔNG THANH TOÁN</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
                                                 <img src="{{asset('themes/htp_group_html/images/activity/Rectangle.png')}}" alt="">
@@ -260,7 +261,7 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2>THU HỘ</h2>
+                                        <h2 class="titleItem">THU HỘ</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
                                                 <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513 (1).png')}}" alt="">
