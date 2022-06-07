@@ -227,7 +227,7 @@
                                                 <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513.png')}}" alt="">
                                                 <p class="thumbnail img-hover"></p>
                                             </div>
-                                            <div class="activity-info">
+                                            <div class="activity-info" style="display: block">
                                                 <h2>Thông tin</h2>
                                                 <p>
                                                     Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
