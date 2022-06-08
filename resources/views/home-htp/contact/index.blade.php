@@ -68,6 +68,10 @@
                         <div class="mb-2">
                             <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
+                        <div class="mb-2 mt-8">
+                            <div class="g-recaptcha"  data-sitekey="{{config('captcha.sitekey')}}"></div>
+                            <div class="valid-feedback"></div>
+                        </div>
                         <div class="sendform">
                             <button type="submit" class="btn btn-primary btn-lg">Gửi đi</button>
                         </div>
@@ -83,7 +87,17 @@
     <script src="{{asset('assets/yii2-assets/yii.js')}}"></script>
     <script src="{{asset('assets/yii2-assets/yii.activeForm.js')}}"></script>
     <script src="{{asset('assets/yii2-assets/yii.validation.js')}}"></script>
+    <!-- Google recaptcha API library -->
+    <script src="https://www.google.com/recaptcha/api.js?render={{config('captcha.sitekey')}}&hl=vi"></script>
+    <script>
+        window.onload = function() {
+            var $recaptcha = document.querySelector('#g-recaptcha-response');
 
+            if($recaptcha) {
+                $recaptcha.setAttribute("required", "required");
+            }
+        };
+    </script>
     <script>
         jQuery(function ($) {
 

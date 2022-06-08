@@ -92,5 +92,6 @@
     });
 </script>
 @yield('script')
+@yield('script2')
 </body>
 </html>
