@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Rules\Crm\MobileVN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {

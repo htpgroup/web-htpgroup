@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
-                    <form action="{{route('HomeHTP.contact-form.store')}}" id="contactform">
+                    <form method="post" action="{{route('HomeHTP.contact-form.store')}}" id="contactform">
                         @csrf
                         <div class="mb-2">
                             <input type="text" name="full_name" class="form-control" id="inputName" placeholder="Họ tên">
