@@ -34,6 +34,8 @@ class CreatePostsTable extends Migration
             $table->integer('hits')->default(0)->unsigned();
             $table->integer('order')->nullable();
             $table->tinyInteger('status')->default(1);
+            //PostType = 1: Post, 2: Page, 3: Product, 4: Recruitment, 5: Event
+            $table->tinyInteger('post_type')->default(1);
 
             $table->integer('moderated_by')->unsigned()->nullable();
             $table->datetime('moderated_at')->nullable();

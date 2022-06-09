@@ -43,7 +43,7 @@ class CommentsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $$module_name = $module_model::latest()->published()->paginate();
 
@@ -69,7 +69,7 @@ class CommentsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Show';
+        $module_action = 'Hiển thị';
 
         $$module_name_singular = $module_model::whereId($id)->published()->first();
 

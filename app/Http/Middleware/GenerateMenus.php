@@ -31,7 +31,7 @@ class GenerateMenus
             ]);
 
             // Notifications
-            $menu->add('<i class="nav-icon fas fa-bell"></i> Notifications', [
+            $menu->add('<i class="nav-icon fas fa-bell"></i> Thông báo', [
                 'route' => 'backend.notifications.index',
                 'class' => 'nav-item',
             ])
@@ -54,7 +54,7 @@ class GenerateMenus
             ]);
 
             // Settings
-            $menu->add('<i class="nav-icon fas fa-cogs"></i> Settings', [
+            $menu->add('<i class="nav-icon fas fa-cogs"></i> Cấu hình', [
                 'route' => 'backend.settings',
                 'class' => 'nav-item',
             ])
@@ -99,7 +99,7 @@ class GenerateMenus
             ]);
 
             // Submenu: Users
-            $accessControl->add('<i class="nav-icon cil-people"></i> Users', [
+            $accessControl->add('<i class="nav-icon cil-people"></i> Thành viên', [
                 'route' => 'backend.users.index',
                 'class' => 'nav-item',
             ])
@@ -113,7 +113,7 @@ class GenerateMenus
             ]);
 
             // Submenu: Roles
-            $accessControl->add('<i class="nav-icon cil-people"></i> Roles', [
+            $accessControl->add('<i class="nav-icon cil-people"></i> Quyền người dùng', [
                 'route' => 'backend.roles.index',
                 'class' => 'nav-item',
             ])
@@ -157,7 +157,7 @@ class GenerateMenus
             ]);
 
             // Submenu: Log Viewer Logs by Days
-            $accessControl->add('<i class="nav-icon cil-list-numbered"></i> Logs by Days', [
+            $accessControl->add('<i class="nav-icon cil-list-numbered"></i> Logs theo Ngày', [
                 'route' => 'log-viewer::logs.list',
                 'class' => 'nav-item',
             ])

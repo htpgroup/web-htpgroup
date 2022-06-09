@@ -3,6 +3,12 @@
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\Web\HomeController as HomeHTPHomeController;
+use App\Http\Controllers\Web\PageController as HomeHTPAboutController;
+use App\Http\Controllers\Web\ContactController as HomeHTPContactController;
+use App\Http\Controllers\Web\ProductController as HomeHTPProductController;
+use App\Http\Controllers\Web\BlogController as HomeHTPBlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,8 +33,50 @@ Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index'
 *
 * --------------------------------------------------------------------
 */
+Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], function () {
+
+
+    Route::get('/', [HomeHTPHomeController::class, 'index'])->name('homeWebPay');
+
+    //Page
+    Route::get('/about', [HomeHTPAboutController::class, 'about'])->name('aboutWebPay');
+    Route::get('/about/supply', [HomeHTPAboutController::class, 'supply'])->name('supplyWebPay');
+    Route::get('/about/license', [HomeHTPAboutController::class, 'license'])->name('licenseWebPay');
+
+    //Contact
+    Route::get('/contact', [HomeHTPContactController::class, 'index'])->name('contactWebPay');
+    Route::post('/contact-form', [HomeHTPContactController::class, 'storeContactForm'])->name('contact-form.store');
+
+    Route::get('/contact/question', [HomeHTPContactController::class, 'question'])->name('questionWebPay');
+    Route::get('/contact/question/list', [HomeHTPContactController::class, 'questionList'])->name('questionListWebPay');
+
+    //Product
+    Route::get('/product', [HomeHTPProductController::class, 'index'])->name('productWebPay');
+    Route::get('/product/integration', [HomeHTPProductController::class, 'integration'])->name('productIntegratedWebPay');
+    Route::get('/product/cod', [HomeHTPProductController::class, 'cod'])->name('productCodWebPay');
+    Route::get('/product/extend', [HomeHTPProductController::class, 'extend'])->name('productExtendWebPay');
+    Route::get('/product/tool', [HomeHTPProductController::class, 'tool'])->name('productToolWebPay');
+
+    //Page Policy
+    Route::get('/thoa-thuan-nguoi-dung', [HomeHTPAboutController::class, 'userPolicy'])->name('userPolicyWebPay');
+    Route::get('/chinh-sach-bao-mat', [HomeHTPAboutController::class, 'securityPolicy'])->name('securityPolicyWebPay');
+    Route::get('/chinh-sach-giao-dịch', [HomeHTPAboutController::class, 'checkoutPolicy'])->name('checkoutPolicyWebPay');
+    Route::get('/quy-dinh-khieu-nai-va-hoan-tien', [HomeHTPAboutController::class, 'returnPolicy'])->name('returnPolicyWebPay');
+
+    //New
+    Route::get('/news', [HomeHTPBlogController::class, 'index'])->name('newWebPay');
+    Route::get('/news-details/{slug?}/{id}', [HomeHTPBlogController::class, 'show'])->name('newShowWebPay');
+    //New
+    Route::get('/recruitment', [HomeHTPBlogController::class, 'recruitmentIndex'])->name('recruitmentWebPay');
+    Route::get('/recruitment-details/{slug}/{id}', [HomeHTPBlogController::class, 'recruitmentShow'])->name('recruitmentShowWebPay');
+
+});
+
 Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.'], function () {
-    Route::get('/', 'FrontendController@index')->name('index');
+
+    Route::get('/web', 'FrontendController@index')->name('index');
+
+
     Route::get('home', 'FrontendController@index')->name('home');
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');

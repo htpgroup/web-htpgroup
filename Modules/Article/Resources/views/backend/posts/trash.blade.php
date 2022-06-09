@@ -32,20 +32,20 @@
                             <th>
                                 #
                             </th>
-                            <th>
-                                Name
+                            <th class="text-end">
+                                Tên
                             </th>
                             <th>
                                 Page
                             </th>
-                            <th>
-                                Updated At
+                            <th class="text-end">
+                                Cập nhật lúc
                             </th>
                             <th>
                                 Created By
                             </th>
                             <th class="text-end">
-                                Action
+                                Thao tác
                             </th>
                         </tr>
                     </thead>

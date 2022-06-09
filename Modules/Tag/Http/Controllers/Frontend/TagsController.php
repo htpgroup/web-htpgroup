@@ -40,7 +40,7 @@ class TagsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $$module_name = $module_model::latest()->with('posts')->paginate();
 
@@ -67,7 +67,7 @@ class TagsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Show';
+        $module_action = 'Hiển thị';
 
         $$module_name_singular = $module_model::findOrFail($id);
         $posts = $$module_name_singular->posts()->with('category', 'tags', 'comments')->paginate();

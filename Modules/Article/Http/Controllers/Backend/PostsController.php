@@ -54,7 +54,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $$module_name = $module_model::latest()->paginate();
 
@@ -75,9 +75,9 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
-        $$module_name = $module_model::select('id', 'name', 'category_name', 'status', 'updated_at', 'published_at', 'is_featured');
+        $$module_name = $module_model::select('id', 'name', 'category_name', 'status', 'type', 'updated_at', 'published_at', 'is_featured');
 
         $data = $$module_name;
 
@@ -122,7 +122,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $term = trim($request->q);
 
@@ -158,7 +158,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Create';
+        $module_action = 'Thêm mới';
 
         $categories = Category::pluck('name', 'id');
 
@@ -217,7 +217,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Show';
+        $module_action = 'Hiển thị';
 
         $$module_name_singular = $module_model::findOrFail($id);
 
@@ -250,7 +250,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Edit';
+        $module_action = 'Cập nhật';
 
         $$module_name_singular = $module_model::findOrFail($id);
 
@@ -280,7 +280,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Update';
+        $module_action = 'Cập nhật';
 
         $$module_name_singular = $module_model::findOrFail($id);
 

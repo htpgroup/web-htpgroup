@@ -37,7 +37,7 @@
                                 @lang('Module')
                             </th>
                             <th>
-                                @lang('Updated At')
+                                Cập nhật lúc
                             </th>
                             <th class="text-end">
                                 @lang('Action')

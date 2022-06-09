@@ -150,7 +150,7 @@ class Post extends BaseModel
     public function scopePublished($query)
     {
         return $query->where('status', '=', '1')
-                        ->where('published_at', '<=', Carbon::now());
+            ->where('published_at', '<=', Carbon::now());
     }
 
     public function scopePublishedAndScheduled($query)
@@ -158,11 +158,17 @@ class Post extends BaseModel
         return $query->where('status', '=', '1');
     }
 
+    public function scopeOfType($query, $type = 1)
+    {
+        return $query->where('type', '=', $type);
+    }
+
+
     public function scopeFeatured($query)
     {
         return $query->where('is_featured', '=', 'Yes')
-                        ->where('status', '=', '1')
-                        ->where('published_at', '<=', Carbon::now());
+            ->where('status', '=', '1')
+            ->where('published_at', '<=', Carbon::now());
     }
 
     /**
@@ -174,8 +180,8 @@ class Post extends BaseModel
     public function scopeRecentlyPublished($query)
     {
         return $query->where('status', '=', '1')
-                        ->whereDate('published_at', '<=', Carbon::today()->toDateString())
-                        ->orderBy('published_at', 'desc');
+            ->whereDate('published_at', '<=', Carbon::today()->toDateString())
+            ->orderBy('published_at', 'desc');
     }
 
     /**

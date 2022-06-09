@@ -15,7 +15,7 @@ $notifications_latest = optional($notifications)->take(5);
             <img class="sidebar-brand-full" src="{{asset("img/backend-logo.jpg")}}" height="46" alt="{{ app_name() }}">
         </a>
         <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="{{ route('frontend.index') }}" target="_blank">{{app_name()}}&nbsp;<i class="cil-external-link"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('HomeHTP.homeWebPay') }}" target="_blank">Trang chủ&nbsp;<i class="cil-external-link"></i></a></li>
         </ul>
         <ul class="header-nav ms-auto">
             <li class="nav-item dropdown">
@@ -131,7 +131,7 @@ $notifications_latest = optional($notifications)->take(5);
         var hours = date.getHours();
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
-
+        const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric',second: 'numeric' };
         var session = hours >= 12 ? 'pm' : 'am';
 
         hours = hours % 12;
@@ -140,6 +140,7 @@ $notifications_latest = optional($notifications)->take(5);
         seconds = seconds < 10 ? '0' + seconds : seconds;
 
         var time = hours + ":" + minutes + ":" + seconds + " " + session;
+        //var time = date.toLocaleDateString(undefined, options);
         document.getElementById("liveClock").innerText = time;
         document.getElementById("liveClock").textContent = time;
 

@@ -31,7 +31,7 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href='{{ route("backend.$module_name.trashed") }}'>
-                                <i class="fas fa-eye-slash"></i> View trash
+                                <i class="fas fa-eye-slash"></i> Đã xoá
                             </a>
                         </li>
                         <!-- <li>
@@ -51,20 +51,20 @@
                             <th>
                                 #
                             </th>
-                            <th>
-                                Name
+                            <th class="text-end">
+                                Tên
                             </th>
                             <th>
                                 Code
                             </th>
-                            <th>
-                                Updated At
+                            <th class="text-end">
+                                Cập nhật lúc
                             </th>
                             <th>
                                 Created By
                             </th>
                             <th class="text-end">
-                                Action
+                                Thao tác
                             </th>
                         </tr>
                     </thead>

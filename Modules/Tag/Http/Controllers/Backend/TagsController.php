@@ -81,7 +81,7 @@ class TagsController extends BackendBaseController
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Show';
+        $module_action = 'Hiển thị';
 
         $$module_name_singular = $module_model::findOrFail($id);
 
@@ -111,7 +111,7 @@ class TagsController extends BackendBaseController
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Update';
+        $module_action = 'Cập nhật';
 
         $validatedData = $request->validate([
             'name' => 'required|max:191|unique:'.$module_model.',name,'.$id,

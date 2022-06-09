@@ -4,6 +4,7 @@ namespace Modules\Article\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
+use Modules\Article\Entities\Post;
 use Modules\Article\Events\PostViewed;
 
 class PostsController extends Controller
@@ -40,9 +41,9 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
-        $$module_name = $module_model::latest()->with(['category', 'tags', 'comments'])->paginate();
+        $$module_name = Post::latest()->with(['category', 'tags', 'comments'])->paginate();
 
         return view(
             "article::frontend.$module_path.index",
@@ -67,7 +68,7 @@ class PostsController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Show';
+        $module_action = 'Hiển thị';
 
         $meta_page_type = 'article';
 

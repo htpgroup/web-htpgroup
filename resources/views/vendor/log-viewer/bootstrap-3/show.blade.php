@@ -75,7 +75,7 @@
                                 <td>
                                     <span class="label label-primary">{{ $log->createdAt() }}</span>
                                 </td>
-                                <td>@lang('Updated at') :</td>
+                                <td>Cập nhật lúc :</td>
                                 <td>
                                     <span class="label label-primary">{{ $log->updatedAt() }}</span>
                                 </td>

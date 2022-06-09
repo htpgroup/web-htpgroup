@@ -69,7 +69,7 @@
                                 <td>
                                     <span class="badge badge-primary">{{ $log->createdAt() }}</span>
                                 </td>
-                                <td>@lang('Updated at') :</td>
+                                <td>Cập nhật lúc :</td>
                                 <td>
                                     <span class="badge badge-primary">{{ $log->updatedAt() }}</span>
                                 </td>

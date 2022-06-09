@@ -31,4 +31,9 @@ class CategoryFactory extends Factory
             'updated_at'        => Carbon::now(),
         ];
     }
+
+    protected function randomTitle()
+    {
+        return substr($this->faker->text(20), 0, -1);
+    }
 }

@@ -31,7 +31,7 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href='{{ route("backend.$module_name.trashed") }}'>
-                                <i class="fas fa-eye-slash"></i> View trash
+                                <i class="fas fa-eye-slash"></i> Đã xoá
                             </a>
                         </li>
                         <!-- <li>
@@ -52,13 +52,16 @@
                                 #
                             </th>
                             <th>
-                                Name
+                                Tên
                             </th>
                             <th>
-                                Categoty
+                                Type
+                            </th>
+                            <th>
+                                Danh mục
                             </th>
                             <th class="text-end">
-                                Action
+                                Thao tác
                             </th>
                         </tr>
                     </thead>
@@ -110,6 +113,10 @@
                 name: 'name'
             },
             {
+                data: 'type',
+                name: 'type'
+            },
+            {
                 data: 'category_name',
                 name: 'category_name'
             },
@@ -119,7 +126,21 @@
                 orderable: false,
                 searchable: false
             }
-        ]
+        ],
+        "language": {
+            "lengthMenu": "Hiển _MENU_ bản ghi",
+            "search": "Tìm kiếm",
+            "zeroRecords": "Không có dữ liệu",
+            "info": "Hiển thi trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "No records available",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "paginate": {
+                "first":      "First",
+                "last":       "Last",
+                "next":       "Sau",
+                "previous":   "Trước"
+            },
+        }
     });
 </script>
 @endpush

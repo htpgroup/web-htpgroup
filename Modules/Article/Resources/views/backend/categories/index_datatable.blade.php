@@ -31,7 +31,7 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href='{{ route("backend.$module_name.trashed") }}'>
-                                <i class="fas fa-eye-slash"></i> View trash
+                                <i class="fas fa-eye-slash"></i> Đã xoá
                             </a>
                         </li>
                         <!-- <li>
@@ -51,14 +51,17 @@
                             <th>
                                 #
                             </th>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Updated At
+                            <th class="text-end">
+                                Tên
                             </th>
                             <th class="text-end">
-                                Action
+                                Slug
+                            </th>
+                            <th class="text-end">
+                                Cập nhật lúc
+                            </th>
+                            <th class="text-end">
+                                Thao tác
                             </th>
                         </tr>
                     </thead>
@@ -110,6 +113,10 @@
                 name: 'name'
             },
             {
+                data: 'slug',
+                name: 'slug'
+            },
+            {
                 data: 'updated_at',
                 name: 'updated_at'
             },
@@ -119,7 +126,21 @@
                 orderable: false,
                 searchable: false
             }
-        ]
+        ],
+        "language": {
+            "lengthMenu": "Hiển thị mỗi _MENU_ bản ghi",
+            "search": "Tìm kiếm",
+            "zeroRecords": "Không có dữ liệu",
+            "info": "Hiển thi trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "No records available",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "paginate": {
+                "first":      "First",
+                "last":       "Last",
+                "next":       "Sau",
+                "previous":   "Trước"
+            },
+        }
     });
 </script>
 @endpush

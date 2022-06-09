@@ -3,7 +3,7 @@
         <div class="form-group">
             <?php
             $field_name = 'name';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Tiêu đề';
             $field_placeholder = $field_lable;
             $required = "required";
             ?>
@@ -16,7 +16,7 @@
         <div class="form-group">
             <?php
             $field_name = 'slug';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable ='Bí danh';
             $field_placeholder = $field_lable;
             $required = "";
             ?>
@@ -43,7 +43,7 @@
         <div class="form-group">
             <?php
             $field_name = 'intro';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Giới thiệu ngắn';
             $field_placeholder = $field_lable;
             $required = "required";
             ?>
@@ -57,7 +57,7 @@
         <div class="form-group">
             <?php
             $field_name = 'content';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = "Nội dung";
             $field_placeholder = $field_lable;
             $required = "required";
             ?>
@@ -90,7 +90,7 @@
         <div class="form-group">
             <?php
             $field_name = 'category_id';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Danh mục';
             $field_relation = "category";
             $field_placeholder = __("Select an option");
             $required = "required";
@@ -103,13 +103,14 @@
         <div class="form-group">
             <?php
             $field_name = 'type';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Loại bài viết';
             $field_placeholder = __("Select an option");
             $required = "required";
             $select_options = [
                 'Article' => 'Article',
                 'Feature' => 'Feature',
                 'News' => 'News',
+                'Recruitment' => 'Recruitment',
             ];
             ?>
             {{ html()->label($field_lable, $field_name) }} {!! fielf_required($required) !!}
@@ -138,7 +139,7 @@
         <div class="form-group">
             <?php
             $field_name = 'tags_list[]';
-            $field_lable = __("article::$module_name.tags");
+            $field_lable = 'Thẻ';
             $field_relation = "tags";
             $field_placeholder = __("Select an option");
             $required = "";
@@ -156,7 +157,7 @@
         <div class="form-group">
             <?php
             $field_name = 'status';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Trạng thái';
             $field_placeholder = __("Select an option");
             $required = "required";
             $select_options = [
@@ -173,7 +174,7 @@
         <div class="form-group">
             <?php
             $field_name = 'published_at';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Xuất bản lúc';
             $field_placeholder = $field_lable;
             $required = "";
             ?>

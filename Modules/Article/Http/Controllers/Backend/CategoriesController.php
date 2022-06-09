@@ -50,7 +50,7 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $$module_name = $module_model::latest()->paginate();
 
@@ -76,7 +76,7 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $term = trim($request->q);
 
@@ -107,7 +107,7 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'List';
+        $module_action = 'Danh sách';
 
         $$module_name = $module_model::select('id', 'name', 'slug', 'updated_at');
 
@@ -150,7 +150,7 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Create';
+        $module_action = 'Thêm mới';
 
         Log::info(label_case($module_title.' '.$module_action).' | User:'.auth()->user()->name.'(ID:'.auth()->user()->id.')');
 
@@ -176,8 +176,10 @@ class CategoriesController extends Controller
         $module_name_singular = Str::singular($module_name);
 
         $module_action = 'Store';
+        $dataCreate = $request->all();
+        $dataCreate['slug'] = Str::slug($dataCreate['name']);
 
-        $$module_name_singular = $module_model::create($request->all());
+        $$module_name_singular = $module_model::create($dataCreate);
 
         Flash::success("<i class='fas fa-check'></i> New '".Str::singular($module_title)."' Added")->important();
 
@@ -201,7 +203,7 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Show';
+        $module_action = 'Hiển thị';
 
         $$module_name_singular = $module_model::findOrFail($id);
 
@@ -230,7 +232,7 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Edit';
+        $module_action = 'Cập nhật';
 
         $$module_name_singular = $module_model::findOrFail($id);
 
@@ -258,11 +260,13 @@ class CategoriesController extends Controller
         $module_model = $this->module_model;
         $module_name_singular = Str::singular($module_name);
 
-        $module_action = 'Update';
+        $module_action = 'Cập nhật';
 
         $$module_name_singular = $module_model::findOrFail($id);
+        $dataCreate = $request->all();
+        $dataCreate['slug'] = Str::slug($dataCreate['name']);
 
-        $$module_name_singular->update($request->all());
+        $$module_name_singular->update($dataCreate);
 
         Flash::success("<i class='fas fa-check'></i> '".Str::singular($module_title)."' Updated Successfully")->important();
 

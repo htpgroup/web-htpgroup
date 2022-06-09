@@ -150,5 +150,6 @@ return [
             'update' => 'Cập nhật',
         ],
     ],
+    'Comments' => 'Bình luận',
 
 ];
