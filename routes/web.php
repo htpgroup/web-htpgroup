@@ -39,23 +39,23 @@ Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], fu
     Route::get('/', [HomeHTPHomeController::class, 'index'])->name('homeWebPay');
 
     //Page
-    Route::get('/about', [HomeHTPAboutController::class, 'about'])->name('aboutWebPay');
-    Route::get('/about/supply', [HomeHTPAboutController::class, 'supply'])->name('supplyWebPay');
-    Route::get('/about/license', [HomeHTPAboutController::class, 'license'])->name('licenseWebPay');
+    Route::get('/gioi-thieu', [HomeHTPAboutController::class, 'about'])->name('aboutWebPay');
+    Route::get('/gioi-thieu/supply', [HomeHTPAboutController::class, 'supply'])->name('supplyWebPay');
+    Route::get('/gioi-thieu/license', [HomeHTPAboutController::class, 'license'])->name('licenseWebPay');
 
     //Contact
-    Route::get('/contact', [HomeHTPContactController::class, 'index'])->name('contactWebPay');
-    Route::post('/contact-form', [HomeHTPContactController::class, 'storeContactForm'])->name('contact-form.store');
+    Route::get('/line-he', [HomeHTPContactController::class, 'index'])->name('contactWebPay');
+    Route::post('/gui-lien-he', [HomeHTPContactController::class, 'storeContactForm'])->name('contact-form.store');
 
     Route::get('/contact/question', [HomeHTPContactController::class, 'question'])->name('questionWebPay');
     Route::get('/contact/question/list', [HomeHTPContactController::class, 'questionList'])->name('questionListWebPay');
 
     //Product
-    Route::get('/product', [HomeHTPProductController::class, 'index'])->name('productWebPay');
-    Route::get('/product/integration', [HomeHTPProductController::class, 'integration'])->name('productIntegratedWebPay');
-    Route::get('/product/cod', [HomeHTPProductController::class, 'cod'])->name('productCodWebPay');
-    Route::get('/product/extend', [HomeHTPProductController::class, 'extend'])->name('productExtendWebPay');
-    Route::get('/product/tool', [HomeHTPProductController::class, 'tool'])->name('productToolWebPay');
+    Route::get('/linh-vuc', [HomeHTPProductController::class, 'index'])->name('productWebPay');
+    Route::get('/linh-vuc/integration', [HomeHTPProductController::class, 'integration'])->name('productIntegratedWebPay');
+    Route::get('/linh-vuc/cod', [HomeHTPProductController::class, 'cod'])->name('productCodWebPay');
+    Route::get('/linh-vuc/extend', [HomeHTPProductController::class, 'extend'])->name('productExtendWebPay');
+    Route::get('/linh-vuc/tool', [HomeHTPProductController::class, 'tool'])->name('productToolWebPay');
 
     //Page Policy
     Route::get('/thoa-thuan-nguoi-dung', [HomeHTPAboutController::class, 'userPolicy'])->name('userPolicyWebPay');
@@ -64,11 +64,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], fu
     Route::get('/quy-dinh-khieu-nai-va-hoan-tien', [HomeHTPAboutController::class, 'returnPolicy'])->name('returnPolicyWebPay');
 
     //New
-    Route::get('/news', [HomeHTPBlogController::class, 'index'])->name('newWebPay');
-    Route::get('/news-details/{slug?}/{id}', [HomeHTPBlogController::class, 'show'])->name('newShowWebPay');
+    Route::get('/tin-tuc', [HomeHTPBlogController::class, 'index'])->name('newWebPay');
+    Route::get('/chi-tiet-tin-tuc/{slug?}/{id}', [HomeHTPBlogController::class, 'show'])->name('newShowWebPay');
     //New
-    Route::get('/recruitment', [HomeHTPBlogController::class, 'recruitmentIndex'])->name('recruitmentWebPay');
-    Route::get('/recruitment-details/{slug}/{id}', [HomeHTPBlogController::class, 'recruitmentShow'])->name('recruitmentShowWebPay');
+    Route::get('/tuyen-dung', [HomeHTPBlogController::class, 'recruitmentIndex'])->name('recruitmentWebPay');
+    Route::get('/chi-tiet-tuyen-dung/{slug}/{id}', [HomeHTPBlogController::class, 'recruitmentShow'])->name('recruitmentShowWebPay');
 
 });
 

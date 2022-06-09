@@ -132,11 +132,11 @@
                             <p>OmiPay là một ứng dụng thanh toán trực tuyến đáp ứng xu hướng thanh toán không dùng tiền mặt đang được phát triển rộng rãi, góp phần thúc đẩy nền kinh tế xã hội một cách nhanh chóng nhờ đưa ra các giải pháp đồng bộ đảm bảo tính an toàn, bảo mật, chi phí hợp lý và mang lại sự thuận tiện, dễ dàng cho người dùng.</p>
                         </div>
 
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -196,11 +196,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Trước</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Sau</span>
                             </button>
@@ -213,26 +213,25 @@
                             <p>OmiPay là một ứng dụng thanh toán trực tuyến đáp ứng xu hướng thanh toán không dùng tiền mặt đang được phát triển rộng rãi, góp phần thúc đẩy nền kinh tế xã hội một cách nhanh chóng nhờ đưa ra các giải pháp đồng bộ đảm bảo tính an toàn, bảo mật, chi phí hợp lý và mang lại sự thuận tiện, dễ dàng cho người dùng.</p>
                         </div>
 
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExampleIndicators3" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="main-content-activity">
-                                        <h2 class="titleItem">Ví điện tử</h2>
+                                        <h2 class="titleItem">Thương mại điện tử</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513.png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/intro/Rectangle1513(3).png')}}" alt="">
                                                 <p class="thumbnail img-hover"></p>
                                             </div>
                                             <div class="activity-info" style="display: block">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Website eCommerce càng sở hữu nhiều tính năng nâng cao thì càng giúp doanh nghiệp tối ưu quản lý và vận hành hoạt động kinh doanh của mình. Đặc biệt, đối với các doanh nghiệp eCommerce lớn, việc quản lý hàng tồn, đơn hàng, khách hàng cũng như các chiến dịch Marketing càng trở nên vô cùng phức tạp.      </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -242,16 +241,15 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2 class="titleItem">CỔNG THANH TOÁN</h2>
+                                        <h2 class="titleItem">Thương mại điện tử</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle.png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/intro/Rectangle1513(4).png')}}" alt="">
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Chuyên gia trong ngành bất động sản nhận định, mô hình shop thương mại dịch vụ sẽ phát triển mạnh và thành công tại Việt Nam như đã và đang là kênh đầu tư hấp dẫn bậc nhất tại xứ Cảng Thơm.    </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -261,7 +259,7 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
-                                        <h2 class="titleItem">THU HỘ</h2>
+                                        <h2 class="titleItem">Thương mại điện tử</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
                                                 <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513 (1).png')}}" alt="">
@@ -269,8 +267,7 @@
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Omipay cung cấp dịch vụ ví điện tử cho các khách hàng cá nhân hoặc khách hàng doanh nghiệp, Các khách hàng sẽ được cung cấp một tài khoản được định danh bằng số điện thoại. Tài khoản được sử dụng để giao dịch trực tuyến trong hệ sinh thái của Omipay và các Merchant của Omipay.
-                                                </p>
+                                                    Cụ thể hóa các mục tiêu để Hà Nội phát triển thương mại, dịch vụ hiện đại. Thành phố sẽ hỗ trợ các nhà đầu tư mở rộng quy mô, nâng cấp các dự án hạ tầng thương mại đang hoạt động hiệu quả; tạo điều kiện thuận lợi về thủ tục đầu tư, cơ chế chính sách…     </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -279,11 +276,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Trước</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Sau</span>
                             </button>
