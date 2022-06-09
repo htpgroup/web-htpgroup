@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/style.css')}}">
     <link rel="icon" type="image/x-icon" href="{{asset('themes/htp_group_html/images/favicon.ico')}}" />
     <link rel="icon"  href="{{asset('themes/htp_group_html/images/favicon.ico')}}" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    @include('frontend.includes.meta')
 
     @yield('style')
     <link href="{{asset('themes/htp_group_html/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -18,6 +22,8 @@
     @if(Request::get('send_job'))
         <script src="https://unpkg.com/mithril/mithril.js"></script>
     @endif
+
+    <x-google-analytics />
 </head>
 <body>
 <nav class="flex-div">

@@ -12,11 +12,11 @@ if(!isset($meta_page_type)){
     @case('article')
         {{-- Facebook Meta --}}
         <meta property="og:type" content="article" />
-        <meta property="article:published_time" content="{{$$module_name_singular->published_at}}" />
-        <meta property="article:modified_time" content="{{$$module_name_singular->updated_at}}" />
-        <meta property="article:author" content="{{isset($$module_name_singular->created_by_alias)? $$module_name_singular->created_by_alias : $$module_name_singular->created_by_name}}" />
-        <meta property="article:section" content="{{$$module_name_singular->category_name}}" />
-        @foreach ($$module_name_singular->tags as $tag)
+        <meta property="article:published_time" content="{{$post->published_at}}" />
+        <meta property="article:modified_time" content="{{$post->updated_at}}" />
+        <meta property="article:author" content="{{isset($post->created_by_alias)? $post->created_by_alias : $post->created_by_name}}" />
+        <meta property="article:section" content="{{$post->category_name}}" />
+        @foreach ($post->tags as $tag)
         <meta property="article:tag" content="{{$tag->name}}" />
         @endforeach
 

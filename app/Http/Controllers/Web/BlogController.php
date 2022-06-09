@@ -78,19 +78,22 @@ class BlogController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function recruitmentShow(Request $request, $slug = false, $id=1)
+    public function recruitmentShow(Request $request, $slug = false, $id = 1)
     {
         //
         $post = Post::where('id', $id)->first();
+        $meta_page_type = 'article';
 
         $data = [
             'post' => $post,
+            'meta_page_type' => $meta_page_type,
         ];
 
         //dd($post->attributesToArray());
 
         return view('home-htp.recruitment.show', $data);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -122,9 +125,10 @@ class BlogController extends Controller
     {
         //
         $post = Post::where('slug', $slug)->first();
-
+        $meta_page_type = 'article';
         $data = [
             'post' => $post,
+            'meta_page_type' => $meta_page_type,
         ];
 
         return view('home-htp.blog.show', $data);

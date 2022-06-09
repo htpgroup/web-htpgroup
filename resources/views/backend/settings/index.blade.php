@@ -57,7 +57,7 @@
                     <div class="row m-b-md">
                         <div class="col-md-12">
                             <button class="btn-primary btn">
-                                <i class='fas fa-save'></i> @lang('Save')
+                                <i class='fas fa-save'></i> Lưu
                             </button>
                         </div>
                     </div>

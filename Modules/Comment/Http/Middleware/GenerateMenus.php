@@ -24,7 +24,7 @@ class GenerateMenus
         \Menu::make('admin_sidebar', function ($menu) {
 
             // comments
-            $menu->add('<i class="nav-icon fas fa-comments"></i> Comments', [
+            $menu->add('<i class="nav-icon fas fa-comments"></i> Bình luận', [
                 'route' => 'backend.comments.index',
                 'class' => 'nav-item',
             ])

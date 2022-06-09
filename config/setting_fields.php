@@ -11,7 +11,7 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'string', // data type, string, int, boolean
                 'name'  => 'app_name', // unique name for field
-                'label' => 'App Name', // you know what label it is
+                'label' => 'Tên ứng dụng', // you know what label it is
                 'rules' => 'required|min:2|max:50', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => 'Laravel Starter', // default value if you want
@@ -20,16 +20,16 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'string', // data type, string, int, boolean
                 'name'  => 'footer_text', // unique name for field
-                'label' => 'Footer Text', // you know what label it is
+                'label' => 'Nội dung footer', // you know what label it is
                 'rules' => 'required|min:2', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => '<a href="https://github.com/nasirkhan/laravel-starter/">Built with ♥ from Bangladesh</a>', // default value if you want
+                'value' => '<a href="https://htpgroup.com.vn/">HTP Group</a>', // default value if you want
             ],
             [
                 'type'  => 'checkbox', // input fields type
                 'data'  => 'text', // data type, string, int, boolean
                 'name'  => 'show_copyright', // unique name for field
-                'label' => 'Show Copyright', // you know what label it is
+                'label' => 'Hiển thị dòng text bản quyền', // you know what label it is
                 'rules' => '', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => '1', // default value if you want
@@ -46,7 +46,7 @@ return [
                 'type'  => 'email', // input fields type
                 'data'  => 'string', // data type, string, int, boolean
                 'name'  => 'email', // unique name for field
-                'label' => 'Email', // you know what label it is
+                'label' => 'Địa chỉ Email', // you know what label it is
                 'rules' => 'required|email', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => 'info@example.com', // default value if you want
@@ -118,7 +118,7 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'text', // data type, string, int, boolean
                 'name'  => 'meta_site_name', // unique name for field
-                'label' => 'Meta Site Name', // you know what label it is
+                'label' => 'Tên Meta Site', // you know what label it is
                 'rules' => 'required', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => 'Awesome Laravel | A Laravel Starter Project', // default value if you want
@@ -127,7 +127,7 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'text', // data type, string, int, boolean
                 'name'  => 'meta_description', // unique name for field
-                'label' => 'Meta Description', // you know what label it is
+                'label' => 'Mô tả Meta', // you know what label it is
                 'rules' => 'required', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => 'A CMS like modular starter application project built with Laravel 9.', // default value if you want
@@ -136,7 +136,7 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'text', // data type, string, int, boolean
                 'name'  => 'meta_keyword', // unique name for field
-                'label' => 'Meta Keyword', // you know what label it is
+                'label' => 'Từ khoá Meta', // you know what label it is
                 'rules' => 'required', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => 'Web Application, Laravel,Laravel starter,Bootstrap,Admin,Template,Open,Source, nasir khan, nasirkhan', // default value if you want
@@ -145,7 +145,7 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'text', // data type, string, int, boolean
                 'name'  => 'meta_image', // unique name for field
-                'label' => 'Meta Image', // you know what label it is
+                'label' => 'Ảnh Meta', // you know what label it is
                 'rules' => 'required', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => 'img/default_banner.jpg', // default value if you want
@@ -172,7 +172,7 @@ return [
                 'type'  => 'text', // input fields type
                 'data'  => 'text', // data type, string, int, boolean
                 'name'  => 'meta_twitter_creator', // unique name for field
-                'label' => 'Meta Twitter Creator Account', // you know what label it is
+                'label' => 'Tài khoản Meta Twitter Creator', // you know what label it is
                 'rules' => '', // validation rule of laravel
                 'class' => '', // any class for input
                 'value' => '@nasir8891', // default value if you want

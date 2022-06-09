@@ -44,7 +44,7 @@
                         <p class="mb-8 leading-relaxed">
                             Trang chuyên bản tin về công ty.
                             <br>
-                            Các tin tức mới nhất về công ty.
+                            Các tin tức mới nhất.
                         </p>
                     </div>
                     <div class="line-spaces"></div>

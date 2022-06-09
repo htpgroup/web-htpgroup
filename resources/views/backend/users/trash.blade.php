@@ -20,7 +20,7 @@
             </x-slot>
             <x-slot name="toolbar">
                 <x-buttons.return-back />
-                <a href='{{ route("backend.$module_name.index") }}' class="btn btn-secondary" data-toggle="tooltip" title="{{ ucwords($module_name) }} List"><i class="fas fa-list"></i> List</a>
+                <a href='{{ route("backend.$module_name.index") }}' class="btn btn-secondary" data-toggle="tooltip" title="{{ ucwords($module_name) }} List"><i class="fas fa-list"></i> Danh sách</a>
             </x-slot>
         </x-backend.section-header>
 
@@ -35,16 +35,16 @@
                                 #
                             </th>
                             <th>
-                                Name
+                                Tên
                             </th>
                             <th>
-                                Updated At
+                                Cập nhật lúc
                             </th>
                             <th>
-                                Created By
+                                Tạo bởi
                             </th>
                             <th class="text-end">
-                                Action
+                                Thao tác
                             </th>
                         </tr>
                     </thead>
@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-7">
                 <div class="float-left">
-                    Total {{ $$module_name->total() }} {{ ucwords($module_name) }}
+                    Tổng {{ $$module_name->total() }} {{ ucwords($module_name) }}
                 </div>
             </div>
             <div class="col-5">
