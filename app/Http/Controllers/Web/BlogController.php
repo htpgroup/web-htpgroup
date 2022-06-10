@@ -23,9 +23,11 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $input = $request->all();
+        $getCategory = $request->get('category_id');
         $select_options = [
             'Article' => 'Article',
             'Feature' => 'Feature',
@@ -33,13 +35,28 @@ class BlogController extends Controller
             'Recruitment' => 'Recruitment',
         ];
 
+        //Bài viết Tin tức
         $listPosts = Post::latest()
+            ->filter($request->only(['category_id']))
             ->with(['category', 'tags', 'comments'])
             ->where('type', '=', 'News')
             ->paginate();
 
+        //Danh sách danh mục bài viết
+
+        $listCategoryInpost = Post::query()
+            ->where('type', '=', 'News')
+            ->pluck('category_id')->unique()->toArray();
+        $arrayCategory = [];
+        foreach ($listCategoryInpost as $key => $value) {
+            $arrayCategory[] = $value;
+        }
+
+        $listCategory = \Modules\Article\Entities\Category::whereIn('id', $arrayCategory)->get();
+
         $data = [
             'listPosts' => $listPosts,
+            'listCategory' => $listCategory,
         ];
 
         return view('home-htp.blog.index', $data);
@@ -61,12 +78,24 @@ class BlogController extends Controller
         ];
 
         $listPosts = Post::latest()
+            ->filter($request->only(['category_id']))
             ->with(['category', 'tags', 'comments'])
             ->where('type', '=', 'Recruitment')
             ->paginate();
 
+        $listCategoryInpost = Post::query()
+            ->where('type', '=', 'Recruitment')
+            ->pluck('category_id')->unique()->toArray();
+        $arrayCategory = [];
+        foreach ($listCategoryInpost as $key => $value) {
+            $arrayCategory[] = $value;
+        }
+
+        $listCategory = \Modules\Article\Entities\Category::whereIn('id', $arrayCategory)->get();
+
         $data = [
             'listPosts' => $listPosts,
+            'listCategory' => $listCategory,
         ];
 
         return view('home-htp.recruitment.index', $data);

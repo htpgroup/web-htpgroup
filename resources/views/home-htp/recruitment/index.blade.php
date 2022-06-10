@@ -37,12 +37,11 @@
                     <p>Công việc đang mở: 7</p>
                 </div>
                 <div class="col-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" id="listBlockCategory"  aria-label="Default select example">
                         <option selected>Tất cả</option>
-                        <option value="1">Phòng sản phẩm</option>
-                        <option value="2">phòng kinh doanh</option>
-                        <option value="3">Phòng kế toán</option>
-                        <option value="4">Phòng nhân sự</option>
+                        @foreach($listCategory as $postCategory)
+                            <option value="{{$postCategory->id}}" data_url="{{route('HomeHTP.newWebPay', ['category_id' => $postCategory->id,'slug' => $postCategory->slug])}}">{{$postCategory->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-12">
@@ -67,4 +66,35 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+
+@section('script2')
+
+    <script src="{{asset('assets/yii2-assets/yii.js')}}"></script>
+    <script src="{{asset('assets/yii2-assets/yii.activeForm.js')}}"></script>
+    <script src="{{asset('assets/yii2-assets/yii.validation.js')}}"></script>
+    <!-- Google recaptcha API library -->
+    <script src="https://www.google.com/recaptcha/api.js?render={{config('captcha.sitekey')}}&hl=vi"></script>
+    <script>
+        window.onload = function() {
+            var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+            if($recaptcha) {
+                $recaptcha.setAttribute("required", "required");
+            }
+        };
+    </script>
+    <script>
+        jQuery(function ($) {
+            $( "#listBlockCategory" ).change(function() {
+                //alert( "Handler for .change() called." );
+                //alert( "Handler for .change() called." );
+                var optionUrl = $('option:selected', this).attr('data_url');
+                //alert(option);
+                window.location.href = optionUrl;
+            });
+        });
+    </script>
 @endsection

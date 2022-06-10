@@ -323,7 +323,7 @@
         </div>
       </section>
     </div>
-    <script src="{{asset_cdn('themes/finderv3/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="{{asset_cdn('themes/finderv3/js/main.js"></script>
+    <script src="{{asset_cdn('themes/finderv3/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset_cdn('themes/finderv3/js/main.js')}}"></script>
   </body>
 </html>

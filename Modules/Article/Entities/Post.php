@@ -2,7 +2,9 @@
 
 namespace Modules\Article\Entities;
 
+use App\Dictionaries\Cms\UserStatus;
 use App\Models\BaseModel;
+use App\Traits\Filterable;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,6 +19,7 @@ class Post extends BaseModel
     use LogsActivity;
     use SoftDeletes;
     use PostPresenter;
+    use Filterable;
     use Notifiable;
 
     protected $table = 'posts';
@@ -184,6 +187,7 @@ class Post extends BaseModel
             ->orderBy('published_at', 'desc');
     }
 
+
     /**
      * Create a new factory instance for the model.
      *
@@ -193,4 +197,41 @@ class Post extends BaseModel
     {
         return \Modules\Article\Database\Factories\PostFactory::new();
     }
+
+    /**
+     * Filter by name
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param mixed $value
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function filterName($query, $value)
+    {
+        return $query->where('posts.name', 'like', '%' . $value . '%')
+            ->orWhere('posts.first_name', 'like', '%' . $value . '%')
+            ->orWhere('posts.last_name', 'like', '%' . $value . '%');
+    }
+    public function filterDomainId($query, $value)
+    {
+        return $query->where('posts.domain_id', $value);
+    }
+
+    public function filterCategoryType($query, $value)
+    {
+        return $query->where('posts.category_type', $value);
+    }
+
+    public function filterCategoryId($query, $value)
+    {
+        return $query->where('posts.category_id', $value);
+    }
+    public function filterStatus($query, $value)
+    {
+        if ($value == UserStatus::DELETED) {
+            return $query->onlyTrashed();
+        }
+        return $query->where('status', '=', $value);
+    }
+
+
 }

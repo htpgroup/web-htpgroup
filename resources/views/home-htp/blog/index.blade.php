@@ -11,12 +11,11 @@
             <div class="text-center">
 
 
-                <select class="mb-3 formcustom" aria-label=".form-select-lg example">
+                <select class="mb-3 formcustom" id="listBlockCategory" aria-label=".form-select-lg example">
                     <option selected>Tất cả</option>
-                    <option value="1">Chuyên về HTP</option>
-                    <option value="2">Tin tức công nghệ</option>
-                    <option value="3">Tin đời sống</option>
-                    <option value="4">Tin tuyển dụng</option>
+                    @foreach($listCategory as $postCategory)
+                        <option value="{{$postCategory->id}}" data_url="{{route('HomeHTP.newWebPay', ['category_id' => $postCategory->id,'category' => $postCategory->id,'slug' => $postCategory->slug])}}">{{$postCategory->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <!-- <div class="row">
@@ -96,4 +95,32 @@
         </div>
     </section>
 
+@endsection
+
+@section('script2')
+
+    <script src="{{asset('assets/yii2-assets/yii.js')}}"></script>
+    <script src="{{asset('assets/yii2-assets/yii.activeForm.js')}}"></script>
+    <script src="{{asset('assets/yii2-assets/yii.validation.js')}}"></script>
+    <!-- Google recaptcha API library -->
+    <script src="https://www.google.com/recaptcha/api.js?render={{config('captcha.sitekey')}}&hl=vi"></script>
+    <script>
+        window.onload = function() {
+            var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+            if($recaptcha) {
+                $recaptcha.setAttribute("required", "required");
+            }
+        };
+    </script>
+    <script>
+        jQuery(function ($) {
+            $( "#listBlockCategory" ).change(function() {
+                //alert( "Handler for .change() called." );
+                var optionUrl = $('option:selected', this).attr('data_url');
+                //alert(option);
+                window.location.href = optionUrl;
+            });
+        });
+    </script>
 @endsection

@@ -92,7 +92,7 @@ class ContactController extends Controller
             });
         }
 
-        $data = ['is_done' => true, 'send_job' => true];
+        $data = ['is_done' => true, 'send_job' => true, 'send_contact' => 1];
 
         //Success Page
         return redirect()->route('HomeHTP.homeWebPay', $data);

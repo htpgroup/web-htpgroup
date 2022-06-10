@@ -91,6 +91,7 @@
         serverSide: true,
         autoWidth: true,
         responsive: true,
+        pageLength: 50,
         ajax: '{{ route("backend.$module_name.index_data") }}',
         columns: [{
                 data: 'id',
