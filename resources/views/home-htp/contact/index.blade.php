@@ -55,18 +55,38 @@
                 </div>
                 <div class="col-md-12 col-lg-6">
                     <form method="post" action="{{route('HomeHTP.contact-form.store')}}" id="contactform">
+                        @method('POST')
                         @csrf
+
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $key => $error)
+                                        <li datakey="{{$key}}">{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <br/>
+                        @endif
+
                         <div class="mb-2">
-                            <input type="text" name="full_name" class="form-control" id="inputName" placeholder="Họ tên">
+                            <input type="text" name="name" class="form-control" id="name" value="{{old('name')}}" placeholder="Họ và tên">
                         </div>
                         <div class="mb-2">
-                            <input type="email" name="email" class="form-control" id="FormControlInputEmail" placeholder="Email...">
+                            <input type="text" class="form-control" value="{{old('company')}}" name="company" id="company" placeholder="Công ty...">
                         </div>
                         <div class="mb-2">
-                            <input type="text" name="phone" class="form-control" id="FormControlInputEmail" placeholder="Số điện thoại...">
+                            <input type="email" name="email" class="form-control"   value="{{old('email')}}"  id="email" placeholder="Email...">
                         </div>
                         <div class="mb-2">
-                            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <input type="text" name="phone" class="form-control"  value="{{old('phone')}}"  id="phone" placeholder="Số điện thoại...">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" name="subject" class="form-control"  value="{{old('subject')}}"  id="subject" placeholder="Tiêu đề...">
+                        </div>
+                        <div class="mb-2">
+                            <textarea class="form-control" name="content" id="content" rows="3">{{old('content') }}</textarea>
                         </div>
                         <div class="mb-2 mt-8">
                             <div class="g-recaptcha"  data-sitekey="{{config('captcha.sitekey')}}"></div>

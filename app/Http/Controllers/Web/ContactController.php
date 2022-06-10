@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Dictionaries\MenuData;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Rules\Captcha;
 use App\Rules\Crm\MobileVN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -50,10 +51,11 @@ class ContactController extends Controller
             'subject' => 'required',
             //'message' => 'required',
             'content' => 'required',
+            //'g-recaptcha-response' => new Captcha(),
         ]);
 
         $input = $request->all();
-        $modelCheckContact = Contact::query()
+       /* $modelCheckContact = Contact::query()
             ->where('email', $input['email'])
             ->first();
 
@@ -65,16 +67,17 @@ class ContactController extends Controller
             $modelContact->first_name = $input['name'];
 
             $modelContact->save();
-        }
+        }*/
 
         $adminEmail = 'dungpx@htpgroup.com.vn';
         //$adminEmail = 'support@htpgroup.com.vn';
         $arrAdminEmail = [
-            'tech@htpgroup.com.vn',
-            'support@htpgroup.com.vn',
+            //'tech@htpgroup.com.vn',
+            //'support@htpgroup.com.vn',
             'dungpx@htpgroup.com.vn'
         ];
         $mailTitle = 'Website - ' . $input['company'] . ' - ' . $input['email'] . ' ' . $input['phone'] . ' - ' . $input['subject'];
+        //dd($mailTitle);
         //  Send mail to admin
         foreach ($arrAdminEmail as $adminValueEmail) {
             \Mail::send('emails.contactMail', array(
@@ -92,7 +95,7 @@ class ContactController extends Controller
         $data = ['is_done' => true, 'send_job' => true];
 
         //Success Page
-        return redirect()->route('HomePay.contactWebPay', $data);
+        return redirect()->route('HomeHTP.homeWebPay', $data);
     }
 
     /**

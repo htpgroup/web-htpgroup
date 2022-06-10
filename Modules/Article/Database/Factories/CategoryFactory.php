@@ -23,7 +23,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name'              => substr($this->faker->text(20), 0, -1),
+            //'name'              => substr($this->faker->text(20), 0, -1),
+            'name'              => 'Danh mục sản phẩm ' .$this->faker->numberBetween(1,20),
             'slug'              => '',
             'description'       => $this->faker->paragraph,
             'status'            => 1,

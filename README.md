@@ -120,6 +120,14 @@ Follow the steps mentioned below to install and run the project.
 
 `php artisan cache:forget spatie.permission.cache`
 
+## Google Recaptcha
+You can use Google Recaptcha to protect your application from spam and abuse.
+> Please visit [Google Recaptcha](https://www.google.com/recaptcha/intro/index.html) for more information.
+
+Env Google Recaptcha Site Key:
+> GOOGLE_RECAPTCHA_KEY=6Les3lEgAAAAAIUzpi7Wknx9C-1IU2RB2rhkLco2
+> GOOGLE_RECAPTCHA_SECRET=6Les3lEgAAAAANJQ0ZoL__GZIYXRuo3r1Q1rOH7h
+
 ## Docker and Laravel Sail
 This project is configured with Laravel Sail (https://laravel.com/docs/9.x/sail). You can use all the docker functionalities here.
 

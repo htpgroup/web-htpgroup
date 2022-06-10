@@ -44,7 +44,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], fu
     Route::get('/gioi-thieu/license', [HomeHTPAboutController::class, 'license'])->name('licenseWebPay');
 
     //Contact
-    Route::get('/line-he', [HomeHTPContactController::class, 'index'])->name('contactWebPay');
+    Route::get('/lien-he', [HomeHTPContactController::class, 'index'])->name('contactWebPay');
     Route::post('/gui-lien-he', [HomeHTPContactController::class, 'storeContactForm'])->name('contact-form.store');
 
     Route::get('/contact/question', [HomeHTPContactController::class, 'question'])->name('questionWebPay');
