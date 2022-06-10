@@ -11,7 +11,7 @@ If you discover any security related issues, please send an e-mail to Nasir Khan
 # Appplication Demo
 Check the following demo project. It is just a straight installation of the project without any modification.
 
-Demo URL: http://laravel.nasirkhn.com
+Demo URL: http://htpgroup.com.vn
 
 ```
 User: super@admin.com
