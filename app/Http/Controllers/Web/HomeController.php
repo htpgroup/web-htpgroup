@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Helpers\TimeHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
@@ -28,6 +29,12 @@ class HomeController extends Controller
             ],
         ];
 
+        $locale = App::currentLocale();
+
+        if (App::isLocale('en')) {
+            //
+            return redirect()->route('language.switch', ['langugage' => 'vi']);
+        }
         /*Redis::set('name', 'Taylor');
         Redis::get('name');
         $values = Redis::lrange('names', 5, 10);
