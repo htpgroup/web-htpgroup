@@ -62,7 +62,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="form-group">
-                            {{ html()->submit($text = icon('fas fa-save')." Save")->class('btn btn-success') }}
+                            {{ html()->submit($text = icon('fas fa-save')." Lưu")->class('btn btn-success') }}
                         </div>
                     </div>
 

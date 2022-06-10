@@ -58,10 +58,10 @@
                                 Danh mục
                             </th>
                             <th>
-                                Type
+                                Loại
                             </th>
                             <th>
-                                Image
+                                Ảnh
                             </th>
                             <th class="text-end">
                                 Thao tác

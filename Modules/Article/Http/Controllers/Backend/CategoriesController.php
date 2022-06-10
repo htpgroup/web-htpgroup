@@ -296,7 +296,7 @@ class CategoriesController extends Controller
 
         $$module_name_singular->delete();
 
-        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Deleted Successfully!')->important();
+        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Xoá thành công!')->important();
 
         Log::info(label_case($module_title.' '.$module_action)." | '".$$module_name_singular->name.', ID:'.$$module_name_singular->id." ' by User:".auth()->user()->name.'(ID:'.auth()->user()->id.')');
 
@@ -351,7 +351,7 @@ class CategoriesController extends Controller
         $$module_name_singular = $module_model::withTrashed()->find($id);
         $$module_name_singular->restore();
 
-        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Data Restoreded Successfully!')->important();
+        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Khôi phục thành công!')->important();
 
         Log::info(label_case($module_action)." '$module_name': '".$$module_name_singular->name.', ID:'.$$module_name_singular->id." ' by User:".auth()->user()->name.'(ID:'.auth()->user()->id.')');
 

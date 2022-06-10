@@ -155,3 +155,7 @@ __Backend Dashboard__
 ---
 
 ![Edit-Posts-Laravel-Starter](https://user-images.githubusercontent.com/396987/88519360-d1bcf880-d013-11ea-9f6c-b5d33912057f.jpg)
+
+### Git
+
+ > git remote set-url origin ssh://git@gitlab.omipay.vn:31082/omipay/htpgroup.com.git

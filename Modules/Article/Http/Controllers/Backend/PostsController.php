@@ -56,7 +56,8 @@ class PostsController extends Controller
 
         $module_action = 'Danh sách';
 
-        $$module_name = $module_model::latest()->paginate();
+        $$module_name = $module_model::latest()->paginate(20);
+        //dd($$module_name);
 
         Log::info(label_case($module_title.' '.$module_action).' | User:'.Auth::user()->name.'(ID:'.Auth::user()->id.')');
 
@@ -88,7 +89,7 @@ class PostsController extends Controller
                             return view('backend.includes.action_column', compact('module_name', 'data'));
                         })
                         ->editColumn('name', function ($data) {
-                            $is_featured = ($data->is_featured) ? '<span class="badge bg-primary">Featured</span>' : '';
+                            $is_featured = ($data->is_featured) ? '<span class="badge bg-primary">Nổi bật</span>' : '';
 
                             return $data->name.' '.$data->status_formatted.' '.$is_featured;
                         })
@@ -323,7 +324,7 @@ class PostsController extends Controller
 
         $$module_name_singular->delete();
 
-        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Deleted Successfully!')->important();
+        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Xoá thành công!')->important();
 
         Log::info(label_case($module_title.' '.$module_action)." | '".$$module_name_singular->name.', ID:'.$$module_name_singular->id." ' by User:".Auth::user()->name.'(ID:'.Auth::user()->id.')');
 
@@ -378,7 +379,7 @@ class PostsController extends Controller
         $$module_name_singular = $module_model::withTrashed()->find($id);
         $$module_name_singular->restore();
 
-        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Data Restoreded Successfully!')->important();
+        Flash::success('<i class="fas fa-check"></i> '.label_case($module_name_singular).' Khôi phục thành công!')->important();
 
         Log::info(label_case($module_action)." '$module_name': '".$$module_name_singular->name.', ID:'.$$module_name_singular->id." ' by User:".Auth::user()->name.'(ID:'.Auth::user()->id.')');
 

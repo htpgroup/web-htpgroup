@@ -222,7 +222,7 @@
         <div class="form-group">
             <?php
             $field_name = 'order';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Thứ tự';
             $field_placeholder = $field_lable;
             $required = "";
             ?>
