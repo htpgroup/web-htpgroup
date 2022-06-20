@@ -33,7 +33,7 @@ class HomeController extends Controller
 
         if (App::isLocale('en')) {
             //
-            return redirect()->route('language.switch', ['langugage' => 'vi']);
+            return redirect()->route('language.switch', ['language' => 'vi']);
         }
         /*Redis::set('name', 'Taylor');
         Redis::get('name');
