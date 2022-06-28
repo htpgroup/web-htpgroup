@@ -12,10 +12,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 /**
- * @property integer $id
- * @property integer $domain_id
- * @property integer $user_id
- * @property integer $category_type
+ * @property int $id
+ * @property int $domain_id
+ * @property int $user_id
+ * @property int $category_type
  * @property string $first_name
  * @property string $last_name
  * @property string $phone
@@ -70,7 +70,7 @@ class Contact extends Model
         'image_base_url',
         'image_base_path',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     /**
@@ -84,17 +84,16 @@ class Contact extends Model
     /**
      * Filter by name
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param mixed $value
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  mixed  $value
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function filterName($query, $value)
     {
-        return $query->where('blog_contacts.name', 'like', '%' . $value . '%')
-            ->orWhere('blog_contacts.first_name', 'like', '%' . $value . '%')
-            ->orWhere('blog_contacts.last_name', 'like', '%' . $value . '%');
+        return $query->where('blog_contacts.name', 'like', '%'.$value.'%')
+            ->orWhere('blog_contacts.first_name', 'like', '%'.$value.'%')
+            ->orWhere('blog_contacts.last_name', 'like', '%'.$value.'%');
     }
-
 
     public function filterDomainId($query, $value)
     {
@@ -111,6 +110,7 @@ class Contact extends Model
         if ($value == UserStatus::DELETED) {
             return $query->onlyTrashed();
         }
+
         return $query->where('status', '=', $value);
     }
 
@@ -124,7 +124,7 @@ class Contact extends Model
         if (empty($name)) {
             $name = $this->last_name;
         }
-        $listWord = explode(" ", $name);
+        $listWord = explode(' ', $name);
         $count = 0;
         $charText = '';
         $listWord = array_slice($listWord, -2);
@@ -174,16 +174,16 @@ class Contact extends Model
     {
         $url = asset_cdn('themes/finder/img/avatars/36.png');
         if ($this->image_base_path) {
-            $url = $this->image_base_url . '/';
+            $url = $this->image_base_url.'/';
             //Face avatar
             if ($type == 2) {
                 //$url = $url . 'c_crop,g_face,h_400,w_400/r_max/c_scale,w_200';
-                $url = $url . 'c_thumb,g_face,h_32,w_32';
+                $url = $url.'c_thumb,g_face,h_32,w_32';
             }
-            $url = $url . '/' . $this->image_base_path;
+            $url = $url.'/'.$this->image_base_path;
             if ($width) {
-                $cropValue = '/w_' . $width . ',h_' . $height . ',c_fill,q_auto,f_auto/';
-                $url = $this->image_base_url . $cropValue . $this->image_base_path;
+                $cropValue = '/w_'.$width.',h_'.$height.',c_fill,q_auto,f_auto/';
+                $url = $this->image_base_url.$cropValue.$this->image_base_path;
             }
         }
 

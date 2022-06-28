@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 namespace App\Traits\Bookings;
-;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -65,8 +64,7 @@ trait BookingScopes
     /**
      * Get bookings starts before the given date.
      *
-     * @param string $date
-     *
+     * @param  string  $date
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsStartsBefore(string $date): MorphMany
@@ -80,8 +78,7 @@ trait BookingScopes
     /**
      * Get bookings starts after the given date.
      *
-     * @param string $date
-     *
+     * @param  string  $date
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsStartsAfter(string $date): MorphMany
@@ -95,9 +92,8 @@ trait BookingScopes
     /**
      * Get bookings starts between the given dates.
      *
-     * @param string $startsAt
-     * @param string $endsAt
-     *
+     * @param  string  $startsAt
+     * @param  string  $endsAt
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsStartsBetween(string $startsAt, string $endsAt): MorphMany
@@ -112,8 +108,7 @@ trait BookingScopes
     /**
      * Get bookings ends before the given date.
      *
-     * @param string $date
-     *
+     * @param  string  $date
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsEndsBefore(string $date): MorphMany
@@ -127,8 +122,7 @@ trait BookingScopes
     /**
      * Get bookings ends after the given date.
      *
-     * @param string $date
-     *
+     * @param  string  $date
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsEndsAfter(string $date): MorphMany
@@ -142,9 +136,8 @@ trait BookingScopes
     /**
      * Get bookings ends between the given dates.
      *
-     * @param string $startsAt
-     * @param string $endsAt
-     *
+     * @param  string  $startsAt
+     * @param  string  $endsAt
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsEndsBetween(string $startsAt, string $endsAt): MorphMany
@@ -159,8 +152,7 @@ trait BookingScopes
     /**
      * Get bookings cancelled before the given date.
      *
-     * @param string $date
-     *
+     * @param  string  $date
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsCancelledBefore(string $date): MorphMany
@@ -173,8 +165,7 @@ trait BookingScopes
     /**
      * Get bookings cancelled after the given date.
      *
-     * @param string $date
-     *
+     * @param  string  $date
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsCancelledAfter(string $date): MorphMany
@@ -187,9 +178,8 @@ trait BookingScopes
     /**
      * Get bookings cancelled between the given dates.
      *
-     * @param string $startsAt
-     * @param string $endsAt
-     *
+     * @param  string  $startsAt
+     * @param  string  $endsAt
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsCancelledBetween(string $startsAt, string $endsAt): MorphMany

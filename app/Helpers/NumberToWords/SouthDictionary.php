@@ -30,7 +30,7 @@ class SouthDictionary extends Dictionary
     ];
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function tripletTenSeparator(): string
     {
@@ -38,7 +38,7 @@ class SouthDictionary extends Dictionary
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function specialTripletUnitFour(): string
     {

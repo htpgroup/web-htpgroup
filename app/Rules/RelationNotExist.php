@@ -12,8 +12,9 @@ class RelationNotExist implements Rule
 
     /**
      * Create a new rule instance.
-     * @param string $class
-     * @param string $relation
+     *
+     * @param  string  $class
+     * @param  string  $relation
      * @return void
      */
     public function __construct(string $class = null, string $relation = null)
@@ -25,8 +26,8 @@ class RelationNotExist implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)

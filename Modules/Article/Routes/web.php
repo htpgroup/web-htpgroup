@@ -16,8 +16,8 @@ Route::group(['namespace' => '\Modules\Article\Http\Controllers\Frontend', 'as' 
      */
     $module_name = 'posts';
     $controller_name = 'PostsController';
-    Route::get("posts", ['as' => "posts.index", 'uses' => "PostsController@index"]);
-    Route::get("posts/{id}/{slug?}", ['as' => "posts.show", 'uses' => "$controller_name@show"]);
+    Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index']);
+    Route::get('posts/{id}/{slug?}', ['as' => 'posts.show', 'uses' => "$controller_name@show"]);
 
     /*
      *

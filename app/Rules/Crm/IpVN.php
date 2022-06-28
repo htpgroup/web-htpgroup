@@ -13,6 +13,7 @@ use PHPViet\Validation\Validator;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
+ *
  * @since 1.0.0
  */
 class IpVN extends CallableRule
@@ -29,7 +30,7 @@ class IpVN extends CallableRule
     /**
      * IpVN constructor.
      *
-     * @param int|null $version
+     * @param  int|null  $version
      */
     public function __construct(?int $version = null)
     {
@@ -37,7 +38,7 @@ class IpVN extends CallableRule
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function passes($attribute, $value): bool
     {
@@ -45,7 +46,7 @@ class IpVN extends CallableRule
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function message(): string
     {

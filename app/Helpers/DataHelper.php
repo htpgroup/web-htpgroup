@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Helpers;
-
 
 use App\Dictionaries\AppDomain;
 
@@ -34,7 +32,6 @@ class DataHelper
                 $arrDomain = AppDomain::all();
                 break;
         }
-
 
         return $arrDomain;
     }

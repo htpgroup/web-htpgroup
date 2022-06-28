@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-
 trait WithText
 {
     /**
@@ -12,5 +11,4 @@ trait WithText
     {
         return '';
     }
-
 }

@@ -11,7 +11,7 @@ final class HttpImageRule implements Rule
 {
     public function passes($attribute, $value): bool
     {
-        return !preg_match('/!\[.*\]\(http:\/\/.*\)/', $value);
+        return ! preg_match('/!\[.*\]\(http:\/\/.*\)/', $value);
     }
 
     public function message(): string

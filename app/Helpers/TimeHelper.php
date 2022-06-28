@@ -15,33 +15,39 @@ namespace App\Helpers;
 class TimeHelper
 {
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_MINUTE = 60;
 
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_FIVE_MINUTE = 300;
+
     const SECONDS_IN_TEN_MINUTE = 600;
+
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_AN_HOUR = 3600;
+
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_DAY = 86400;
+
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_WEEK = 604800;
+
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_MONTH = 2592000;
+
     /**
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_YEAR = 31536000;
 
@@ -80,7 +86,7 @@ class TimeHelper
         s - Number of full seconds (default)
         */
 
-        if (!$using_timestamps) {
+        if (! $using_timestamps) {
             $datefrom = strtotime($datefrom, 0);
             $dateto = strtotime($dateto, 0);
         }
@@ -91,29 +97,29 @@ class TimeHelper
             case 'yyyy': // Number of full years
 
                 $years_difference = floor($difference / 31536000);
-                if (mktime(date("H", $datefrom), date("i", $datefrom), date("s", $datefrom), date("n", $datefrom), date("j", $datefrom), date("Y", $datefrom) + $years_difference) > $dateto) {
+                if (mktime(date('H', $datefrom), date('i', $datefrom), date('s', $datefrom), date('n', $datefrom), date('j', $datefrom), date('Y', $datefrom) + $years_difference) > $dateto) {
                     $years_difference--;
                 }
-                if (mktime(date("H", $dateto), date("i", $dateto), date("s", $dateto), date("n", $dateto), date("j", $dateto), date("Y", $dateto) - ($years_difference + 1)) > $datefrom) {
+                if (mktime(date('H', $dateto), date('i', $dateto), date('s', $dateto), date('n', $dateto), date('j', $dateto), date('Y', $dateto) - ($years_difference + 1)) > $datefrom) {
                     $years_difference++;
                 }
                 $datediff = $years_difference;
                 break;
 
-            case "q": // Number of full quarters
+            case 'q': // Number of full quarters
 
                 $quarters_difference = floor($difference / 8035200);
-                while (mktime(date("H", $datefrom), date("i", $datefrom), date("s", $datefrom), date("n", $datefrom) + ($quarters_difference * 3), date("j", $dateto), date("Y", $datefrom)) < $dateto) {
+                while (mktime(date('H', $datefrom), date('i', $datefrom), date('s', $datefrom), date('n', $datefrom) + ($quarters_difference * 3), date('j', $dateto), date('Y', $datefrom)) < $dateto) {
                     $months_difference++;
                 }
                 $quarters_difference--;
                 $datediff = $quarters_difference;
                 break;
 
-            case "m": // Number of full months
+            case 'm': // Number of full months
 
                 $months_difference = floor($difference / 2678400);
-                while (mktime(date("H", $datefrom), date("i", $datefrom), date("s", $datefrom), date("n", $datefrom) + ($months_difference), date("j", $dateto), date("Y", $datefrom)) < $dateto) {
+                while (mktime(date('H', $datefrom), date('i', $datefrom), date('s', $datefrom), date('n', $datefrom) + ($months_difference), date('j', $dateto), date('Y', $datefrom)) < $dateto) {
                     $months_difference++;
                 }
                 $months_difference--;
@@ -122,19 +128,19 @@ class TimeHelper
 
             case 'y': // Difference between day numbers
 
-                $datediff = date("z", $dateto) - date("z", $datefrom);
+                $datediff = date('z', $dateto) - date('z', $datefrom);
                 break;
 
-            case "d": // Number of full days
+            case 'd': // Number of full days
 
                 $datediff = floor($difference / 86400);
                 break;
 
-            case "w": // Number of full weekdays
+            case 'w': // Number of full weekdays
 
                 $days_difference = floor($difference / 86400);
                 $weeks_difference = floor($days_difference / 7); // Complete weeks
-                $first_day = date("w", $datefrom);
+                $first_day = date('w', $datefrom);
                 $days_remainder = floor($days_difference % 7);
                 $odd_days = $first_day + $days_remainder; // Do we have a Saturday or Sunday in the remainder?
                 if ($odd_days > 7) { // Sunday
@@ -146,17 +152,17 @@ class TimeHelper
                 $datediff = ($weeks_difference * 5) + $days_remainder;
                 break;
 
-            case "ww": // Number of full weeks
+            case 'ww': // Number of full weeks
 
                 $datediff = floor($difference / 604800);
                 break;
 
-            case "h": // Number of full hours
+            case 'h': // Number of full hours
 
                 $datediff = floor($difference / 3600);
                 break;
 
-            case "n": // Number of full minutes
+            case 'n': // Number of full minutes
 
                 $datediff = floor($difference / 60);
                 break;
@@ -168,16 +174,14 @@ class TimeHelper
         }
 
         return $datediff;
-
     }
-
 
     /*
      * Calculate Minute between time
      * */
     public static function minuteDiff($start, $end)
     {
-        $timeStart = strtotime($start, 0);;
+        $timeStart = strtotime($start, 0);
         $timeEnd = strtotime($end, 0);
         $datediff = $timeEnd - $timeStart;
         //minute

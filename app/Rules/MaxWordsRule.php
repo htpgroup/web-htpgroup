@@ -11,8 +11,7 @@ class MaxWordsRule implements Rule
     /**
      * Create a new rule instance.
      *
-     * @param integer $max_words
-     *
+     * @param  int  $max_words
      * @return void
      */
     public function __construct($max_words = 500)
@@ -23,8 +22,8 @@ class MaxWordsRule implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -39,6 +38,6 @@ class MaxWordsRule implements Rule
      */
     public function message()
     {
-        return 'The :attribute cannot be longer than ' . $this->max_words . ' words.';
+        return 'The :attribute cannot be longer than '.$this->max_words.' words.';
     }
 }

@@ -20,20 +20,20 @@ trait NumberResolver
     /**
      * Chia số truyền vào thành mảng bao gồm kiểu số âm hoặc dương, số nguyên và phân số.
      *
-     * @param int|float|string $number
+     * @param  int|float|string  $number
      * @return array
      *
      * @throws InvalidArgumentException
      */
     protected function resolveNumber($number): array
     {
-        if (!is_numeric($number)) {
+        if (! is_numeric($number)) {
             throw new InvalidArgumentException(sprintf('Number arg (`%s`) must be numeric!', $number));
         }
 
         if ($this->decimalPart === null) {
             $number += 0; // trick xóa các số 0 lẻ sau cùng của phân số đối với input là chuỗi.
-            $number = (string)$number;
+            $number = (string) $number;
         } else {
             $number = number_format($number, $this->decimalPart, '.', '');
         }

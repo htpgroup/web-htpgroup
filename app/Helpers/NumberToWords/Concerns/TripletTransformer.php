@@ -18,16 +18,16 @@ trait TripletTransformer
     /**
      * Chuyển đổi cụm 3 số thành chữ số.
      *
-     * @param int $triplet
-     * @param bool $isFirst
-     * @param int $exponent
+     * @param  int  $triplet
+     * @param  bool  $isFirst
+     * @param  int  $exponent
      * @return string
      */
     protected function tripletToWords(int $triplet, bool $isFirst, int $exponent): string
     {
         [$hundred, $ten, $unit] = $this->splitTriplet($triplet);
 
-        if (0 < $hundred || !$isFirst) {
+        if (0 < $hundred || ! $isFirst) {
             $words[] = $this->dictionary->getTripletHundred($hundred);
 
             if (0 === $ten && 0 < $unit) {
@@ -51,13 +51,13 @@ trait TripletTransformer
     /**
      * Chia 3 số thành mảng 3 phần tử tương ứng với hàng trăm, hàng chục, hàng đơn vị.
      *
-     * @param int $triplet
+     * @param  int  $triplet
      * @return array
      */
     private function splitTriplet(int $triplet): array
     {
-        $hundred = (int)($triplet / 100) % 10;
-        $ten = (int)($triplet / 10) % 10;
+        $hundred = (int) ($triplet / 100) % 10;
+        $ten = (int) ($triplet / 10) % 10;
         $unit = $triplet % 10;
 
         return [$hundred, $ten, $unit];
@@ -66,8 +66,8 @@ trait TripletTransformer
     /**
      * Chuyển đổi số hàng đơn vị sang chữ số ở một số trường hợp đặc biệt.
      *
-     * @param int $unit
-     * @param int $ten
+     * @param  int  $unit
+     * @param  int  $ten
      * @return null|string
      */
     private function getTripletUnit(int $unit, int $ten): string

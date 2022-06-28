@@ -18,7 +18,7 @@ trait Collapse
     /**
      * Ghép mảng chữ số thành chuỗi.
      *
-     * @param array|string[] $words
+     * @param  array|string[]  $words
      * @return string
      *
      * @since 1.2.0

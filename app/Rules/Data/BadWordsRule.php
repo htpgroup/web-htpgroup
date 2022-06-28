@@ -13,8 +13,7 @@ class BadWordsRule implements Rule
     /**
      * Create a new rule instance.
      *
-     * @param integer $max_words
-     *
+     * @param  int  $max_words
      * @return void
      */
     public function __construct($max_words = 500)
@@ -25,8 +24,8 @@ class BadWordsRule implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -39,15 +38,15 @@ class BadWordsRule implements Rule
     /**
      * Validates for bad words.
      *
-     * @param string $attribute
-     * @param mixed $value
-     * @param array $parameters
-     * @param object $validator
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @param  array  $parameters
+     * @param  object  $validator
      * @return bool
      */
     public function validate($attribute, $value, $parameters, $validator)
     {
-        if (!is_string($value)) {
+        if (! is_string($value)) {
             return true;
         }
 
@@ -56,7 +55,7 @@ class BadWordsRule implements Rule
             Arr::only(config('bad-word'), $parameters);
 
         //Arr::flatten https://dev.to/cooldashing24/flatten-array-using-arr-flatten-in-laravel-1d4f
-        return !Str::contains(strtolower($value), Arr::flatten($words));
+        return ! Str::contains(strtolower($value), Arr::flatten($words));
     }
 
     /**

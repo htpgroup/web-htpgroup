@@ -24,7 +24,7 @@ class PostFactory extends Factory
     {
         return [
             //'name'              => substr($this->faker->text(30), 0, -1),
-            'name'              => 'Ví điện tử ' .$this->faker->numberBetween(1,20),
+            'name'              => 'Ví điện tử '.$this->faker->numberBetween(1, 20),
             'slug'              => '',
             'intro'             => 'Trong khi hàng loạt ngành hàng chịu ảnh hưởng nặng nề bởi dịch COVID-19 thì thanh toán điện tử (E-payment) nói chung và ví điện tử (E-wallet) nói riêng lại có cơ hội bứt phá vượt trội',
             'content'           => 'Trong khi hàng loạt ngành hàng chịu ảnh hưởng nặng nề bởi dịch COVID-19 thì thanh toán điện tử (E-payment) nói chung và ví điện tử (E-wallet) nói riêng lại có cơ hội bứt phá vượt trội',

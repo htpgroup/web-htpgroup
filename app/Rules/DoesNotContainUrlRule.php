@@ -11,7 +11,7 @@ final class DoesNotContainUrlRule implements Rule
 
     public function passes($attribute, $value): bool
     {
-        return !collect(explode(' ', $value))->contains(function ($word) {
+        return ! collect(explode(' ', $value))->contains(function ($word) {
             return $this->validateRequired('word', $word) && $this->validateUrl('word', $word);
         });
     }

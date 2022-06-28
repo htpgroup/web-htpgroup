@@ -74,7 +74,7 @@ interface DictionaryInterface
     /**
      * Trả về từ ngữ hàng đơn vị tương ứng với số truyền vào.
      *
-     * @param int $unit hàng đơn vị
+     * @param  int  $unit hàng đơn vị
      * @return string
      */
     public function getTripletUnit(int $unit): string;
@@ -82,7 +82,7 @@ interface DictionaryInterface
     /**
      * Trả về từ ngữ hàng chục tương ứng với số truyền vào.
      *
-     * @param int $ten hàng chục
+     * @param  int  $ten hàng chục
      * @return string
      */
     public function getTripletTen(int $ten): string;
@@ -90,7 +90,7 @@ interface DictionaryInterface
     /**
      * Trả về từ ngữ hàng trăm tương ứng với số truyền vào.
      *
-     * @param int $hundred hàng trăm
+     * @param  int  $hundred hàng trăm
      * @return string
      */
     public function getTripletHundred(int $hundred): string;
@@ -98,7 +98,7 @@ interface DictionaryInterface
     /**
      * Trả về đơn vị tương ứng với số mũ cơ số 3.
      *
-     * @param int $power hàng trăm
+     * @param  int  $power hàng trăm
      * @return string
      */
     public function getExponent(int $power): string;

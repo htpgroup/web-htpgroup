@@ -14,8 +14,9 @@ class UniqueNumber implements Rule
 
     /**
      * Create a new rule instance.
-     * @param string $class
-     * @param int $id
+     *
+     * @param  string  $class
+     * @param  int  $id
      * @return void
      */
     public function __construct(string $class = null, int $id = null)
@@ -27,15 +28,15 @@ class UniqueNumber implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        if ($value && count(explode("-", $value)) > 2) {
-            $number = explode("-", $value);
-            $uniqueNumber = $number[0] . '-' . sprintf('%06d', intval($number[1]));
+        if ($value && count(explode('-', $value)) > 2) {
+            $number = explode('-', $value);
+            $uniqueNumber = $number[0].'-'.sprintf('%06d', intval($number[1]));
         } else {
             $uniqueNumber = $value;
         }

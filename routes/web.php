@@ -1,14 +1,13 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
-use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\Web\BlogController as HomeHTPBlogController;
+use App\Http\Controllers\Web\ContactController as HomeHTPContactController;
 use App\Http\Controllers\Web\HomeController as HomeHTPHomeController;
 use App\Http\Controllers\Web\PageController as HomeHTPAboutController;
-use App\Http\Controllers\Web\ContactController as HomeHTPContactController;
 use App\Http\Controllers\Web\ProductController as HomeHTPProductController;
-use App\Http\Controllers\Web\BlogController as HomeHTPBlogController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,8 +33,6 @@ Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index'
 * --------------------------------------------------------------------
 */
 Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], function () {
-
-
     Route::get('/', [HomeHTPHomeController::class, 'index'])->name('homeWebPay');
 
     //Page
@@ -69,13 +66,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], fu
     //New
     Route::get('/tuyen-dung', [HomeHTPBlogController::class, 'recruitmentIndex'])->name('recruitmentWebPay');
     Route::get('/chi-tiet-tuyen-dung/{slug}/{id}', [HomeHTPBlogController::class, 'recruitmentShow'])->name('recruitmentShowWebPay');
-
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.'], function () {
-
     Route::get('/web', 'FrontendController@index')->name('index');
-
 
     Route::get('home', 'FrontendController@index')->name('home');
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');

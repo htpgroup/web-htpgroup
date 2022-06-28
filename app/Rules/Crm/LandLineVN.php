@@ -12,12 +12,13 @@ use PHPViet\Validation\Validator;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
+ *
  * @since 1.0.0
  */
 class LandLineVN extends CallableRule
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function passes($attribute, $value): bool
     {
@@ -25,7 +26,7 @@ class LandLineVN extends CallableRule
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function message(): string
     {

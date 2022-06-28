@@ -2,7 +2,8 @@
 
 namespace App\Helpers;
 
-use Illuminate\Support\Facades\DB, Exception;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 /*
  * IdGenerator
@@ -33,7 +34,6 @@ class IdGenerator
 
         foreach ($rows as $col) {
             if ($field == $col->column_name) {
-
                 $fieldType = $col->data_type;
                 //column_type not available in postgres SQL
                 //mysql 8 optional display width for int,bigint numeric field
@@ -50,27 +50,32 @@ class IdGenerator
             }
         }
 
-        if ($fieldType == null) throw new Exception("$field not found in $table table");
+        if ($fieldType == null) {
+            throw new Exception("$field not found in $table table");
+        }
+
         return ['type' => $fieldType, 'length' => $fieldLength];
     }
 
     public static function generate($configArr)
     {
-        if (!array_key_exists('table', $configArr) || $configArr['table'] == '') {
+        if (! array_key_exists('table', $configArr) || $configArr['table'] == '') {
             throw new Exception('Must need a table name');
         }
-        if (!array_key_exists('length', $configArr) || $configArr['length'] == '') {
+        if (! array_key_exists('length', $configArr) || $configArr['length'] == '') {
             throw new Exception('Must specify the length of ID');
         }
-        if (!array_key_exists('prefix', $configArr) || $configArr['prefix'] == '') {
+        if (! array_key_exists('prefix', $configArr) || $configArr['prefix'] == '') {
             throw new Exception('Must specify a prefix of your ID');
         }
 
         if (array_key_exists('where', $configArr)) {
-            if (is_string($configArr['where']))
+            if (is_string($configArr['where'])) {
                 throw new Exception('where clause must be an array, you provided string');
-            if (!count($configArr['where']))
+            }
+            if (! count($configArr['where'])) {
                 throw new Exception('where clause must need at least an array');
+            }
         }
 
         $table = $configArr['table'];
@@ -83,7 +88,7 @@ class IdGenerator
         $tableFieldType = $fieldInfo['type'];
         $tableFieldLength = $fieldInfo['length'];
 
-        if (in_array($tableFieldType, ['int', 'integer', 'bigint', 'numeric']) && !is_numeric($prefix)) {
+        if (in_array($tableFieldType, ['int', 'integer', 'bigint', 'numeric']) && ! is_numeric($prefix)) {
             throw new Exception("$field field type is $tableFieldType but prefix is string");
         }
 
@@ -96,32 +101,31 @@ class IdGenerator
         $whereString = '';
 
         if (array_key_exists('where', $configArr)) {
-            $whereString .= " WHERE ";
+            $whereString .= ' WHERE ';
             foreach ($configArr['where'] as $row) {
-                $whereString .= $row[0] . "=" . $row[1] . " AND ";
+                $whereString .= $row[0].'='.$row[1].' AND ';
             }
         }
         $whereString = rtrim($whereString, 'AND ');
 
-
-        $totalQuery = sprintf("SELECT count(%s) total FROM %s %s", $field, $configArr['table'], $whereString);
+        $totalQuery = sprintf('SELECT count(%s) total FROM %s %s', $field, $configArr['table'], $whereString);
         $total = DB::select(trim($totalQuery));
 
         if ($total[0]->total) {
             if ($resetOnPrefixChange) {
-                $maxQuery = sprintf("SELECT MAX(%s) AS maxid FROM %s WHERE %s LIKE %s", $field, $table, $field, "'" . $prefix . "%'");
+                $maxQuery = sprintf('SELECT MAX(%s) AS maxid FROM %s WHERE %s LIKE %s', $field, $table, $field, "'".$prefix."%'");
             } else {
-                $maxQuery = sprintf("SELECT MAX(%s) AS maxid FROM %s", $field, $table);
+                $maxQuery = sprintf('SELECT MAX(%s) AS maxid FROM %s', $field, $table);
             }
 
             $queryResult = DB::select($maxQuery);
             $maxFullId = $queryResult[0]->maxid;
 
             $maxId = substr($maxFullId, $prefixLength, $idLength);
-            return $prefix . str_pad((int)$maxId + 1, $idLength, '0', STR_PAD_LEFT);
 
+            return $prefix.str_pad((int) $maxId + 1, $idLength, '0', STR_PAD_LEFT);
         } else {
-            return $prefix . str_pad(1, $idLength, '0', STR_PAD_LEFT);
+            return $prefix.str_pad(1, $idLength, '0', STR_PAD_LEFT);
         }
     }
 }

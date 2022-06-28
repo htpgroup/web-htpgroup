@@ -2,54 +2,54 @@
 
 namespace App\Rules;
 
-use Illuminate\Support\Str;
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Str;
 
 class isValidPassword implements Rule
 {
     /**
      * Determine if the Length Validation Rule passes.
      *
-     * @var boolean
+     * @var bool
      */
     public $lengthPasses = true;
 
     /**
      * Determine if the Uppercase Validation Rule passes.
      *
-     * @var boolean
+     * @var bool
      */
     public $uppercasePasses = true;
 
     /**
      * Determine if the Numeric Validation Rule passes.
      *
-     * @var boolean
+     * @var bool
      */
     public $numericPasses = true;
 
     /**
      * Determine if the Special Character Validation Rule passes.
      *
-     * @var boolean
+     * @var bool
      */
     public $specialCharacterPasses = true;
 
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
         $this->lengthPasses = (Str::length($value) >= 10);
         $this->uppercasePasses = (Str::lower($value) !== $value);
-        $this->numericPasses = ((bool)preg_match('/[0-9]/', $value));
-        $this->specialCharacterPasses = ((bool)preg_match('/[^A-Za-z0-9]/', $value));
+        $this->numericPasses = ((bool) preg_match('/[0-9]/', $value));
+        $this->specialCharacterPasses = ((bool) preg_match('/[^A-Za-z0-9]/', $value));
 
-        return ($this->lengthPasses && $this->uppercasePasses && $this->numericPasses && $this->specialCharacterPasses);
+        return $this->lengthPasses && $this->uppercasePasses && $this->numericPasses && $this->specialCharacterPasses;
     }
 
     /**
@@ -60,34 +60,34 @@ class isValidPassword implements Rule
     public function message()
     {
         switch (true) {
-            case !$this->uppercasePasses
+            case ! $this->uppercasePasses
                 && $this->numericPasses
                 && $this->specialCharacterPasses:
                 return 'The :attribute must be at least 10 characters and contain at least one uppercase character.';
 
-            case !$this->numericPasses
+            case ! $this->numericPasses
                 && $this->uppercasePasses
                 && $this->specialCharacterPasses:
                 return 'The :attribute must be at least 10 characters and contain at least one number.';
 
-            case !$this->specialCharacterPasses
+            case ! $this->specialCharacterPasses
                 && $this->uppercasePasses
                 && $this->numericPasses:
                 return 'The :attribute must be at least 10 characters and contain at least one special character.';
 
-            case !$this->uppercasePasses
-                && !$this->numericPasses
+            case ! $this->uppercasePasses
+                && ! $this->numericPasses
                 && $this->specialCharacterPasses:
                 return 'The :attribute must be at least 10 characters and contain at least one uppercase character and one number.';
 
-            case !$this->uppercasePasses
-                && !$this->specialCharacterPasses
+            case ! $this->uppercasePasses
+                && ! $this->specialCharacterPasses
                 && $this->numericPasses:
                 return 'The :attribute must be at least 10 characters and contain at least one uppercase character and one special character.';
 
-            case !$this->uppercasePasses
-                && !$this->numericPasses
-                && !$this->specialCharacterPasses:
+            case ! $this->uppercasePasses
+                && ! $this->numericPasses
+                && ! $this->specialCharacterPasses:
                 return 'The :attribute must be at least 10 characters and contain at least one uppercase character, one number, and one special character.';
 
             default:

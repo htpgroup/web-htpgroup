@@ -20,8 +20,8 @@ class Captcha implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -29,17 +29,15 @@ class Captcha implements Rule
         $client = new Client();
         $response = $client->post(
             'https://www.google.com/recaptcha/api/siteverify',
-            ['form_params'=>
-                [
-                    'secret'=>env('GOOGLE_RECAPTCHA_SECRET'),
-                    'response'=>$value
-                ]
+            ['form_params'=> [
+                'secret'=>env('GOOGLE_RECAPTCHA_SECRET'),
+                'response'=>$value,
+            ],
             ]
         );
-        $body = json_decode((string)$response->getBody());
+        $body = json_decode((string) $response->getBody());
 
         return $body->success;
-
     }
 
     /**

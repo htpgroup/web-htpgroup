@@ -12,6 +12,7 @@ use Illuminate\Contracts\Validation\Rule;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
+ *
  * @since 1.0.0
  */
 abstract class CallableRule implements Rule

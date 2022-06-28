@@ -75,7 +75,7 @@ class Dictionary implements DictionaryInterface
     ];
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function zero(): string
     {
@@ -83,7 +83,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function minus(): string
     {
@@ -91,7 +91,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function separator(): string
     {
@@ -99,7 +99,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function tripletTenSeparator(): string
     {
@@ -107,7 +107,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function specialTripletUnitOne(): string
     {
@@ -115,7 +115,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function specialTripletUnitFour(): string
     {
@@ -123,7 +123,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function specialTripletUnitFive(): string
     {
@@ -131,7 +131,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function fraction(): string
     {
@@ -139,11 +139,11 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getTripletUnit(int $unit): string
     {
-        if (!isset(static::$tripletUnits[$unit])) {
+        if (! isset(static::$tripletUnits[$unit])) {
             throw new InvalidArgumentException(sprintf('Unit arg (`%s`) must be in 0-9 range!', $unit));
         }
 
@@ -151,11 +151,11 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getTripletTen(int $ten): string
     {
-        if (!isset(static::$tripletTens[$ten])) {
+        if (! isset(static::$tripletTens[$ten])) {
             throw new InvalidArgumentException(sprintf('Ten arg (`%s`) must be in 0-9 range!', $ten));
         }
 
@@ -163,23 +163,23 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getTripletHundred(int $hundred): string
     {
-        if (!isset(static::$tripletUnits[$hundred])) {
+        if (! isset(static::$tripletUnits[$hundred])) {
             throw new InvalidArgumentException(sprintf('Hundred arg (`%s`) must be in 0-9 range!', $hundred));
         }
 
-        return static::$tripletUnits[$hundred] . $this->separator() . static::$hundred;
+        return static::$tripletUnits[$hundred].$this->separator().static::$hundred;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getExponent(int $power): string
     {
-        if (!isset(static::$exponents[$power])) {
+        if (! isset(static::$exponents[$power])) {
             throw new InvalidArgumentException(sprintf('Power arg (`%s`) not exist in vietnamese dictionary!', $power));
         }
 

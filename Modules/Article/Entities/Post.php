@@ -166,7 +166,6 @@ class Post extends BaseModel
         return $query->where('type', '=', $type);
     }
 
-
     public function scopeFeatured($query)
     {
         return $query->where('is_featured', '=', 'Yes')
@@ -187,7 +186,6 @@ class Post extends BaseModel
             ->orderBy('published_at', 'desc');
     }
 
-
     /**
      * Create a new factory instance for the model.
      *
@@ -201,16 +199,17 @@ class Post extends BaseModel
     /**
      * Filter by name
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param mixed $value
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  mixed  $value
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function filterName($query, $value)
     {
-        return $query->where('posts.name', 'like', '%' . $value . '%')
-            ->orWhere('posts.first_name', 'like', '%' . $value . '%')
-            ->orWhere('posts.last_name', 'like', '%' . $value . '%');
+        return $query->where('posts.name', 'like', '%'.$value.'%')
+            ->orWhere('posts.first_name', 'like', '%'.$value.'%')
+            ->orWhere('posts.last_name', 'like', '%'.$value.'%');
     }
+
     public function filterDomainId($query, $value)
     {
         return $query->where('posts.domain_id', $value);
@@ -225,13 +224,13 @@ class Post extends BaseModel
     {
         return $query->where('posts.category_id', $value);
     }
+
     public function filterStatus($query, $value)
     {
         if ($value == UserStatus::DELETED) {
             return $query->onlyTrashed();
         }
+
         return $query->where('status', '=', $value);
     }
-
-
 }

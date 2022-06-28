@@ -2,8 +2,8 @@
 
 namespace App\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Crm\Rating;
+use Illuminate\Database\Eloquent\Model;
 
 trait ReviewRateable
 {
@@ -16,8 +16,6 @@ trait ReviewRateable
     }
 
     /**
-     *
-     *
      * @param $round
      * @param $onlyApproved
      * @return mixed
@@ -28,7 +26,7 @@ trait ReviewRateable
 
         if ($round) {
             return $this->ratings()
-                ->selectRaw('ROUND(AVG(rating), ' . $round . ') as averageReviewRateable')
+                ->selectRaw('ROUND(AVG(rating), '.$round.') as averageReviewRateable')
                 ->where($where)
                 ->pluck('averageReviewRateable');
         }
@@ -40,10 +38,10 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @return mixed
-     * @var $onlyApproved
-     * @var $round
+     *
+     * @var
+     * @var
      */
     public function averageCustomerServiceRating($round = null, $onlyApproved = false)
     {
@@ -51,7 +49,7 @@ trait ReviewRateable
 
         if ($round) {
             return $this->ratings()
-                ->selectRaw('ROUND(AVG(customer_service_rating), ' . $round . ') as averageCustomerServiceReviewRateable')
+                ->selectRaw('ROUND(AVG(customer_service_rating), '.$round.') as averageCustomerServiceReviewRateable')
                 ->where($where)
                 ->pluck('averageCustomerServiceReviewRateable');
         }
@@ -63,7 +61,6 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @param $round
      * @param $onlyApproved
      * @return mixed
@@ -74,7 +71,7 @@ trait ReviewRateable
 
         if ($round) {
             return $this->ratings()
-                ->selectRaw('ROUND(AVG(quality_rating), ' . $round . ') as averageQualityReviewRateable')
+                ->selectRaw('ROUND(AVG(quality_rating), '.$round.') as averageQualityReviewRateable')
                 ->where($where)
                 ->pluck('averageQualityReviewRateable');
         }
@@ -86,10 +83,10 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @return mixed
-     * @var $onlyApproved
-     * @var $round
+     *
+     * @var
+     * @var
      */
     public function averageFriendlyRating($round = null, $onlyApproved = false)
     {
@@ -97,7 +94,7 @@ trait ReviewRateable
 
         if ($round) {
             return $this->ratings()
-                ->selectRaw('ROUND(AVG(friendly_rating), ' . $round . ') as averageFriendlyReviewRateable')
+                ->selectRaw('ROUND(AVG(friendly_rating), '.$round.') as averageFriendlyReviewRateable')
                 ->where($where)
                 ->pluck('averageFriendlyReviewRateable');
         }
@@ -109,10 +106,10 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @return mixed
-     * @var $onlyApproved
-     * @var $round
+     *
+     * @var
+     * @var
      */
     public function averagePricingRating($round = null, $onlyApproved = false)
     {
@@ -120,7 +117,7 @@ trait ReviewRateable
 
         if ($round) {
             return $this->ratings()
-                ->selectRaw('ROUND(AVG(pricing_rating), ' . $round . ') as averagePricingReviewRateable')
+                ->selectRaw('ROUND(AVG(pricing_rating), '.$round.') as averagePricingReviewRateable')
                 ->where($where)
                 ->pluck('averagePricingReviewRateable');
         }
@@ -133,7 +130,8 @@ trait ReviewRateable
 
     /**
      * @return mixed
-     * @var $onlyApproved
+     *
+     * @var
      */
     public function countRating($onlyApproved = false)
     {
@@ -145,7 +143,8 @@ trait ReviewRateable
 
     /**
      * @return mixed
-     * @var $onlyApproved
+     *
+     * @var
      */
     public function countCustomerServiceRating($onlyApproved = false)
     {
@@ -157,7 +156,8 @@ trait ReviewRateable
 
     /**
      * @return mixed
-     * @var $onlyApproved
+     *
+     * @var
      */
     public function countQualityRating($onlyApproved = false)
     {
@@ -169,7 +169,8 @@ trait ReviewRateable
 
     /**
      * @return mixed
-     * @var $onlyApproved
+     *
+     * @var
      */
     public function countFriendlyRating($onlyApproved = false)
     {
@@ -181,7 +182,8 @@ trait ReviewRateable
 
     /**
      * @return mixed
-     * @var $onlyApproved
+     *
+     * @var
      */
     public function countPriceRating($onlyApproved = false)
     {
@@ -193,7 +195,8 @@ trait ReviewRateable
 
     /**
      * @return mixed
-     * @var $onlyApproved
+     *
+     * @var
      */
     public function sumRating($onlyApproved = false)
     {
@@ -205,7 +208,6 @@ trait ReviewRateable
 
     /**
      * @param $max
-     *
      * @return mixed
      */
     public function ratingPercent($max = 5)
@@ -213,6 +215,7 @@ trait ReviewRateable
         $ratings = $this->ratings();
         $quantity = $ratings->count();
         $total = $ratings->selectRaw('SUM(rating) as total')->pluck('total');
+
         return ($quantity * $max) > 0 ? $total / (($quantity * $max) / 100) : 0;
     }
 
@@ -220,7 +223,6 @@ trait ReviewRateable
      * @param $data
      * @param $author
      * @param $parent
-     *
      * @return mixed
      */
     public function rating($data, Model $author, Model $parent = null)
@@ -232,7 +234,6 @@ trait ReviewRateable
      * @param $id
      * @param $data
      * @param $parent
-     *
      * @return mixed
      */
     public function updateRating($id, $data, Model $parent = null)
@@ -241,7 +242,6 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @param $id
      * @param $sort
      * @return mixed
@@ -252,7 +252,6 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @param $id
      * @param $sort
      * @return mixed
@@ -263,7 +262,6 @@ trait ReviewRateable
     }
 
     /**
-     *
      * @param $id
      * @param $sort
      * @return mixed
@@ -298,7 +296,6 @@ trait ReviewRateable
 
     /**
      * @param $id
-     *
      * @return mixed
      */
     public function deleteRating($id)

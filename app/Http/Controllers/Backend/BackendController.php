@@ -20,6 +20,7 @@ class BackendController extends Controller
             //
             return redirect()->route('language.switch', ['langugage' => 'vi']);
         }
+
         return view('backend.index');
     }
 }

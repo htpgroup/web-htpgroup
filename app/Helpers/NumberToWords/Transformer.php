@@ -35,7 +35,7 @@ class Transformer
     /**
      * Tạo đối tượng mới với từ điển chỉ định và phần thập phân.
      *
-     * @param DictionaryInterface $dictionary
+     * @param  DictionaryInterface  $dictionary
      */
     public function __construct(?DictionaryInterface $dictionary = null, $decimalPart = null)
     {
@@ -50,7 +50,7 @@ class Transformer
     /**
      * Chuyển đổi số sang chữ số.
      *
-     * @param int|float|string $number
+     * @param  int|float|string  $number
      * @return string
      *
      * @throws \InvalidArgumentException
@@ -84,18 +84,18 @@ class Transformer
      * Chuyển đổi số sang chữ số kết hợp với đơn vị tiền tệ.
      *
      * @param $number
-     * @param array|string[]|string $unit
+     * @param  array|string[]|string  $unit
      * @return string
      *
      * @throws \InvalidArgumentException
      */
     public function toCurrency($number, $unit = 'đồng'): string
     {
-        $unit = (array)$unit;
+        $unit = (array) $unit;
         $originNumber = $number;
         [$minus, $number, $decimal] = $this->resolveNumber($number);
 
-        if (0 === $decimal || !isset($unit[1])) {
+        if (0 === $decimal || ! isset($unit[1])) {
             $words[] = $this->toWords($originNumber);
             $words[] = $unit[0];
         } else {

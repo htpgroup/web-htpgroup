@@ -8,8 +8,8 @@ use App\Models\Contact;
 use App\Rules\Captcha;
 use App\Rules\Crm\MobileVN;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\View;
 
 class ContactController extends Controller
 {
@@ -55,38 +55,38 @@ class ContactController extends Controller
         ]);
 
         $input = $request->all();
-       /* $modelCheckContact = Contact::query()
-            ->where('email', $input['email'])
-            ->first();
+        /* $modelCheckContact = Contact::query()
+             ->where('email', $input['email'])
+             ->first();
 
-        if ($modelCheckContact == false) {
-            $modelContact = new Contact();
-            $modelContact->user_id = 1;
-            $modelContact->phone = $input['phone'];
-            $modelContact->email = $input['email'];
-            $modelContact->first_name = $input['name'];
+         if ($modelCheckContact == false) {
+             $modelContact = new Contact();
+             $modelContact->user_id = 1;
+             $modelContact->phone = $input['phone'];
+             $modelContact->email = $input['email'];
+             $modelContact->first_name = $input['name'];
 
-            $modelContact->save();
-        }*/
+             $modelContact->save();
+         }*/
 
         $adminEmail = 'dungpx@htpgroup.com.vn';
         //$adminEmail = 'support@htpgroup.com.vn';
         $arrAdminEmail = [
             //'tech@htpgroup.com.vn',
             //'support@htpgroup.com.vn',
-            'dungpx@htpgroup.com.vn'
+            'dungpx@htpgroup.com.vn',
         ];
-        $mailTitle = 'Website - ' . $input['company'] . ' - ' . $input['email'] . ' ' . $input['phone'] . ' - ' . $input['subject'];
+        $mailTitle = 'Website - '.$input['company'].' - '.$input['email'].' '.$input['phone'].' - '.$input['subject'];
         //dd($mailTitle);
         //  Send mail to admin
         foreach ($arrAdminEmail as $adminValueEmail) {
-            \Mail::send('emails.contactMail', array(
+            \Mail::send('emails.contactMail', [
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'phone' => $input['phone'],
                 'subject' => $input['subject'],
                 'content' => $input['content'],
-            ), function ($message) use ($request, $adminEmail, $adminValueEmail, $mailTitle) {
+            ], function ($message) use ($request , $adminValueEmail, $mailTitle) {
                 $message->from($request->email);
                 $message->to($adminValueEmail, 'Admin')->subject($mailTitle);
             });
@@ -141,7 +141,6 @@ class ContactController extends Controller
         //
         return view('home-htp.page.about');
     }
-
 
     /**
      * Display a listing of the resource.
@@ -201,7 +200,7 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -212,7 +211,7 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -223,7 +222,7 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -234,8 +233,8 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -246,7 +245,7 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
