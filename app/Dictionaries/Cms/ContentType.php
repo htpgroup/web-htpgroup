@@ -8,17 +8,20 @@
 
 namespace App\Dictionaries\Cms;
 
-
 class ContentType
 {
     const HTML = 1;
 
     const MARKDOWN = 2;
+
     const LONG_FORM = 3;
+
     const TEXT = 4;
 
     const TOP_POSITON = 1;
+
     const CENTER_POSITON = 2;
+
     const FOOTER_POSITON = 3;
 
     public static function all()

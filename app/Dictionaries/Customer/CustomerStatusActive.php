@@ -9,10 +9,15 @@ namespace App\Dictionaries\Customer;
 class CustomerStatusActive
 {
     const F0_STATUS = 0;
+
     const F1_STATUS = 1;
+
     const F2_STATUS = 2;
+
     const F3_STATUS = 3;
+
     const F4_STATUS = 4;
+
     const F5_STATUS = 5;
 
     public static function all()

@@ -5,14 +5,21 @@ namespace App\Services\Napas\Resources;
 class PerformanceRecord extends ApiResource
 {
     public int $id;
+
     public int $siteId;
+
     public string $createdAt;
 
     public float $dnsTimeInSeconds;
+
     public float $tcpTimeInSeconds;
+
     public float $sslHandshakeTimeInSeconds;
+
     public float $remoteServerProcessingTimeInSeconds;
+
     public float $downloadTimeInSeconds;
+
     public float $totalTimeInSeconds;
 
     public array $curl;

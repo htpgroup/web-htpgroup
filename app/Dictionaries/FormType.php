@@ -8,10 +8,10 @@
 
 namespace App\Dictionaries;
 
-
 class FormType
 {
     const CREATE = 1;
+
     const EDIT = 2;
 
     public static function all()

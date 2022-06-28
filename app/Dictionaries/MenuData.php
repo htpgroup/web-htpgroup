@@ -8,18 +8,23 @@
 
 namespace App\Dictionaries;
 
-
 class MenuData
 {
     const HOME = 1;
-    const ABOUT = 2;
-    const PRODUCT = 3;
-    const SERVICE = 4;
-    const BLOG = 5;
-    const CONTACT = 6;
-    const PROFILE = 7;
-    const HELP = 8;
 
+    const ABOUT = 2;
+
+    const PRODUCT = 3;
+
+    const SERVICE = 4;
+
+    const BLOG = 5;
+
+    const CONTACT = 6;
+
+    const PROFILE = 7;
+
+    const HELP = 8;
 
     public static function all()
     {

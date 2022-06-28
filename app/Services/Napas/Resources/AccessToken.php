@@ -11,13 +11,12 @@ class AccessToken extends ApiResource
     public string $refresh_token;
 
     public string $expires_in;
-    public string $scope;
 
+    public string $scope;
 
     public function __construct(array $attributes, $ohDear = null)
     {
         parent::__construct($attributes, $ohDear);
-
     }
 
     public function oauth(): array

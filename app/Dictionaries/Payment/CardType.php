@@ -19,12 +19,19 @@ namespace App\Dictionaries\Payment;
 class CardType
 {
     const  AMEX = 'AMEX';
+
     const  AMEX_DEBIT = 'AMEX_DEBIT';
+
     const  JCB = 'JCB';
+
     const  JCB_DEBIT = 'JCB_DEBIT';
+
     const  MASTERCARD = 'MASTERCARD';
+
     const  MASTERCARD_DEBIT = 'MASTERCARD_DEBIT';
+
     const  VISA = 'VISA';
+
     const  VISA_DEBIT = 'VISA_DEBIT';
 
     public static function all()

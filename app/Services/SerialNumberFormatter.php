@@ -7,7 +7,6 @@ use Crater\Models\Customer;
 
 /**
  * SerialNumberFormatter
- * @package Crater\Services;
  */
 class SerialNumberFormatter
 {
@@ -85,7 +84,7 @@ class SerialNumberFormatter
     public function getNextNumber($data = null)
     {
         $modelName = strtolower(class_basename($this->model));
-        $settingKey = $modelName . '_number_format';
+        $settingKey = $modelName.'_number_format';
         $companyId = $this->company;
 
         if (request()->has('format')) {
@@ -155,7 +154,7 @@ class SerialNumberFormatter
 
     public static function getPlaceholders(string $format)
     {
-        $regex = "/{{([A-Z_]{1,})(?::)?([a-zA-Z0-9_]{1,6}|.{1})?}}/";
+        $regex = '/{{([A-Z_]{1,})(?::)?([a-zA-Z0-9_]{1,6}|.{1})?}}/';
 
         preg_match_all($regex, $format, $placeholders);
         array_shift($placeholders);
@@ -174,8 +173,8 @@ class SerialNumberFormatter
 
             if (in_array($name, self::VALID_PLACEHOLDERS)) {
                 $validPlaceholders->push([
-                    "name" => $name,
-                    "value" => $value
+                    'name' => $name,
+                    'value' => $value,
                 ]);
             }
         }
@@ -197,22 +196,22 @@ class SerialNumberFormatter
             $value = $placeholder['value'];
 
             switch ($name) {
-                case "SEQUENCE":
+                case 'SEQUENCE':
                     $value = $value ? $value : 6;
                     $serialNumber .= str_pad($this->nextSequenceNumber, $value, 0, STR_PAD_LEFT);
 
                     break;
-                case "DATE_FORMAT":
+                case 'DATE_FORMAT':
                     $value = $value ? $value : 'Y';
                     $serialNumber .= date($value);
 
                     break;
-                case "RANDOM_SEQUENCE":
+                case 'RANDOM_SEQUENCE':
                     $value = $value ? $value : 6;
                     $serialNumber .= substr(bin2hex(random_bytes($value)), 0, $value);
 
                     break;
-                case "CUSTOMER_SERIES":
+                case 'CUSTOMER_SERIES':
                     if (isset($this->customer)) {
                         $serialNumber .= $this->customer->prefix ?? 'CST';
                     } else {
@@ -220,7 +219,7 @@ class SerialNumberFormatter
                     }
 
                     break;
-                case "CUSTOMER_SEQUENCE":
+                case 'CUSTOMER_SEQUENCE':
                     $serialNumber .= str_pad($this->nextCustomerSequenceNumber, $value, 0, STR_PAD_LEFT);
 
                     break;

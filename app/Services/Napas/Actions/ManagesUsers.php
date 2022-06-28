@@ -31,12 +31,11 @@ trait ManagesUsers
             'client_id' => 'APITEST',
             'client_secret' => 'TT3F6AM5UQZXJEJXAWJ8CHVC9ZJ02A51',
             'username' => 'apitest',
-            'password' => 'fPJFVp5qnCWeFmtd'
+            'password' => 'fPJFVp5qnCWeFmtd',
 
         ];
-        $siteAttributes = $this->post("oauth/token", $dataSend);
+        $siteAttributes = $this->post('oauth/token', $dataSend);
 
         return new Site($siteAttributes, $this);
-
     }
 }

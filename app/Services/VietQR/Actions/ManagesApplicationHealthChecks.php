@@ -28,7 +28,7 @@ trait ManagesApplicationHealthChecks
         $listTemplate = [
             'compact2',
             'compact',
-            'qr_only'
+            'qr_only',
         ];
 
         return $listTemplate;

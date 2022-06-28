@@ -28,8 +28,8 @@ class Module
     /**
      * Register the given script file with Module.
      *
-     * @param string $name
-     * @param string $path
+     * @param  string  $name
+     * @param  string  $path
      * @return static
      */
     public static function script($name, $path)
@@ -42,8 +42,8 @@ class Module
     /**
      * Register the given CSS file with Module.
      *
-     * @param string $name
-     * @param string $path
+     * @param  string  $name
+     * @param  string  $path
      * @return static
      */
     public static function style($name, $path)

@@ -8,14 +8,14 @@
 
 namespace App\Dictionaries\EuroGroup\EuroSecure;
 
-
-use phpDocumentor\Reflection\Types\Self_;
-
 class SecureServiceCategory
 {
     const SERVCICE_COMPANY = 1;
+
     const SERVCICE_PERSONAL = 2;
+
     const SERVCICE_QUALITY = 3;
+
     const SERVCICE_OTHER = 4;
 
     public static function all()
@@ -34,22 +34,22 @@ class SecureServiceCategory
             [
                 'id' => self::SERVCICE_COMPANY,
                 'title' => 'Dành Cho doanh nghiệp',
-                'slug' => 'danh-cho-doanh-nghiep'
+                'slug' => 'danh-cho-doanh-nghiep',
             ],
             [
                 'id' => self::SERVCICE_PERSONAL,
                 'title' => 'Dành Cho cá nhân',
-                'slug' => 'danh-cho-ca-nhan'
+                'slug' => 'danh-cho-ca-nhan',
             ],
             [
                 'id' => self::SERVCICE_QUALITY,
                 'title' => 'Dịch vụ bảo vệ chất lượng cao',
-                'slug' => 'dich-vu-bao-ve-chat-luong-cao'
+                'slug' => 'dich-vu-bao-ve-chat-luong-cao',
             ],
             [
                 'id' => self::SERVCICE_OTHER,
                 'title' => 'Dịch vụ khác',
-                'slug' => 'dich-vu-khac'
+                'slug' => 'dich-vu-khac',
             ],
         ];
     }

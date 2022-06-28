@@ -15,8 +15,11 @@ namespace App\Dictionaries;
 class PriceAverage
 {
     const DAY = 1;
+
     const WEEK = 2;
+
     const MONTH = 3;
+
     const YEAR = 4;
 
     public static function all()

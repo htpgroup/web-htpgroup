@@ -3,10 +3,9 @@
 declare(strict_types=1);
 
 namespace App\Traits\Bookings;
-;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Bookings\BookableBooking;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasBookings
@@ -16,12 +15,11 @@ trait HasBookings
     /**
      * Define a polymorphic one-to-many relationship.
      *
-     * @param string $related
-     * @param string $name
-     * @param string $type
-     * @param string $id
-     * @param string $localKey
-     *
+     * @param  string  $related
+     * @param  string  $name
+     * @param  string  $type
+     * @param  string  $id
+     * @param  string  $localKey
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     abstract public function morphMany($related, $name, $type = null, $id = null, $localKey = null);
@@ -52,15 +50,13 @@ trait HasBookings
      */
     public function bookings(): MorphMany
     {
-
         return $this->morphMany(static::getBookingModel(), 'customer', 'customer_type', 'customer_id');
     }
 
     /**
      * Get bookings of the given resource.
      *
-     * @param \Illuminate\Database\Eloquent\Model $bookable
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $bookable
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsOf(Model $bookable): MorphMany
@@ -71,8 +67,7 @@ trait HasBookings
     /**
      * Check if the person booked the given model.
      *
-     * @param \Illuminate\Database\Eloquent\Model $bookable
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $bookable
      * @return bool
      */
     public function isBooked(Model $bookable): bool
@@ -83,10 +78,9 @@ trait HasBookings
     /**
      * Book the given model at the given dates with the given price.
      *
-     * @param \Illuminate\Database\Eloquent\Model $bookable
-     * @param string $startsAt
-     * @param string $endsAt
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $bookable
+     * @param  string  $startsAt
+     * @param  string  $endsAt
      * @return \App\Models\Bookings\BookableBooking
      */
     public function newBooking(Model $bookable, string $startsAt, string $endsAt, float $price = 1000): BookableBooking

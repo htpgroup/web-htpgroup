@@ -7,8 +7,7 @@ use App\Services\OhDear\Resources\MaintenancePeriod;
 trait ManagesMaintenancePeriods
 {
     /**
-     * @param int $siteId
-     *
+     * @param  int  $siteId
      * @return array
      */
     public function maintenancePeriods(int $siteId): array
@@ -20,9 +19,8 @@ trait ManagesMaintenancePeriods
     }
 
     /**
-     * @param int $siteId
-     * @param int $stopMaintenanceAfterSeconds Stops after one hour by default
-     *
+     * @param  int  $siteId
+     * @param  int  $stopMaintenanceAfterSeconds Stops after one hour by default
      * @return MaintenancePeriod
      */
     public function startSiteMaintenance(int $siteId, int $stopMaintenanceAfterSeconds = 60 * 60): MaintenancePeriod
@@ -35,7 +33,7 @@ trait ManagesMaintenancePeriods
     }
 
     /**
-     * @param int $siteId
+     * @param  int  $siteId
      */
     public function stopSiteMaintenance(int $siteId)
     {
@@ -43,16 +41,15 @@ trait ManagesMaintenancePeriods
     }
 
     /**
-     * @param int $siteId
-     * @param string $startsAt Y:m:d H:i
-     * @param string $endsAt Y:m:d H:i
-     *
+     * @param  int  $siteId
+     * @param  string  $startsAt Y:m:d H:i
+     * @param  string  $endsAt Y:m:d H:i
      * @return MaintenancePeriod
      */
     public function createSiteMaintenance(int $siteId, string $startsAt, string $endsAt): MaintenancePeriod
     {
-        $startsAt = $this->convertDateFormat($startsAt,'Y-m-d H:i');
-        $endsAt = $this->convertDateFormat($endsAt,'Y-m-d H:i');
+        $startsAt = $this->convertDateFormat($startsAt, 'Y-m-d H:i');
+        $endsAt = $this->convertDateFormat($endsAt, 'Y-m-d H:i');
 
         $payload = [
             'site_id' => $siteId,
@@ -66,7 +63,7 @@ trait ManagesMaintenancePeriods
     }
 
     /**
-     * @param int $maintenancePeriodId
+     * @param  int  $maintenancePeriodId
      */
     public function deleteSiteMaintenance(int $maintenancePeriodId)
     {

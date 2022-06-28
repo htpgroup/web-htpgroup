@@ -10,7 +10,6 @@ use App\Services\VietQR\Resources\QRCode;
 
 trait ManagesQRCodes
 {
-
     public function generateQR(array $data): QRCode
     {
         $siteAttributes = $this->post('generate', $data)['data'];

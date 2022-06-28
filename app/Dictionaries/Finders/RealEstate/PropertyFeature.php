@@ -5,8 +5,8 @@ namespace App\Dictionaries\Finders\RealEstate;
 class PropertyFeature
 {
     const HOUSE = 1;
-    const APARTMENT = 2;
 
+    const APARTMENT = 2;
 
     public static function all()
     {

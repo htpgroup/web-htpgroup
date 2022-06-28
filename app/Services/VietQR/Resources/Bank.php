@@ -40,6 +40,5 @@ class Bank extends ApiResource
         }
 
         parent::__construct($attributes, $ohDear);
-
     }
 }

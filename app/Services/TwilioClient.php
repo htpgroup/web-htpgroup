@@ -23,8 +23,8 @@ final class TwilioClient implements TwilioClientContract
     /**
      * Creates a new Twilio client instance.
      *
-     * @param Client $twilio The Twilio SDK client.
-     * @param string $from The default from number to use.
+     * @param  Client  $twilio The Twilio SDK client.
+     * @param  string  $from The default from number to use.
      */
     public function __construct(Client $twilio, string $from)
     {
@@ -45,9 +45,8 @@ final class TwilioClient implements TwilioClientContract
     /**
      * Create a call through the Twilio API.
      *
-     * @param string $to The phone number to create a call to.
-     * @param array $params Optional arguments for the created call.
-     *
+     * @param  string  $to The phone number to create a call to.
+     * @param  array  $params Optional arguments for the created call.
      * @return CallInstance
      *
      * @throws TwilioException on Twilio API failure
@@ -64,10 +63,9 @@ final class TwilioClient implements TwilioClientContract
     /**
      * Send a SMS through the Twilio API.
      *
-     * @param string $to The phone number to send the SMS to.
-     * @param string $message The message body to send.
-     * @param array $params Optional arguments for the SMS.
-     *
+     * @param  string  $to The phone number to send the SMS to.
+     * @param  string  $message The message body to send.
+     * @param  array  $params Optional arguments for the SMS.
      * @return MessageInstance
      *
      * @throws TwilioException on Twilio API failure

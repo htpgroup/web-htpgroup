@@ -10,7 +10,6 @@ class FireBaseDatabase
 {
     public function start()
     {
-
         $factory = (new Factory)
             ->withServiceAccount('/path/to/firebase_credentials.json')
             ->withDatabaseUri('https://my-project-default-rtdb.firebaseio.com');
@@ -71,8 +70,8 @@ class FireBaseDatabase
         $newPostKey = $database->getReference('posts')->push()->getKey();
 
         $updates = [
-            'posts/' . $newPostKey => $postData,
-            'user-posts/' . $uid . '/' . $newPostKey => $postData,
+            'posts/'.$newPostKey => $postData,
+            'user-posts/'.$uid.'/'.$newPostKey => $postData,
         ];
 
         $database->getReference() // this is the root reference

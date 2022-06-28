@@ -2,7 +2,6 @@
 
 namespace App\Space;
 
-
 use Illuminate\Support\Arr;
 
 class Share
@@ -65,18 +64,18 @@ class Share
      */
     public function __toString()
     {
-        $this->html = $this->prefix . $this->html;
+        $this->html = $this->prefix.$this->html;
         $this->html .= $this->suffix;
 
         return $this->html;
     }
 
     /**
-     * @param string $url
-     * @param string|null $title
-     * @param array $options
-     * @param string|null $prefix
-     * @param string|null $suffix
+     * @param  string  $url
+     * @param  string|null  $title
+     * @param  array  $options
+     * @param  string|null  $prefix
+     * @param  string|null  $suffix
      * @return $this
      */
     public function page($url, $title = null, $options = [], $prefix = null, $suffix = null)
@@ -92,10 +91,10 @@ class Share
     }
 
     /**
-     * @param string|null $title
-     * @param array $options
-     * @param string|null $prefix
-     * @param string|null $suffix
+     * @param  string|null  $title
+     * @param  array  $options
+     * @param  string|null  $prefix
+     * @param  string|null  $suffix
      * @return $this
      */
     public function currentPage($title = null, $options = [], $prefix = null, $suffix = null)
@@ -112,7 +111,7 @@ class Share
      */
     public function facebook()
     {
-        $url = config('laravel-share.services.facebook.uri') . $this->url;
+        $url = config('laravel-share.services.facebook.uri').$this->url;
 
         $this->buildLink('facebook', $url);
 
@@ -131,7 +130,7 @@ class Share
         }
 
         $base = config('laravel-share.services.twitter.uri');
-        $url = $base . '?text=' . urlencode($this->title) . '&url=' . $this->url;
+        $url = $base.'?text='.urlencode($this->title).'&url='.$this->url;
 
         $this->buildLink('twitter', $url);
 
@@ -150,7 +149,7 @@ class Share
         }
 
         $base = config('laravel-share.services.reddit.uri');
-        $url = $base . '?title=' . urlencode($this->title) . '&url=' . $this->url;
+        $url = $base.'?title='.urlencode($this->title).'&url='.$this->url;
 
         $this->buildLink('reddit', $url);
 
@@ -169,7 +168,7 @@ class Share
         }
 
         $base = config('laravel-share.services.telegram.uri');
-        $url = $base . '?url=' . $this->url . '&text=' . urlencode($this->title);
+        $url = $base.'?url='.$this->url.'&text='.urlencode($this->title);
 
         $this->buildLink('telegram', $url);
 
@@ -183,7 +182,7 @@ class Share
      */
     public function whatsapp()
     {
-        $url = config('laravel-share.services.whatsapp.uri') . $this->url;
+        $url = config('laravel-share.services.whatsapp.uri').$this->url;
 
         $this->buildLink('whatsapp', $url);
 
@@ -193,14 +192,14 @@ class Share
     /**
      * Linked in share link
      *
-     * @param string $summary
+     * @param  string  $summary
      * @return $this
      */
     public function linkedin($summary = '')
     {
         $base = config('laravel-share.services.linkedin.uri');
         $mini = config('laravel-share.services.linkedin.extra.mini');
-        $url = $base . '?mini=' . $mini . '&url=' . $this->url . '&title=' . urlencode($this->title) . '&summary=' . urlencode($summary);
+        $url = $base.'?mini='.$mini.'&url='.$this->url.'&title='.urlencode($this->title).'&summary='.urlencode($summary);
 
         $this->buildLink('linkedin', $url);
 
@@ -214,7 +213,7 @@ class Share
      */
     public function pinterest()
     {
-        $url = config('laravel-share.services.pinterest.uri') . $this->url;
+        $url = config('laravel-share.services.pinterest.uri').$this->url;
 
         $this->buildLink('pinterest', $url);
 
@@ -238,8 +237,8 @@ class Share
     /**
      * Build a single link
      *
-     * @param string $provider
-     * @param string $url
+     * @param  string  $provider
+     * @param  string  $url
      */
     protected function buildLink($provider, $url)
     {
@@ -249,34 +248,33 @@ class Share
 
         $this->html .= trans("laravel-share::laravel-share-fa$fontAwesomeVersion.$provider", [
             'url' => $url,
-            'class' => key_exists('class', $this->options) ? $this->options['class'] : '',
-            'id' => key_exists('id', $this->options) ? $this->options['id'] : '',
-            'title' => key_exists('title', $this->options) ? $this->options['title'] : '',
-            'rel' => key_exists('rel', $this->options) ? $this->options['rel'] : '',
+            'class' => array_key_exists('class', $this->options) ? $this->options['class'] : '',
+            'id' => array_key_exists('id', $this->options) ? $this->options['id'] : '',
+            'title' => array_key_exists('title', $this->options) ? $this->options['title'] : '',
+            'rel' => array_key_exists('rel', $this->options) ? $this->options['rel'] : '',
         ]);
-
     }
 
     /**
      * Optionally Set custom prefix and/or suffix
      *
-     * @param string $prefix
-     * @param string $suffix
+     * @param  string  $prefix
+     * @param  string  $suffix
      */
     protected function setPrefixAndSuffix($prefix, $suffix)
     {
-        if (!is_null($prefix)) {
+        if (! is_null($prefix)) {
             $this->prefix = $prefix;
         }
 
-        if (!is_null($suffix)) {
+        if (! is_null($suffix)) {
             $this->suffix = $suffix;
         }
     }
 
     /**
-     * @param string $provider
-     * @param string $socialNetworkUrl
+     * @param  string  $provider
+     * @param  string  $socialNetworkUrl
      */
     protected function rememberRawLink($provider, $socialNetworkUrl)
     {

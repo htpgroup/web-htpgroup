@@ -2,8 +2,6 @@
 
 namespace App\Services\OmiPayVA\Actions;
 
-use App\Services\OmiPayVA\Resources\Site;
-use App\Services\OmiPayVA\Resources\Account;
 use App\Services\OmiPayVA\Resources\Transaction;
 
 /*
@@ -30,21 +28,21 @@ trait ManagesTransactions
     public function transactions(array $data = []): array
     {
         return $this->transformCollection(
-            $this->get('historyGetListTransaction&data=' . json_encode($data) . '&language=vi')['data'],
+            $this->get('historyGetListTransaction&data='.json_encode($data).'&language=vi')['data'],
             Transaction::class,
         );
     }
 
     public function transaction(int $accountID, array $data = []): Transaction
     {
-        $siteAttributes = $this->get("paymentGetTransactionById&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('paymentGetTransactionById&data='.json_encode($data).'&language=vi');
 
         return new Transaction($siteAttributes, $this);
     }
 
     public function historyList(int $accountID, array $data = []): Transaction
     {
-        $siteAttributes = $this->get("getVaAccountHistoryList&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('getVaAccountHistoryList&data='.json_encode($data).'&language=vi');
 
         return new Transaction($siteAttributes, $this);
     }
@@ -58,14 +56,14 @@ trait ManagesTransactions
 
     public function createTransaction(array $data): Transaction
     {
-        $siteAttributes = $this->post('createVaAccountList&data=' . json_encode($data) . '&language=vi', $data);
+        $siteAttributes = $this->post('createVaAccountList&data='.json_encode($data).'&language=vi', $data);
 
         return new Transaction($siteAttributes, $this);
     }
 
     public function updateTransaction(array $data): Transaction
     {
-        $siteAttributes = $this->post('updateVaAccount&data=' . json_encode($data) . '&language=vi', $data);
+        $siteAttributes = $this->post('updateVaAccount&data='.json_encode($data).'&language=vi', $data);
 
         return new Transaction($siteAttributes, $this);
     }

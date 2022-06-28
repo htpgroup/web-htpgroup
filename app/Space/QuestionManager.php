@@ -2,8 +2,8 @@
 
 namespace App\Space;
 
-use App\Models\Choice\Question;
 use App\Models\Choice\Choice;
+use App\Models\Choice\Question;
 
 class QuestionManager
 {
@@ -19,7 +19,7 @@ class QuestionManager
         }
 
         // Create question if it does not exist
-        if (!$question) {
+        if (! $question) {
             $question = new Question;
             $question->text = $questionIdOrText;
             $question->save();
@@ -36,7 +36,6 @@ class QuestionManager
 
         // Create any choices from choicesText array that do not already exist
         foreach ($choicesTexts as $choicesText) {
-
             $choice = $question->choices()->where('text', $choicesText)->first();
 
             if ($choice) {
@@ -49,5 +48,4 @@ class QuestionManager
             $choice->save();
         }
     }
-
 }

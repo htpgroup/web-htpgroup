@@ -8,108 +8,173 @@
 
 namespace App\Dictionaries\Cms;
 
-
 use App\Dictionaries\AppDomain;
 
 class CategoryType
 {
     //Category Type
     const ABOUT = 100;
+
     const PRODUCT = 101;
+
     const STORE = 121;
+
     const PROJECT = 102;
+
     const SERVICE = 103;
+
     const BLOG = 104;
+
     const HELP = 105;
+
     const PAGE = 106;
+
     const CAREERS = 107;
+
     const IMAGE = 108;
+
     const VIDEO = 109;
+
     const INFORMATON = 110;
 
     const COLOR = 1;
+
     const JOB = 2;
 
     //Euro Security
     const EURO_SECURITY_SEVICE = 3;
+
     const EURO_SECURITY_MEDIA = 4;
+
     const EURO_SECURITY_ACTION = 5;
+
     const EURO_SECURITY_IMAGE = 6;
+
     const EURO_SECURITY_VIDEO = 7;
+
     const EURO_SECURITY_RECRUITMENT = 8;
+
     const EURO_SECURITY_TRAINING = 9;
 
     //Blog
     const EURO_BLOG_ABOUT = 10;
+
     const EURO_BLOG_POST = 11;
+
     const EURO_BLOG_VIDEO = 12;
+
     const EURO_BLOG_IMAGE = 13;
 
     //StarToday
     const EURO_NEWS_ABOUT = 50;
+
     const EURO_NEWS_POST = 51;
+
     const EURO_NEWS_VIDEO = 52;
+
     const EURO_NEWS_IMAGE = 53;
 
     //Chuyên mục
     const EURO_NEWS_CATEGORY_HOME = 70;
-    const EURO_NEWS_CATEGORY_GENERAL = 60;
-    const EURO_NEWS_CATEGORY_SPORT = 61;
-    const EURO_NEWS_CATEGORY_MEDIA = 62;
-    const EURO_NEWS_CATEGORY_BUSINESS = 63;
-    const EURO_NEWS_CATEGORY_TECHNOLOGY = 64;
-    const EURO_NEWS_CATEGORY_ART = 65;
-    const EURO_NEWS_CATEGORY_HEALTH = 66;
-    const EURO_NEWS_CATEGORY_LIFESTYLE = 67;
-    const EURO_NEWS_CATEGORY_MULTICULTURAL = 68;
-    const EURO_NEWS_CATEGORY_TRADE = 69;
 
+    const EURO_NEWS_CATEGORY_GENERAL = 60;
+
+    const EURO_NEWS_CATEGORY_SPORT = 61;
+
+    const EURO_NEWS_CATEGORY_MEDIA = 62;
+
+    const EURO_NEWS_CATEGORY_BUSINESS = 63;
+
+    const EURO_NEWS_CATEGORY_TECHNOLOGY = 64;
+
+    const EURO_NEWS_CATEGORY_ART = 65;
+
+    const EURO_NEWS_CATEGORY_HEALTH = 66;
+
+    const EURO_NEWS_CATEGORY_LIFESTYLE = 67;
+
+    const EURO_NEWS_CATEGORY_MULTICULTURAL = 68;
+
+    const EURO_NEWS_CATEGORY_TRADE = 69;
 
     //Store
     const FRUIT_STORE_ABOUT = 20;
+
     const FRUIT_STORE_PRODUCT = 14;
+
     const FRUIT_STORE_SERVICE = 26;
+
     const FRUIT_STORE_CATEGORY = 15;
+
     const FRUIT_STORE_BLOG = 16;
+
     const FRUIT_STORE_MEDIA = 22;
+
     const FRUIT_STORE_RECRUITMENT = 17;
+
     const FRUIT_STORE_OFFER = 23;
+
     const FRUIT_STORE_IMAGE = 18;
+
     const FRUIT_STORE_VIDEO = 19;
+
     const FRUIT_STORE_PAGE = 21;
+
     const FRUIT_STORE_INFORMATION = 28;
+
     const FRUIT_STORE_PRODUCT_BAG = 24;
+
     const FRUIT_STORE_PRODUCT_DRINK = 25;
+
     const FRUIT_STORE_ACTION = 125;
+
     const FRUIT_STORE_TRAINING = 125;
 
     //Space Golf
     const SPACE_GOLF_ABOUT = 301;
+
     const SPACE_GOLF_PRODUCT = 302;
+
     const SPACE_GOLF_SERVICE = 303;
+
     const SPACE_GOLF_CATEGORY = 304;
+
     const SPACE_GOLF_BLOG = 305;
+
     const SPACE_GOLF_MEDIA = 306;
+
     const SPACE_GOLF_RECRUITMENT = 307;
+
     const SPACE_GOLF_OFFER = 308;
+
     const SPACE_GOLF_IMAGE = 309;
+
     const SPACE_GOLF_VIDEO = 310;
+
     const SPACE_GOLF_PAGE = 311;
+
     const SPACE_GOLF_INFORMATION = 312;
+
     const SPACE_GOLF_PRODUCT_BAG = 313;
+
     const SPACE_GOLF_PRODUCT_DRINK = 314;
 
     //Golf Product Category Type
     //Đồ tập
     const WORK_OUT = 251;
+
     //Túi
     const HANDBAG = 252;
+
     //Giày golf
     const SHOE = 253;
+
     //Thời trang
     const FAHSHION = 254;
+
     //Phụ kiện
     const ACCESSORY = 255;
+
     //Gậy golf
     const STICK = 256;
 
@@ -202,6 +267,7 @@ class CategoryType
             self::PAGE => 'Trang',
             self::CAREERS => 'Tuyển dụng',
         ];
+
         return $type;
     }
 
@@ -257,7 +323,6 @@ class CategoryType
                 self::PAGE => 'Trang',
                 self::CAREERS => 'Tuyển dụng',
             ],
-
 
             AppDomain::CITY => [
                 self::ABOUT => 'Giới thiệu',
@@ -449,7 +514,7 @@ class CategoryType
                 self::FRUIT_STORE_PAGE => 'Page',
                 self::FRUIT_STORE_PRODUCT_BAG => 'Giỏ hoa quả',
                 self::FRUIT_STORE_PRODUCT_DRINK => 'Đồ uống công nghệ',
-            ]
+            ],
         ];
     }
 

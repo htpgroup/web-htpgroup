@@ -8,15 +8,20 @@
 
 namespace App\Dictionaries;
 
-
 class UserRole
 {
     const SUPER_ADMIN = 'super_admin';
+
     const ADMIN = 'admin';
+
     const MANAGER = 'manager';
+
     const SALE = 'sale';
+
     const CONTENT = 'content';
+
     const USER = 'user';
+
     const CUSTOMER = 'customer';
 
     public static function all()

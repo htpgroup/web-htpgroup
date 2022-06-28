@@ -20,11 +20,17 @@ namespace App\Dictionaries\Payment;
 class PaymentMethod
 {
     const OM = 0;
+
     const VISA = 1;
+
     const IB_ONLINE = 2;
+
     const QRCODE = 3;
+
     const ATM_ONLINE = 4;
+
     const ATM = 5;
+
     const ATM_OFFLINE = 6;
 
     public static function all()

@@ -2,8 +2,8 @@
 
 namespace App\Services\Napas\Actions;
 
-use App\Services\Napas\Resources\Site;
 use App\Services\Napas\Resources\Account;
+use App\Services\Napas\Resources\Site;
 
 trait ManagesAccounts
 {

@@ -5,6 +5,7 @@ namespace App\Dictionaries\Domain\Merchant;
 class ActiveType
 {
     const ACTIVE = 1;
+
     const NOT_ACTIVE = 0;
 
     public static function all()
@@ -18,9 +19,10 @@ class ActiveType
     public static function allItem()
     {
         $arrType = [
-            0 => "Tất cả",
+            0 => 'Tất cả',
 
         ];
+
         return $arrType;
     }
 

@@ -1,14 +1,15 @@
 <?php
 
-
 namespace App\Dictionaries;
-
 
 class PaymentOptions
 {
     const IMMEDIATE_MONEY = 1;
+
     const THD_PAYMENT = 2;
+
     const BANK_TRANFER = 3;
+
     const CASH_ON_DATE = 4;
 
     public static function getAll()

@@ -2,8 +2,8 @@
 
 namespace App\Services\Napas\Actions;
 
-use App\Services\Napas\Resources\Site;
 use App\Services\Napas\Resources\Order;
+use App\Services\Napas\Resources\Site;
 
 trait ManagesOrders
 {

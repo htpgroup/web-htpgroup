@@ -8,10 +8,10 @@
 
 namespace App\Dictionaries\Domain\Merchant;
 
-
 class ConditionType
 {
     const FIXED = 1;
+
     const CHANGE = 2;
 
     public static function all()

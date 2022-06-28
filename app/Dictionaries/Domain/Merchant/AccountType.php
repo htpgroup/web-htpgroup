@@ -8,10 +8,10 @@
 
 namespace App\Dictionaries\Domain\Merchant;
 
-
 class AccountType
 {
     const ONE_TIME = 1;
+
     const MULTIPLE_TIME = 2;
 
     public static function all()

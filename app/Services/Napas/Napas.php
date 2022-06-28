@@ -2,8 +2,6 @@
 
 namespace App\Services\Napas;
 
-use Carbon\Carbon;
-use GuzzleHttp\Client;
 use App\Services\Napas\Actions\ManagesApplicationHealthChecks;
 use App\Services\Napas\Actions\ManagesBrokenLinks;
 use App\Services\Napas\Actions\ManagesCertificateHealth;
@@ -19,6 +17,8 @@ use App\Services\Napas\Actions\ManagesStatusPages;
 use App\Services\Napas\Actions\ManagesStatusPageUpdates;
 use App\Services\Napas\Actions\ManagesUptime;
 use App\Services\Napas\Actions\ManagesUsers;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 
 class Napas
 {

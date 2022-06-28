@@ -2,9 +2,8 @@
 
 namespace App\Services\OmiPayVA\Actions;
 
-use App\Services\OmiPayVA\Resources\History;
-use App\Services\OmiPayVA\Resources\Site;
 use App\Services\OmiPayVA\Resources\Account;
+use App\Services\OmiPayVA\Resources\History;
 
 /*
  * $accounts = $omiPayVA->accounts();
@@ -30,7 +29,7 @@ trait ManagesAccounts
     public function accounts(array $data = []): array
     {
         return $this->transformCollection(
-            $this->get('getVaAccountList&data=' . json_encode($data) . '&language=vi')['data'],
+            $this->get('getVaAccountList&data='.json_encode($data).'&language=vi')['data'],
             Account::class,
         );
     }
@@ -40,7 +39,7 @@ trait ManagesAccounts
      * */
     public function merchants(array $data = []): array
     {
-        $dataMerchants = $this->get('merchantGetList&data=' . json_encode($data) . '&language=vi');
+        $dataMerchants = $this->get('merchantGetList&data='.json_encode($data).'&language=vi');
         if (isset($dataMerchants['data'])) {
             return $this->transformCollection(
                 $dataMerchants['data'],
@@ -56,37 +55,35 @@ trait ManagesAccounts
      * */
     public function getInfo(array $data = []): Account
     {
-        $siteAttributes = $this->get("userGetByEmail&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('userGetByEmail&data='.json_encode($data).'&language=vi');
 
         return new Account($siteAttributes, $this);
     }
 
     public function getMerchantPasscode(array $data = []): Account
     {
-        $siteAttributes = $this->get("paymentGetMerchantPasscode&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('paymentGetMerchantPasscode&data='.json_encode($data).'&language=vi');
 
         return new Account($siteAttributes, $this);
     }
 
-
     public function countTotal(array $data = []): array
     {
-        $siteAttributes = $this->get("countVaAccount&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('countVaAccount&data='.json_encode($data).'&language=vi');
 
         return $siteAttributes;
     }
 
-
     public function account(int $accountID, array $data = []): Account
     {
-        $siteAttributes = $this->get("getVaAccountByID&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('getVaAccountByID&data='.json_encode($data).'&language=vi');
 
         return new Account($siteAttributes, $this);
     }
 
     public function history1(int $accountID, array $data = []): Account
     {
-        $siteAttributes = $this->get("getVaAccountHistoryList&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('getVaAccountHistoryList&data='.json_encode($data).'&language=vi');
 
         return new Account($siteAttributes, $this);
     }
@@ -94,7 +91,7 @@ trait ManagesAccounts
     public function history(array $data = []): array
     {
         return $this->transformCollection(
-            $this->get('getVaAccountHistoryList&data=' . json_encode($data) . '&language=vi')['data'],
+            $this->get('getVaAccountHistoryList&data='.json_encode($data).'&language=vi')['data'],
             History::class,
         );
     }
@@ -104,7 +101,7 @@ trait ManagesAccounts
      * */
     public function login(array $data = []): Account
     {
-        $siteAttributes = $this->get("usercheckShalogin&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('usercheckShalogin&data='.json_encode($data).'&language=vi');
         //$siteAttributes = $this->get("usercheckShalogin&" . http_build_query($data). '&language=vi');
 
         return new Account($siteAttributes, $this);
@@ -112,7 +109,7 @@ trait ManagesAccounts
 
     public function checkAccout(array $data = []): Account
     {
-        $siteAttributes = $this->get("usercheckShalogin&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('usercheckShalogin&data='.json_encode($data).'&language=vi');
 
         return new Account($siteAttributes, $this);
     }
@@ -127,7 +124,7 @@ trait ManagesAccounts
     public function createAccount(array $data): Account
     {
         //dd('createVaAccountList&data=' . json_encode($data). '&language=vi');
-        $siteAttributes = $this->post('createVaAccountList&data=' . json_encode($data) . '&language=vi', $data);
+        $siteAttributes = $this->post('createVaAccountList&data='.json_encode($data).'&language=vi', $data);
 
         //dd($siteAttributes);
 
@@ -136,7 +133,7 @@ trait ManagesAccounts
 
     public function updateAccount(array $data): Account
     {
-        $siteAttributes = $this->post('updateVaAccount&data=' . json_encode($data) . '&language=vi', $data);
+        $siteAttributes = $this->post('updateVaAccount&data='.json_encode($data).'&language=vi', $data);
 
         return new Account($siteAttributes, $this);
     }

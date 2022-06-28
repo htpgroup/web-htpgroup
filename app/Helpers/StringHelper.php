@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Helpers;
-
 
 class StringHelper
 {
@@ -11,6 +9,7 @@ class StringHelper
         if (str_contains($str, $word) !== false) {
             return true;
         }
+
         return false;
     }
 

@@ -2,8 +2,6 @@
 
 namespace App\Services\OhDear;
 
-use Carbon\Carbon;
-use GuzzleHttp\Client;
 use App\Services\OhDear\Actions\ManagesBrokenLinks;
 use App\Services\OhDear\Actions\ManagesCertificateHealth;
 use App\Services\OhDear\Actions\ManagesChecks;
@@ -18,6 +16,8 @@ use App\Services\OhDear\Actions\ManagesStatusPages;
 use App\Services\OhDear\Actions\ManagesStatusPageUpdates;
 use App\Services\OhDear\Actions\ManagesUptime;
 use App\Services\OhDear\Actions\ManagesUsers;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 
 /*
  * $apiKey = "iK4YfZe2i1RAe22tKP4xejGKDZP .... ";

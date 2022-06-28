@@ -3,10 +3,9 @@
 declare(strict_types=1);
 
 namespace App\Traits\Bookings;
-;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Bookings\TicketableBooking;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait Ticketable
@@ -14,8 +13,7 @@ trait Ticketable
     /**
      * Register a saved model event with the dispatcher.
      *
-     * @param \Closure|string $callback
-     *
+     * @param  \Closure|string  $callback
      * @return void
      */
     abstract public static function saved($callback);
@@ -23,8 +21,7 @@ trait Ticketable
     /**
      * Register a deleted model event with the dispatcher.
      *
-     * @param \Closure|string $callback
-     *
+     * @param  \Closure|string  $callback
      * @return void
      */
     abstract public static function deleted($callback);
@@ -32,12 +29,11 @@ trait Ticketable
     /**
      * Define a polymorphic one-to-many relationship.
      *
-     * @param string $related
-     * @param string $name
-     * @param string $type
-     * @param string $id
-     * @param string $localKey
-     *
+     * @param  string  $related
+     * @param  string  $name
+     * @param  string  $type
+     * @param  string  $id
+     * @param  string  $localKey
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     abstract public function morphMany($related, $name, $type = null, $id = null, $localKey = null);
@@ -71,9 +67,8 @@ trait Ticketable
     /**
      * Attach the given bookings to the model.
      *
-     * @param \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array $ids
-     * @param mixed $bookings
-     *
+     * @param  \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array  $ids
+     * @param  mixed  $bookings
      * @return void
      */
     public function setBookingsAttribute($bookings): void
@@ -106,8 +101,7 @@ trait Ticketable
     /**
      * Get bookings by the given customer.
      *
-     * @param \Illuminate\Database\Eloquent\Model $customer
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $customer
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsBy(Model $customer): MorphMany
@@ -118,10 +112,9 @@ trait Ticketable
     /**
      * Book the model for the given customer at the given dates with the given price.
      *
-     * @param \Illuminate\Database\Eloquent\Model $customer
-     * @param float $paid
-     * @param string $currency
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $customer
+     * @param  float  $paid
+     * @param  string  $currency
      * @return \App\Models\Bookings\TicketableBooking
      */
     public function newBooking(Model $customer, float $paid, string $currency): TicketableBooking

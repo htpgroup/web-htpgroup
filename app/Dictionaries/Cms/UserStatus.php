@@ -15,10 +15,12 @@ namespace App\Dictionaries\Cms;
 class UserStatus
 {
     const NOT_ACTIVE = 1;
-    const ACTIVE = 2;
-    const DELETED = 3;
-    const BANNER = 4;
 
+    const ACTIVE = 2;
+
+    const DELETED = 3;
+
+    const BANNER = 4;
 
     public static function all()
     {

@@ -4,40 +4,40 @@ use App\Models\Crm\CompanySetting;
 use App\Models\Crm\Currency;
 use App\Models\Crm\CustomField;
 use Carbon\Carbon;
-use Illuminate\Support\Str;
-use Illuminate\Support\HtmlString;
-use Kreait\Firebase\Factory;
+use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Request;
 
-if (!function_exists('mix_cdn')) {
+if (! function_exists('mix_cdn')) {
     /**
      * Get the path to a versioned Mix file.
      *
-     * @param string $path
-     * @param string $manifestDirectory
+     * @param  string  $path
+     * @param  string  $manifestDirectory
      * @return \Illuminate\Support\HtmlString
      *
      * @throws \Exception
      */
     function mix_cdn($path, $manifestDirectory = '')
     {
-        if (!config('asset-cdn.use_cdn')) {
+        if (! config('asset-cdn.use_cdn')) {
             return mix($path, $manifestDirectory);
         }
 
         static $manifests = [];
 
-        if (!Str::startsWith($path, '/')) {
+        if (! Str::startsWith($path, '/')) {
             $path = "/{$path}";
         }
 
-        if ($manifestDirectory && !Str::startsWith($manifestDirectory, '/')) {
+        if ($manifestDirectory && ! Str::startsWith($manifestDirectory, '/')) {
             $manifestDirectory = "/{$manifestDirectory}";
         }
 
-        $manifestPath = public_path($manifestDirectory . '/mix-manifest.json');
+        $manifestPath = public_path($manifestDirectory.'/mix-manifest.json');
 
-        if (!isset($manifests[$manifestPath])) {
-            if (!file_exists($manifestPath)) {
+        if (! isset($manifests[$manifestPath])) {
+            if (! file_exists($manifestPath)) {
                 throw new Exception('The Mix manifest does not exist.');
             }
 
@@ -46,7 +46,7 @@ if (!function_exists('mix_cdn')) {
 
         $manifest = $manifests[$manifestPath];
 
-        if (!isset($manifest[$path])) {
+        if (! isset($manifest[$path])) {
             throw new Exception("Unable to locate Mix file: {$path}.");
         }
 
@@ -54,23 +54,23 @@ if (!function_exists('mix_cdn')) {
         // Remove slashes from ending of the path
         $cdnUrl = rtrim($cdnUrl, '/');
 
-        return new HtmlString($cdnUrl . $manifestDirectory . $manifest[$path]);
+        return new HtmlString($cdnUrl.$manifestDirectory.$manifest[$path]);
     }
 }
 
-if (!function_exists('asset_cdn')) {
+if (! function_exists('asset_cdn')) {
 
     /**
      * Generate an asset path for the application.
      *
-     * @param string $path
+     * @param  string  $path
      * @return string
      */
     function asset_cdn($path, $type = 1, $show_version = 1)
     {
         $version = '20220527';
         if ($show_version) {
-            $path .= '?version=' . $version;
+            $path .= '?version='.$version;
         }
 
         $hasConfigCdn = config('asset-cdn.use_cdn');
@@ -86,7 +86,7 @@ if (!function_exists('asset_cdn')) {
         // Remove slashes from ending of the path
         $cdnUrl = rtrim($cdnUrl, '/');
 
-        return $cdnUrl . '/' . trim($path, '/');
+        return $cdnUrl.'/'.trim($path, '/');
     }
 }
 
@@ -94,12 +94,12 @@ if (!function_exists('asset_cdn')) {
  * Set Active Path
  *
  * @param $path
- * @param string $active
+ * @param  string  $active
  * @return string
  */
 function set_active($path, $active = 'active')
 {
-    return call_user_func_array('Request::is', (array)$path) ? $active : '';
+    return call_user_func_array('Request::is', (array) $path) ? $active : '';
 }
 
 /**
@@ -108,7 +108,7 @@ function set_active($path, $active = 'active')
  */
 function is_url($path)
 {
-    return call_user_func_array('Request::is', (array)$path);
+    return call_user_func_array('Request::is', (array) $path);
 }
 
 /**
@@ -122,6 +122,7 @@ function get_company_setting($key, $company_id)
     if (\Storage::disk('local')->has('database_created')) {
         return CompanySetting::getSetting($key, $company_id);
     }
+
     return null;
 }
 
@@ -136,16 +137,16 @@ function get_app_setting($key)
     if (\Storage::disk('local')->has('database_created')) {
         return \App\Models\Crm\Setting::getSetting($key);
     }
+
     return null;
 }
-
 
 /*
  * Get or Set the Settings Values
  *
  * @var [type]
  */
-if (!function_exists('crm_setting')) {
+if (! function_exists('crm_setting')) {
     function setting($key, $default = null)
     {
         if (is_null($key)) {
@@ -163,7 +164,7 @@ if (!function_exists('crm_setting')) {
 }
 
 /**
- * @param string $type
+ * @param  string  $type
  * @return string
  */
 function getCustomFieldValueKey(string $type)
@@ -233,9 +234,9 @@ function format_money_pdf($money, $currency = null, $type = 1)
     $currency_with_symbol = '';
     $isSwrapSymbol = $currency->swap_currency_symbol;
     if ($isSwrapSymbol) {
-        $currency_with_symbol = $format_money . ' ' . $currency->code;
+        $currency_with_symbol = $format_money.' '.$currency->code;
     } else {
-        $currency_with_symbol = $format_money . ' ' . $currency->symbol;
+        $currency_with_symbol = $format_money.' '.$currency->symbol;
     }
 
     return $currency_with_symbol;
@@ -245,7 +246,7 @@ function format_money_pdf2($money, $currency = null)
 {
     $money = $money / 100;
 
-    if (!$currency) {
+    if (! $currency) {
         $currency = Currency::findOrFail(CompanySetting::getSetting('currency', 1));
     }
 
@@ -258,9 +259,9 @@ function format_money_pdf2($money, $currency = null)
 
     $currency_with_symbol = '';
     if ($currency->swap_currency_symbol) {
-        $currency_with_symbol = $format_money . '<span style="font-family: DejaVu Sans;">' . $currency->symbol . '</span>';
+        $currency_with_symbol = $format_money.'<span style="font-family: DejaVu Sans;">'.$currency->symbol.'</span>';
     } else {
-        $currency_with_symbol = '<span style="font-family: DejaVu Sans;">' . $currency->symbol . '</span>' . $format_money;
+        $currency_with_symbol = '<span style="font-family: DejaVu Sans;">'.$currency->symbol.'</span>'.$format_money;
     }
 
     return $currency_with_symbol;
@@ -278,21 +279,21 @@ function slug_text($text)
 function clean_slug($model, $title, $id = 0)
 {
     // Normalize the title
-    $slug = Str::upper('CUSTOM_' . $model . '_' . Str::slug($title, '_'));
+    $slug = Str::upper('CUSTOM_'.$model.'_'.Str::slug($title, '_'));
 
     // Get any that could possibly be related.
     // This cuts the queries down by doing it once.
     $allSlugs = getRelatedSlugs($model, $slug, $id);
 
     // If we haven't used it before then we are all good.
-    if (!$allSlugs->contains('slug', $slug)) {
+    if (! $allSlugs->contains('slug', $slug)) {
         return $slug;
     }
 
     // Just append numbers like a savage until we find not used.
     for ($i = 1; $i <= 10; $i++) {
-        $newSlug = $slug . '_' . $i;
-        if (!$allSlugs->contains('slug', $newSlug)) {
+        $newSlug = $slug.'_'.$i;
+        if (! $allSlugs->contains('slug', $newSlug)) {
             return $newSlug;
         }
     }
@@ -302,13 +303,13 @@ function clean_slug($model, $title, $id = 0)
 
 function getRelatedSlugs($type, $slug, $id = 0)
 {
-    return CustomField::select('slug')->where('slug', 'like', $slug . '%')
+    return CustomField::select('slug')->where('slug', 'like', $slug.'%')
         ->where('model_type', $type)
         ->where('id', '<>', $id)
         ->get();
 }
 
-if (!function_exists('md_to_html')) {
+if (! function_exists('md_to_html')) {
     /**
      * Convert Markdown to HTML.
      */
@@ -319,7 +320,6 @@ if (!function_exists('md_to_html')) {
     }
 }
 
-
 /**
  * @param $money
  * @return formated_money
@@ -328,7 +328,7 @@ function format_money_pdf1($money, $currency = null)
 {
     $money = $money / 100;
 
-    if (!$currency) {
+    if (! $currency) {
         $currency = Currency::findOrFail(CompanySetting::getSetting('currency', 1));
     }
 
@@ -341,9 +341,9 @@ function format_money_pdf1($money, $currency = null)
 
     $currency_with_symbol = '';
     if ($currency->swap_currency_symbol) {
-        $currency_with_symbol = $format_money . '<span style="font-family: DejaVu Sans;">' . $currency->code . '</span>';
+        $currency_with_symbol = $format_money.'<span style="font-family: DejaVu Sans;">'.$currency->code.'</span>';
     } else {
-        $currency_with_symbol = '<span style="font-family: DejaVu Sans;">' . $currency->symbol . '</span>' . $format_money;
+        $currency_with_symbol = '<span style="font-family: DejaVu Sans;">'.$currency->symbol.'</span>'.$format_money;
     }
 
     return $currency_with_symbol;
@@ -353,7 +353,7 @@ function format_money($money, $currency = null)
 {
     $money = $money / 100;
 
-    if (!$currency) {
+    if (! $currency) {
         //$currency = Currency::findOrFail(CompanySetting::getSetting('currency', 1));
         $currency = Currency::findOrFail(CompanySetting::getSetting('currency', 1));
     }
@@ -367,9 +367,9 @@ function format_money($money, $currency = null)
 
     $currency_with_symbol = '';
     if ($currency->swap_currency_symbol) {
-        $currency_with_symbol = $format_money . ' ' . $currency->code;
+        $currency_with_symbol = $format_money.' '.$currency->code;
     } else {
-        $currency_with_symbol = $currency->symbol . ' ' . $format_money;
+        $currency_with_symbol = $currency->symbol.' '.$format_money;
     }
 
     return $currency_with_symbol;
@@ -383,13 +383,12 @@ function format_money_vnd($money, $currency = null, $type = 1)
     //$money = $money / 100;
     $money = $money;
 
-    if (!$currency) {
+    if (! $currency) {
         //$currency = Currency::findOrFail(CompanySetting::getSetting('currency', 1));
         //$currency = Currency::findOrFail(17);
     }
 
     if ($money == '' || empty($money)) {
-
         return $money;
     }
 
@@ -407,14 +406,13 @@ function format_money_vnd($money, $currency = null, $type = 1)
     //$isSwrapSymbol = $currency->swap_currency_symbol;
     $isSwrapSymbol = 0;
     if ($isSwrapSymbol) {
-        $currency_with_symbol = $format_money . ' ' . $currencyCode;
+        $currency_with_symbol = $format_money.' '.$currencyCode;
     } else {
-        $currency_with_symbol = $format_money . ' ' . $currencySymbol;
+        $currency_with_symbol = $format_money.' '.$currencySymbol;
     }
 
     return $currency_with_symbol;
 }
-
 
 /*
  * Get short name
@@ -425,7 +423,7 @@ function get_short_showname($name)
     if (empty($name)) {
         $name = 'Xin Chào';
     }
-    $listWord = explode(" ", $name);
+    $listWord = explode(' ', $name);
     $count = 0;
     $charText = '';
     $listWord = array_slice($listWord, -2);
@@ -465,26 +463,22 @@ function convertDataImage($image)
  *
  * @param $dataBase64
  * @param $oldFile
- * @param string $folder
+ * @param  string  $folder
  */
 function uploadImageBase64($dataBase64, $folder = 'blog')
 {
-
-    $filename = $folder . '/' . date('Ymd') . '/' . uniqid() . '_' . rand(0, 999) . '.jpg';
+    $filename = $folder.'/'.date('Ymd').'/'.uniqid().'_'.rand(0, 999).'.jpg';
     //$upload = Storage::disk('s3')->put($filename, convertDataImage($dataBase64), 'public');
     $file = ($dataBase64);
     //q_auto:best
     $uploadedFileUrl = Cloudinary::upload($file)->getSecurePath();
 
-
     if ($uploadedFileUrl) {
-
         return $uploadedFileUrl;
     }
 
     return false;
 }
-
 
 /*
     * Send Firebase
@@ -510,7 +504,7 @@ function sendFirebaseData($path, $data)
  *
  * @return response()
  */
-if (!function_exists('convertDmyToYmd')) {
+if (! function_exists('convertDmyToYmd')) {
     function convertDmyToYmd($date)
     {
         return Carbon::createFromFormat('d-m-Y', $date)->format('Y-m-d');
@@ -522,13 +516,12 @@ if (!function_exists('convertDmyToYmd')) {
  *
  * @return response()
  */
-if (!function_exists('convertYdmToMdy')) {
+if (! function_exists('convertYdmToMdy')) {
     function convertYdmToMdy($date)
     {
         return Carbon::createFromFormat('Y-d-m', $date)->format('m-d-Y');
     }
 }
-
 
 /*
  * This file is part of Cachet.
@@ -539,18 +532,17 @@ if (!function_exists('convertYdmToMdy')) {
  * file that was distributed with this source code.
  */
 
-use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\HtmlString;
+use Illuminate\Support\Str;
+use Kreait\Firebase\Factory;
 use Telegram\Bot\Laravel\Facades\Telegram;
 
-if (!function_exists('setting')) {
+if (! function_exists('setting')) {
     /**
      * Get a setting, or the default value.
      *
-     * @param string $name
-     * @param mixed $default
-     *
+     * @param  string  $name
+     * @param  mixed  $default
      * @return mixed
      */
     function setting($name, $default = null)
@@ -565,14 +557,13 @@ if (!function_exists('setting')) {
     }
 }
 
-if (!function_exists('set_active')) {
+if (! function_exists('set_active')) {
     /**
      * Set active class if request is in path.
      *
-     * @param string $path
-     * @param array $classes
-     * @param string $active
-     *
+     * @param  string  $path
+     * @param  array  $classes
+     * @param  string  $active
      * @return string
      */
     function set_active($path, array $classes = [], $active = 'active')
@@ -587,13 +578,12 @@ if (!function_exists('set_active')) {
     }
 }
 
-if (!function_exists('color_darken')) {
+if (! function_exists('color_darken')) {
     /**
      * Darken a color.
      *
-     * @param string $hex
-     * @param int $percent
-     *
+     * @param  string  $hex
+     * @param  int  $percent
      * @return string
      */
     function color_darken($hex, $percent)
@@ -615,14 +605,13 @@ if (!function_exists('color_darken')) {
     }
 }
 
-if (!function_exists('color_contrast')) {
+if (! function_exists('color_contrast')) {
     /**
      * Calculates colour contrast.
      *
      * https://24ways.org/2010/calculating-color-contrast/
      *
-     * @param string $hexcolor
-     *
+     * @param  string  $hexcolor
      * @return string
      */
     function color_contrast($hexcolor)
@@ -636,14 +625,13 @@ if (!function_exists('color_contrast')) {
     }
 }
 
-if (!function_exists('cachet_route_generator')) {
+if (! function_exists('cachet_route_generator')) {
     /**
      * Generate the route string.
      *
-     * @param string $name
-     * @param string $method
-     * @param string $domain
-     *
+     * @param  string  $name
+     * @param  string  $method
+     * @param  string  $domain
      * @return string
      */
     function cachet_route_generator($name, $method = 'get', $domain = 'core')
@@ -652,15 +640,14 @@ if (!function_exists('cachet_route_generator')) {
     }
 }
 
-if (!function_exists('cachet_route')) {
+if (! function_exists('cachet_route')) {
     /**
      * Generate a URL to a named route, which resides in a given domain.
      *
-     * @param string $name
-     * @param array $parameters
-     * @param string $method
-     * @param string $domain
-     *
+     * @param  string  $name
+     * @param  array  $parameters
+     * @param  string  $method
+     * @param  string  $domain
      * @return string
      */
     function cachet_route($name, $parameters = [], $method = 'get', $domain = 'core')
@@ -673,17 +660,16 @@ if (!function_exists('cachet_route')) {
     }
 }
 
-if (!function_exists('cachet_redirect')) {
+if (! function_exists('cachet_redirect')) {
     /**
      * Create a new redirect response to a named route, which resides in a given domain.
      *
-     * @param string $name
-     * @param array $parameters
-     * @param int $status
-     * @param array $headers
-     * @param string $method
-     * @param string $domain
-     *
+     * @param  string  $name
+     * @param  array  $parameters
+     * @param  int  $status
+     * @param  array  $headers
+     * @param  string  $method
+     * @param  string  $domain
      * @return \Illuminate\Http\RedirectResponse
      */
     function cachet_redirect($name, $parameters = [], $status = 302, $headers = [], $method = 'get', $domain = 'core')
@@ -694,12 +680,11 @@ if (!function_exists('cachet_redirect')) {
     }
 }
 
-if (!function_exists('execute')) {
+if (! function_exists('execute')) {
     /**
      * Send the given command to the dispatcher for execution.
      *
-     * @param object $command
-     *
+     * @param  object  $command
      * @return void
      */
     function execute($command)
@@ -714,7 +699,7 @@ if (!function_exists('execute')) {
  *
  * ------------------------------------------------------------------------
  */
-if (!function_exists('label_case')) {
+if (! function_exists('label_case')) {
 
     /**
      * Prepare the Column Name for Lables.
@@ -740,7 +725,7 @@ if (!function_exists('label_case')) {
  *
  * ------------------------------------------------------------------------
  */
-if (!function_exists('logUserAccess')) {
+if (! function_exists('logUserAccess')) {
 
     /**
      * Format a string to Slug.
@@ -750,14 +735,14 @@ if (!function_exists('logUserAccess')) {
         $auth_text = '';
 
         if (\Auth::check()) {
-            $auth_text = 'User:' . \Auth::user()->name . ' (ID:' . \Auth::user()->id . ')';
+            $auth_text = 'User:'.\Auth::user()->name.' (ID:'.\Auth::user()->id.')';
         }
 
-        \Log::debug(label_case($text) . " | $auth_text");
+        \Log::debug(label_case($text)." | $auth_text");
     }
 }
 
-if (!function_exists('sendTelegramMessage')) {
+if (! function_exists('sendTelegramMessage')) {
 
     /**
      * Send telemetry message to Member.
@@ -771,12 +756,11 @@ if (!function_exists('sendTelegramMessage')) {
         Telegram::sendMessage([
             'chat_id' => '706659637',
             'parse_mode' => 'HTML',
-            'text' => $text
+            'text' => $text,
         ]);
 
         \Log::debug("Send telegram message: $text");
     }
-
 }
 
 /*
@@ -784,7 +768,7 @@ if (!function_exists('sendTelegramMessage')) {
  *
  * @var [type]
  */
-if (!function_exists('humanFilesize')) {
+if (! function_exists('humanFilesize')) {
     function humanFilesize($size, $precision = 2)
     {
         $units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
@@ -796,6 +780,6 @@ if (!function_exists('humanFilesize')) {
             $i++;
         }
 
-        return round($size, $precision) . $units[$i];
+        return round($size, $precision).$units[$i];
     }
 }

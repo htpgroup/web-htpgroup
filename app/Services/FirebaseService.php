@@ -4,12 +4,10 @@ namespace App\Services;
 
 use App\Interfaces\FirebaseServiceInterface;
 use App\Models\Posts;
-use App\Interfaces\SocialMediaServiceInterface;
 use Kreait\Firebase\Factory;
 
 class FirebaseService implements FirebaseServiceInterface
 {
-
     public $database;
 
     public function __construct()
@@ -17,7 +15,6 @@ class FirebaseService implements FirebaseServiceInterface
         $dbUri = config('firebase.projects.app.database.url');
         $factory = (new Factory())->withDatabaseUri($dbUri);
         $this->database = $factory->createDatabase();
-
     }
 
     public function set(Posts $post)

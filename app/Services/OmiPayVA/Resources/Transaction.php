@@ -4,57 +4,97 @@ namespace App\Services\OmiPayVA\Resources;
 
 use App\Dictionaries\Domain\Merchant\PaymentType;
 use App\Dictionaries\Domain\Merchant\StatusType;
-use App\Dictionaries\Payment\TransactionStatus;
 use Carbon\Carbon;
 
 class Transaction extends ApiResource
 {
     public int $id;
+
     public int $transLocalId;
+
     public int $transId;
+
     public int $condition;
+
     public int $status;
+
     public float $amount;
+
     public float $method;
+
     public string $partner;
+
     public string $merchantId;
+
     public string $accountVaType;
 
     public string $url;
-    public string $accountVa;
-    public string $receiver_fee;
-    public string $timeUpdated;
-    public string $merchantEmail;
-    public string $timeCreated;
-    public string $accountVaName;
-    public string $payerEmail;
-    public string $receiverEmail;
-    public string $sender_fullname;
-    public string $timePerformed;
-    public string $orderDescription;
-    public string $cashinId;
-    public string $feeType;
-    public string $type;
-    public string $payerMobile;
-    public string $senderEmail;
-    public string $senderFee;
-    public string $bankCode;
-    public string $timeAuthorized;
-    public string $receiver;
-    public string $sender_email;
-    public string $receiverFeeId;
-    public string $freezingStatus;
-    public string $timeEscrow;
-    public string $orderCode;
-    public string $paymentMethodId;
-    public string $receiverFee;
-    public string $complaintStatus;
-    public string $cashoutStatus;
-    public string $sender;
-    public string $timeFinished;
-    public string $orderId;
-    public string $bankAccount;
 
+    public string $accountVa;
+
+    public string $receiver_fee;
+
+    public string $timeUpdated;
+
+    public string $merchantEmail;
+
+    public string $timeCreated;
+
+    public string $accountVaName;
+
+    public string $payerEmail;
+
+    public string $receiverEmail;
+
+    public string $sender_fullname;
+
+    public string $timePerformed;
+
+    public string $orderDescription;
+
+    public string $cashinId;
+
+    public string $feeType;
+
+    public string $type;
+
+    public string $payerMobile;
+
+    public string $senderEmail;
+
+    public string $senderFee;
+
+    public string $bankCode;
+
+    public string $timeAuthorized;
+
+    public string $receiver;
+
+    public string $sender_email;
+
+    public string $receiverFeeId;
+
+    public string $freezingStatus;
+
+    public string $timeEscrow;
+
+    public string $orderCode;
+
+    public string $paymentMethodId;
+
+    public string $receiverFee;
+
+    public string $complaintStatus;
+
+    public string $cashoutStatus;
+
+    public string $sender;
+
+    public string $timeFinished;
+
+    public string $orderId;
+
+    public string $bankAccount;
 
     /**
      * The checks of a site.
@@ -111,13 +151,13 @@ class Transaction extends ApiResource
     public function getBankAccount()
     {
         $dataBank = [
-            "bank_code" => "",
-            "account_number" => "",
-            "payment_method_code" => "",
-            "bank_id" => '',
-            "account_name" => "",
-            "bank_name" => " ",
-            "method_code" => ""
+            'bank_code' => '',
+            'account_number' => '',
+            'payment_method_code' => '',
+            'bank_id' => '',
+            'account_name' => '',
+            'bank_name' => ' ',
+            'method_code' => '',
         ];
         /*if ($this->bankAccount) {
             $dataBank = json_decode($this->bankAccount, true);
@@ -133,12 +173,14 @@ class Transaction extends ApiResource
     public function getPaymenTypeText()
     {
         $allPaymentType = PaymentType::allItem();
+
         return $allPaymentType[$this->type];
     }
 
     public function getPaymenStatusText()
     {
         $allPaymentType = StatusType::allItem();
+
         return $allPaymentType[$this->status];
     }
 
@@ -165,10 +207,9 @@ class Transaction extends ApiResource
     /**
      * Get the uptime percentages for a site.
      *
-     * @param string $startedAt Must be in format Ymdhis
-     * @param string $endedAt Must be in format Ymdhis
-     * @param string $split Use hour, day or month
-     *
+     * @param  string  $startedAt Must be in format Ymdhis
+     * @param  string  $endedAt Must be in format Ymdhis
+     * @param  string  $split Use hour, day or month
      * @return array
      */
     public function uptime(string $startedAt, string $endedAt, string $split): array
@@ -179,9 +220,8 @@ class Transaction extends ApiResource
     /**
      * Get the downtime periods for a site.
      *
-     * @param string $startedAt Must be in format Ymdhis
-     * @param string $endedAt Must be in format Ymdhis
-     *
+     * @param  string  $startedAt Must be in format Ymdhis
+     * @param  string  $endedAt Must be in format Ymdhis
      * @return array
      */
     public function downtime(string $startedAt, string $endedAt): array
@@ -209,8 +249,7 @@ class Transaction extends ApiResource
         string $end,
         string $timeframe = '1m',
         string $sort = '-created_at'
-    ): array
-    {
+    ): array {
         return $this->omiPayVA->performanceRecords($this->id, $start, $end, $timeframe, $sort);
     }
 }

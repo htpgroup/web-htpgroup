@@ -3,11 +3,10 @@
 declare(strict_types=1);
 
 namespace App\Traits\Bookings;
-;
 
+use App\Models\Bookings\BookableBooking;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Bookings\BookableBooking;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait Bookable
@@ -17,8 +16,7 @@ trait Bookable
     /**
      * Register a saved model event with the dispatcher.
      *
-     * @param \Closure|string $callback
-     *
+     * @param  \Closure|string  $callback
      * @return void
      */
     abstract public static function saved($callback);
@@ -26,8 +24,7 @@ trait Bookable
     /**
      * Register a deleted model event with the dispatcher.
      *
-     * @param \Closure|string $callback
-     *
+     * @param  \Closure|string  $callback
      * @return void
      */
     abstract public static function deleted($callback);
@@ -35,12 +32,11 @@ trait Bookable
     /**
      * Define a polymorphic one-to-many relationship.
      *
-     * @param string $related
-     * @param string $name
-     * @param string $type
-     * @param string $id
-     * @param string $localKey
-     *
+     * @param  string  $related
+     * @param  string  $name
+     * @param  string  $type
+     * @param  string  $id
+     * @param  string  $localKey
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     abstract public function morphMany($related, $name, $type = null, $id = null, $localKey = null);
@@ -81,9 +77,8 @@ trait Bookable
     /**
      * Attach the given bookings to the model.
      *
-     * @param \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array $ids
-     * @param mixed $bookings
-     *
+     * @param  \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array  $ids
+     * @param  mixed  $bookings
      * @return void
      */
     public function setBookingsAttribute($bookings): void
@@ -96,9 +91,8 @@ trait Bookable
     /**
      * Attach the given rates to the model.
      *
-     * @param \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array $ids
-     * @param mixed $rates
-     *
+     * @param  \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array  $ids
+     * @param  mixed  $rates
      * @return void
      */
     public function setRatesAttribute($rates): void
@@ -111,9 +105,8 @@ trait Bookable
     /**
      * Attach the given availabilities to the model.
      *
-     * @param \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array $ids
-     * @param mixed $availabilities
-     *
+     * @param  \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array  $ids
+     * @param  mixed  $availabilities
      * @return void
      */
     public function setAvailabilitiesAttribute($availabilities): void
@@ -136,8 +129,7 @@ trait Bookable
     /**
      * Get bookings by the given customer.
      *
-     * @param \Illuminate\Database\Eloquent\Model $customer
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $customer
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function bookingsBy(Model $customer): MorphMany
@@ -168,10 +160,9 @@ trait Bookable
     /**
      * Book the model for the given customer at the given dates with the given price.
      *
-     * @param \Illuminate\Database\Eloquent\Model $customer
-     * @param string $startsAt
-     * @param string $endsAt
-     *
+     * @param  \Illuminate\Database\Eloquent\Model  $customer
+     * @param  string  $startsAt
+     * @param  string  $endsAt
      * @return \App\Models\Bookings\BookableBooking
      */
     public function newBooking(Model $customer, string $startsAt, string $endsAt, float $price = 1000, int $quantity = 1): BookableBooking

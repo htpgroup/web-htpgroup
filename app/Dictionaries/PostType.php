@@ -8,15 +8,20 @@
 
 namespace App\Dictionaries;
 
-
 class PostType
 {
     const NOTE = 1;
+
     const PAGE = 2;
+
     const BLOG = 3;
+
     const RECRUITMENT = 4;
+
     const COURSE = 5;
+
     const ESTATE = 6;
+
     const ARTICLE = 6;
 
     public static function all()

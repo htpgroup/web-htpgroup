@@ -2,8 +2,8 @@
 
 namespace App\Space\TelegramLoginAuth\Validation\Rules;
 
-use App\Space\TelegramLoginAuth\Contracts\Validation\Rules\Rule as RuleContract;
 use App\Space\TelegramLoginAuth\Contracts\Telegram\Entity as EntityContract;
+use App\Space\TelegramLoginAuth\Contracts\Validation\Rules\Rule as RuleContract;
 use App\Space\TelegramLoginAuth\Contracts\Validation\Rules\SignatureException;
 use Illuminate\Support\Collection;
 
@@ -54,6 +54,6 @@ class SignatureRule implements RuleContract
 
     private function isNotHashMatched(string $knownHash, string $userHash): bool
     {
-        return !hash_equals($knownHash, $userHash);
+        return ! hash_equals($knownHash, $userHash);
     }
 }

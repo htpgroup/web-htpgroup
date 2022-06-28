@@ -17,7 +17,9 @@ namespace App\Dictionaries\Payment;
 class TransactionType
 {
     const TRANFER = 1; //Chuyển tiền
+
     const WITHDRAW = 2; //Rút tiền
+
     const DEPOSIT = 3; //Nạp tiền
 
     public static function all()

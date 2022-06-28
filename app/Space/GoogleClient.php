@@ -6,7 +6,6 @@ use Google_Client as BaseGoogleClient;
 
 /**
  * Class GoogleClient
- * @package App\Components
  */
 class GoogleClient
 {
@@ -17,7 +16,8 @@ class GoogleClient
 
     /**
      * GoogleClient constructor.
-     * @param BaseGoogleClient $client
+     *
+     * @param  BaseGoogleClient  $client
      */
     public function __construct(BaseGoogleClient $client)
     {
@@ -26,22 +26,23 @@ class GoogleClient
 
     /**
      * @return BaseGoogleClient
+     *
      * @throws \Exception
      */
     public function getClient()
     {
         //kiểm tra credentials và token có tồn tại hay không
-        if (!file_exists(config('google-api.client_path'))) {
+        if (! file_exists(config('google-api.client_path'))) {
             throw new \Exception(
                 'You have not create client for application.'
-                . ' Please create on "console.google.com" and save to your storage "storage/google/credentials.json"!'
+                .' Please create on "console.google.com" and save to your storage "storage/google/credentials.json"!'
             );
         }
         $this->client->setAuthConfig(config('google-api.client_path'));
         $this->client->setAccessType('offline');
 
         $credentialsPath = config('google-api.token_path');
-        if (!file_exists($credentialsPath)) {
+        if (! file_exists($credentialsPath)) {
             throw new \Exception('Do not receive access token. Please run command "php artisan google:get-token" to get token!');
         }
 

@@ -2,9 +2,7 @@
 
 namespace App\Services\OmiPayVA\Resources;
 
-use App\Dictionaries\Domain\Merchant\AccountStatus;
 use App\Dictionaries\Domain\Merchant\AccountType;
-use App\Dictionaries\Domain\Merchant\ActiveType;
 use App\Dictionaries\Domain\Merchant\ConditionType;
 use App\Dictionaries\Domain\Merchant\MethodType;
 use Carbon\Carbon;
@@ -12,7 +10,9 @@ use Carbon\Carbon;
 class Account extends ApiResource
 {
     public string $id;
+
     public string $condition;
+
     public string $status;
     //3 khoá
     //1 đã tạo hoá đơn
@@ -20,22 +20,31 @@ class Account extends ApiResource
     //3 đã nhận tiền
 
     public string $amount;
+
     public string $method;
+
     public string $merchantId;
+
     public string $accountVaType;
+
     public string $accountVaId;
+
     public string $va_account;
 
     public string $errorCode;
+
     public string $url;
+
     public string $message;
 
     public string $accountVa;
 
-
     public string $timeUpdated;
+
     public string $merchantEmail;
+
     public string $timeCreated;
+
     public string $accountVaName;
 
     /**
@@ -64,21 +73,21 @@ class Account extends ApiResource
     public function sampleData()
     {
         $sample = [
-            "accountVa" => "",
-            "va_account" => "",
-            "amount" => "",
-            "method" => '',
-            "merchantEmail" => "",
-            "accountVaType" => "",
-            "condition" => "",
-            "merchantId" => "12",
-            "requestId" => "5260BC063BD843D208D76A63F4642A29",
-            "timeUpdated" => time(),
-            "accountVaName" => "",
-            "timeCreated" => time(),
-            "error_code" => 0,
-            "id" => 1,
-            "status" => "0"
+            'accountVa' => '',
+            'va_account' => '',
+            'amount' => '',
+            'method' => '',
+            'merchantEmail' => '',
+            'accountVaType' => '',
+            'condition' => '',
+            'merchantId' => '12',
+            'requestId' => '5260BC063BD843D208D76A63F4642A29',
+            'timeUpdated' => time(),
+            'accountVaName' => '',
+            'timeCreated' => time(),
+            'error_code' => 0,
+            'id' => 1,
+            'status' => '0',
         ];
 
         return $sample;
@@ -147,7 +156,7 @@ class Account extends ApiResource
             return 'Hoạt động';
         }
 
-        return "Khoá";
+        return 'Khoá';
     }
 
     /*

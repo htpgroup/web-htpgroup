@@ -2,12 +2,12 @@
 
 namespace App\Services\OmiPayVA;
 
-use App\Services\OmiPayVA\Exceptions\TimeOutException;
-use Barryvdh\Debugbar\Facades\Debugbar;
-use Exception;
 use App\Services\OmiPayVA\Exceptions\FailedActionException;
 use App\Services\OmiPayVA\Exceptions\NotFoundException;
+use App\Services\OmiPayVA\Exceptions\TimeOutException;
 use App\Services\OmiPayVA\Exceptions\ValidationException;
+use Barryvdh\Debugbar\Facades\Debugbar;
+use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -38,8 +38,8 @@ trait MakesHttpRequests
         //dd($payload);
         //dd($uri);
         //Update uri
-        $uri = 'OmiPayAPI?fnc=' . $uri;
-        Debugbar::addMessage('API Call: Method: ' . $verb . ' ' . $uri, 'omipay_api');
+        $uri = 'OmiPayAPI?fnc='.$uri;
+        Debugbar::addMessage('API Call: Method: '.$verb.' '.$uri, 'omipay_api');
         try {
             $response = $this->client->request(
                 $verb,
@@ -55,19 +55,18 @@ trait MakesHttpRequests
         //dd( $response->getEffectiveUrl());
         // dd(  $this->client);
 
-        if (!$this->isSuccessful($response)) {
+        if (! $this->isSuccessful($response)) {
             return $this->handleRequestError($response);
         }
 
-        $responseBody = (string)$response->getBody();
+        $responseBody = (string) $response->getBody();
         $dataResponse = json_decode($responseBody, true);
 
         //dd($dataResponse);
         //215301 Merchant Empty
 
         $arrCodeError = [0, 1, 3, 104, 206300, 206301, 215301, 214301];
-        if (isset($dataResponse['error_code']) && !in_array($dataResponse['error_code'], $arrCodeError)) {
-
+        if (isset($dataResponse['error_code']) && ! in_array($dataResponse['error_code'], $arrCodeError)) {
             return $this->handleRequestError($response);
         }
 
@@ -83,17 +82,17 @@ trait MakesHttpRequests
 
     public function isSuccessful($response): bool
     {
-        if (!$response) {
+        if (! $response) {
             return false;
         }
 
-        return (int)substr($response->getStatusCode(), 0, 1) === 2;
+        return (int) substr($response->getStatusCode(), 0, 1) === 2;
     }
 
     protected function handleRequestError(ResponseInterface $response): void
     {
         if ($response->getStatusCode() === 422) {
-            throw new ValidationException(json_decode((string)$response->getBody(), true));
+            throw new ValidationException(json_decode((string) $response->getBody(), true));
         }
 
         if ($response->getStatusCode() === 404) {
@@ -101,11 +100,11 @@ trait MakesHttpRequests
         }
 
         if ($response->getStatusCode() === 400) {
-            throw new FailedActionException((string)$response->getBody());
+            throw new FailedActionException((string) $response->getBody());
         }
 
         //dd($response);
 
-        throw new Exception((string)$response->getBody());
+        throw new Exception((string) $response->getBody());
     }
 }

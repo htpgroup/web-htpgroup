@@ -2,11 +2,11 @@
 
 namespace App\Traits;
 
-use App\Models\Crm\User;
-use Carbon\Carbon;
 use App\Models\Crm\Address;
 use App\Models\Crm\CompanySetting;
 use App\Models\Crm\FileDisk;
+use App\Models\Crm\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 
 trait GeneratesPdfTrait
@@ -17,7 +17,7 @@ trait GeneratesPdfTrait
         if ($pdf && file_exists($pdf['path'])) {
             return response()->make(file_get_contents($pdf['path']), 200, [
                 'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="' . $pdf['file_name'] . '.pdf"',
+                'Content-Disposition' => 'inline; filename="'.$pdf['file_name'].'.pdf"',
             ]);
         }
 
@@ -29,7 +29,7 @@ trait GeneratesPdfTrait
 
         return response()->make($pdf->stream(), 200, [
             'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $this[$collection_name . '_number'] . '.pdf"',
+            'Content-Disposition' => 'inline; filename="'.$this[$collection_name.'_number'].'.pdf"',
         ]);
     }
 
@@ -41,7 +41,7 @@ trait GeneratesPdfTrait
             if ($media) {
                 $file_disk = FileDisk::find($media->custom_properties['file_disk_id']);
 
-                if (!$file_disk) {
+                if (! $file_disk) {
                     return false;
                 }
 
@@ -81,7 +81,7 @@ trait GeneratesPdfTrait
 
         $pdf = $this->getPDFData();
 
-        \Storage::disk('local')->put('temp/' . $collection_name . '/' . $this->id . '/temp.pdf', $pdf->output());
+        \Storage::disk('local')->put('temp/'.$collection_name.'/'.$this->id.'/temp.pdf', $pdf->output());
 
         if ($deleteExistingFile) {
             $this->clearMediaCollection($this->id);
@@ -93,15 +93,15 @@ trait GeneratesPdfTrait
             $file_disk->setConfig();
         }
 
-        $media = \Storage::disk('local')->path('temp/' . $collection_name . '/' . $this->id . '/temp.pdf');
+        $media = \Storage::disk('local')->path('temp/'.$collection_name.'/'.$this->id.'/temp.pdf');
 
         try {
             $this->addMedia($media)
                 ->withCustomProperties(['file_disk_id' => $file_disk->id])
-                ->usingFileName($file_name . '.pdf')
+                ->usingFileName($file_name.'.pdf')
                 ->toMediaCollection($collection_name, config('filesystems.default'));
 
-            \Storage::disk('local')->deleteDirectory('temp/' . $collection_name . '/' . $this->id);
+            \Storage::disk('local')->deleteDirectory('temp/'.$collection_name.'/'.$this->id);
 
             return true;
         } catch (\Exception $e) {
@@ -125,7 +125,7 @@ trait GeneratesPdfTrait
         $shipName = $shippingAddress->name ? $shippingAddress->name : $customer->name;
         $shipAddress = $shippingAddress->address_street_1 ? $shippingAddress->address_street_1 : $customer->address;
         $shipPhone = $shippingAddress->phone ? $shippingAddress->phone : $customer->phone;
-        $shipPhone = str_replace("+", "", $shipPhone);
+        $shipPhone = str_replace('+', '', $shipPhone);
         $shipEmail = $shippingAddress->email ? $shippingAddress->email : $customer->email;
 
         //dd($this->company->addressCompany);
@@ -173,15 +173,14 @@ trait GeneratesPdfTrait
         $customerCustomFields = $this->user->fields;
 
         foreach ($customFields as $customField) {
-            $fields['{' . $customField->customField->slug . '}'] = $customField->defaultAnswer;
+            $fields['{'.$customField->customField->slug.'}'] = $customField->defaultAnswer;
         }
 
         if ($customerCustomFields) {
             foreach ($customerCustomFields as $customField) {
-                $fields['{' . $customField->customField->slug . '}'] = $customField->defaultAnswer;
+                $fields['{'.$customField->customField->slug.'}'] = $customField->defaultAnswer;
             }
         }
-
 
         return $fields;
     }
@@ -196,9 +195,9 @@ trait GeneratesPdfTrait
 
         $str = preg_replace("/<[^\/>]*>([\s]?)*<\/[^>]*>/", ' ', $str);
 
-        $str = str_replace("<p>", "", $str);
+        $str = str_replace('<p>', '', $str);
 
-        $str = str_replace("</p>", "</br>", $str);
+        $str = str_replace('</p>', '</br>', $str);
 
         return $str;
     }

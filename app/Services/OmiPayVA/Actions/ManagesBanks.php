@@ -2,7 +2,6 @@
 
 namespace App\Services\OmiPayVA\Actions;
 
-use App\Services\OmiPayVA\Resources\Site;
 use App\Services\OmiPayVA\Resources\Bank;
 
 /*
@@ -29,21 +28,21 @@ trait ManagesBanks
     public function banks(array $data = []): array
     {
         return $this->transformCollection(
-            $this->get('getVaAccountList&data=' . json_encode($data) . '&language=vi')['data'],
+            $this->get('getVaAccountList&data='.json_encode($data).'&language=vi')['data'],
             Bank::class,
         );
     }
 
     public function bank(int $bankID, array $data = []): Bank
     {
-        $siteAttributes = $this->get("getVaAccountByID&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('getVaAccountByID&data='.json_encode($data).'&language=vi');
 
         return new Bank($siteAttributes, $this);
     }
 
     public function historyBank(int $bankID, array $data = []): Account
     {
-        $siteAttributes = $this->get("getVaAccountHistoryList&data=" . json_encode($data) . '&language=vi');
+        $siteAttributes = $this->get('getVaAccountHistoryList&data='.json_encode($data).'&language=vi');
 
         return new Bank($siteAttributes, $this);
     }
@@ -58,14 +57,14 @@ trait ManagesBanks
     public function createBank(array $data): Bank
     {
         //dd('createVaAccountList&data=' . json_encode($data). '&language=vi');
-        $siteAttributes = $this->post('createVaAccountList&data=' . json_encode($data), $data);
+        $siteAttributes = $this->post('createVaAccountList&data='.json_encode($data), $data);
 
         return new Bank($siteAttributes, $this);
     }
 
     public function updateBank(array $data): Bank
     {
-        $siteAttributes = $this->post('updateVaAccount&data=' . json_encode($data), $data);
+        $siteAttributes = $this->post('updateVaAccount&data='.json_encode($data), $data);
 
         return new Bank($siteAttributes, $this);
     }

@@ -4,15 +4,14 @@ namespace App\Space\Crater;
 
 use App\Dictionaries\AppDomain;
 use App\Models\Crm\CompanySetting;
-use Carbon\Carbon;
-use App\Models\User;
 use App\Models\Crm\Invoice;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
 
 class DataInvoice
 {
-
     /*
      * Get active invoice
      * Case User login
@@ -24,7 +23,6 @@ class DataInvoice
         //Todo check user is login
         //Case user is not login
         if ($user) {
-
         }
         if ($user == false) {
             $keyName = 'str1';
@@ -75,7 +73,7 @@ class DataInvoice
         );
 
         $date = Carbon::now();
-        $data['invoice_number'] = $invoice_prefix . "-" . Invoice::getNextInvoiceNumber($invoice_prefix);
+        $data['invoice_number'] = $invoice_prefix.'-'.Invoice::getNextInvoiceNumber($invoice_prefix);
         $data['creator_id'] = $idUser;
         $data['user_id'] = $idUser;
         $data['domain_id'] = $app_domain;
@@ -101,7 +99,6 @@ class DataInvoice
         //$invoiceModel->unique_hash = Hashids::connection(Invoice::class)->encode($invoiceModel->id);
         $invoiceModel->unique_hash = Str::random(60);
         //$invoiceModel->save();
-
 
         return $invoiceModel;
     }

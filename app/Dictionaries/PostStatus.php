@@ -8,12 +8,14 @@
 
 namespace App\Dictionaries;
 
-
 class PostStatus
 {
     const NOT_PUBLISH = 2;
+
     const PUBLISH = 1;
+
     const WAIT_APPROVED = 3;
+
     const DELETED = 4;
 
     public static function all()

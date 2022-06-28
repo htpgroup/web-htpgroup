@@ -16,7 +16,6 @@ class CheckoutErrorCode
 {
     const OM = 0;
 
-
     public static function all()
     {
         return [
@@ -80,6 +79,5 @@ class CheckoutErrorCode
             140 => 'Đơn hàng không hỗ trợ thanh toán trả góp',
 
         ];
-
     }
 }

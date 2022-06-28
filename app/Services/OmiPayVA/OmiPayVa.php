@@ -4,9 +4,6 @@ namespace App\Services\OmiPayVA;
 
 use App\Services\OmiPayVA\Actions\ManagesAccounts;
 use App\Services\OmiPayVA\Actions\ManagesBanks;
-use App\Services\OmiPayVA\Actions\ManagesTransactions;
-use Carbon\Carbon;
-use GuzzleHttp\Client;
 use App\Services\OmiPayVA\Actions\ManagesBrokenLinks;
 use App\Services\OmiPayVA\Actions\ManagesCertificateHealth;
 use App\Services\OmiPayVA\Actions\ManagesChecks;
@@ -19,8 +16,11 @@ use App\Services\OmiPayVA\Actions\ManagesPerformance;
 use App\Services\OmiPayVA\Actions\ManagesSites;
 use App\Services\OmiPayVA\Actions\ManagesStatusPages;
 use App\Services\OmiPayVA\Actions\ManagesStatusPageUpdates;
+use App\Services\OmiPayVA\Actions\ManagesTransactions;
 use App\Services\OmiPayVA\Actions\ManagesUptime;
 use App\Services\OmiPayVA\Actions\ManagesUsers;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 
 /*
  * $apiKey = "iK4YfZe2i1RAe22tKP4xejGKDZP .... ";

@@ -8,10 +8,10 @@
 
 namespace App\Dictionaries\Domain\Merchant;
 
-
 class MethodType
 {
     const HAND_METHOD = 1;
+
     const API_METHOD = 2;
 
     public static function all()

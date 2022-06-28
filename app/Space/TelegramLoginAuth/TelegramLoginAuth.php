@@ -7,9 +7,9 @@ use App\Space\TelegramLoginAuth\Contracts\Validation\ValidatorChain as Validator
 use App\Space\TelegramLoginAuth\Telegram\EntityFromRequestFactory;
 use App\Space\TelegramLoginAuth\Validation\Rules\ResponseNotOutdatedRule;
 use App\Space\TelegramLoginAuth\Validation\Rules\SignatureRule;
+use Exception;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 use Illuminate\Http\Request;
-use Exception;
 
 final class TelegramLoginAuth
 {
@@ -30,7 +30,7 @@ final class TelegramLoginAuth
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return EntityContract|false
      */
     public function validate(Request $request)

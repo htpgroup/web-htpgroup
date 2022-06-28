@@ -2,8 +2,6 @@
 
 namespace App\Services\VietQR;
 
-use Carbon\Carbon;
-use GuzzleHttp\Client;
 use App\Services\VietQR\Actions\ManagesApplicationHealthChecks;
 use App\Services\VietQR\Actions\ManagesBrokenLinks;
 use App\Services\VietQR\Actions\ManagesCertificateHealth;
@@ -19,6 +17,8 @@ use App\Services\VietQR\Actions\ManagesStatusPages;
 use App\Services\VietQR\Actions\ManagesStatusPageUpdates;
 use App\Services\VietQR\Actions\ManagesUptime;
 use App\Services\VietQR\Actions\ManagesUsers;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 
 class OhDear
 {

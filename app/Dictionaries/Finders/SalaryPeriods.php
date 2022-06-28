@@ -8,11 +8,12 @@
 
 namespace App\Dictionaries\Finders;
 
-
 class SalaryPeriods
 {
     const MONTHLY = 1;
+
     const  YEARLY = 2;
+
     const WEEKLY = 3;
 
     public static function all()

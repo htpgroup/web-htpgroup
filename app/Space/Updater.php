@@ -17,9 +17,9 @@ class Updater
     {
         $data = null;
         if (env('APP_ENV') === 'development') {
-            $url = 'downloads/check/latest/' . $installed_version . '?type=update&is_dev=1';
+            $url = 'downloads/check/latest/'.$installed_version.'?type=update&is_dev=1';
         } else {
-            $url = 'downloads/check/latest/' . $installed_version . '?type=update';
+            $url = 'downloads/check/latest/'.$installed_version.'?type=update';
         }
 
         $response = static::getRemote($url, ['timeout' => 100, 'track_redirects' => true]);
@@ -36,7 +36,7 @@ class Updater
             foreach (json_decode($extensions) as $extension) {
                 $extensionData[$extension] = phpversion($extension) ? true : false;
             }
-            $extensionData['php' . '(' . $data->version->minimum_php_version . ')'] = version_compare(phpversion(), $data->version->minimum_php_version, ">=");
+            $extensionData['php'.'('.$data->version->minimum_php_version.')'] = version_compare(phpversion(), $data->version->minimum_php_version, '>=');
             $data->version->extensions = $extensionData;
         }
 
@@ -49,9 +49,9 @@ class Updater
         $path = null;
 
         if (env('APP_ENV') === 'development') {
-            $url = 'downloads/file/' . $new_version . '?type=update&is_dev=1&is_cmd=' . $is_cmd;
+            $url = 'downloads/file/'.$new_version.'?type=update&is_dev=1&is_cmd='.$is_cmd;
         } else {
-            $url = 'downloads/file/' . $new_version . '?type=update&is_cmd=' . $is_cmd;
+            $url = 'downloads/file/'.$new_version.'?type=update&is_cmd='.$is_cmd;
         }
 
         $response = static::getRemote($url, ['timeout' => 100, 'track_redirects' => true]);
@@ -72,18 +72,18 @@ class Updater
         }
 
         // Create temp directory
-        $temp_dir = storage_path('app/temp-' . md5(mt_rand()));
+        $temp_dir = storage_path('app/temp-'.md5(mt_rand()));
 
-        if (!File::isDirectory($temp_dir)) {
+        if (! File::isDirectory($temp_dir)) {
             File::makeDirectory($temp_dir);
         }
 
-        $zip_file_path = $temp_dir . '/upload.zip';
+        $zip_file_path = $temp_dir.'/upload.zip';
 
         // Add content to the Zip file
         $uploaded = is_int(file_put_contents($zip_file_path, $data)) ? true : false;
 
-        if (!$uploaded) {
+        if (! $uploaded) {
             return false;
         }
 
@@ -92,13 +92,13 @@ class Updater
 
     public static function unzip($zip_file_path)
     {
-        if (!file_exists($zip_file_path)) {
+        if (! file_exists($zip_file_path)) {
             throw new \Exception('Zip file not found');
         }
 
-        $temp_extract_dir = storage_path('app/temp2-' . md5(mt_rand()));
+        $temp_extract_dir = storage_path('app/temp2-'.md5(mt_rand()));
 
-        if (!File::isDirectory($temp_extract_dir)) {
+        if (! File::isDirectory($temp_extract_dir)) {
             File::makeDirectory($temp_extract_dir);
         }
         // Unzip the file
@@ -118,7 +118,7 @@ class Updater
 
     public static function copyFiles($temp_extract_dir)
     {
-        if (!File::copyDirectory($temp_extract_dir . '/Crater', base_path())) {
+        if (! File::copyDirectory($temp_extract_dir.'/Crater', base_path())) {
             return false;
         }
 

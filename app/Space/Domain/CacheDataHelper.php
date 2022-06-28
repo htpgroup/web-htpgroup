@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Cache;
 
 class CacheDataHelper
 {
-
     /*
      * Store data
      *

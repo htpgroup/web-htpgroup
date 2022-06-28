@@ -10,10 +10,8 @@ class Template extends ApiResource
 
     public string $image;
 
-
     public function __construct(array $attributes, $ohDear = null)
     {
         parent::__construct($attributes, $ohDear);
-
     }
 }

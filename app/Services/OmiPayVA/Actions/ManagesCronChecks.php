@@ -15,13 +15,12 @@ trait ManagesCronChecks
     }
 
     public function createSimpleCronCheck(
-        int    $siteId,
+        int $siteId,
         string $name,
-        int    $frequencyInMinutes,
-        int    $graceTimeInMinutes,
+        int $frequencyInMinutes,
+        int $graceTimeInMinutes,
                $description
-    ): CronCheck
-    {
+    ): CronCheck {
         $attributes = $this->post("sites/{$siteId}/cron-checks", [
             'name' => $name,
             'type' => 'simple',
@@ -34,14 +33,13 @@ trait ManagesCronChecks
     }
 
     public function createCronCheck(
-        int    $siteId,
+        int $siteId,
         string $name,
         string $cronExpression,
-        int    $graceTimeInMinutes,
+        int $graceTimeInMinutes,
                $description,
         string $serverTimezone
-    ): CronCheck
-    {
+    ): CronCheck {
         $attributes = $this->post("sites/{$siteId}/cron-checks", [
             'name' => $name,
             'type' => 'cron',

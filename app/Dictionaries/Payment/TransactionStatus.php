@@ -19,6 +19,7 @@ namespace App\Dictionaries\Payment;
 class TransactionStatus
 {
     const INCOMPLE = 0;
+
     const COMPLETE = 4;
 
     public static function all()

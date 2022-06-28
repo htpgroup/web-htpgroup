@@ -15,7 +15,9 @@ namespace App\Dictionaries\Cms;
 class PerPageValue
 {
     const TEN = 10;
+
     const TWENTY = 20;
+
     const THIRTY = 30;
 
     public static function all()

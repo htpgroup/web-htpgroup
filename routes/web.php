@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BlogController as HomeHTPBlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,21 +16,11 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-
+use App\Http\Controllers\ContactController as HomeHTPContactController;
 use App\Http\Controllers\HomeController as HomeHTPHomeController;
 use App\Http\Controllers\PageController as HomeHTPAboutController;
-use App\Http\Controllers\ContactController as HomeHTPContactController;
 use App\Http\Controllers\ProductController as HomeHTPProductController;
-use App\Http\Controllers\BlogController as HomeHTPBlogController;
-
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\VerifyEmailController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,7 +74,6 @@ Route::group(['middleware' => [\App\Http\Middleware\HomeHTPMiddleware::class], '
     Route::get('feed', [\App\Http\Controllers\RssFeedController::class, 'feed']);
 
     //Auth
-
 });
 
 //Subdomain

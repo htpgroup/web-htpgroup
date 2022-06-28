@@ -4,9 +4,9 @@ namespace App\Services\Telegram;
 
 //use Longman\TelegramBot\Request;
 use App\Models\Customer;
+use App\Models\User;
 use Telegram\Bot\FileUpload\InputFile;
 use Telegram\Bot\Laravel\Facades\Telegram;
-use App\Models\User;
 
 class TelegramBot
 {
@@ -28,13 +28,14 @@ class TelegramBot
         return Telegram::sendMessage([
             'chat_id' => $id,
             'text' => $text,
-            'parse_mode' => 'html'
+            'parse_mode' => 'html',
         ]);
     }
 
     public static function sendAnimation($id)
     {
         $filename = 'my-photo.jpg';
+
         return Telegram::sendAnimation([
             'chat_id' => $id,
             'animation' => InputFile::create(self::gif(), $filename),
@@ -62,19 +63,18 @@ class TelegramBot
             'chat_id' => $telegram_id,
             'photo' => InputFile::create($pathPhoto, $filename),
             'disable_notification' => true,
-            'caption' => 'Ảnh bài viết,'
+            'caption' => 'Ảnh bài viết,',
         ]);
     }
 
     /**
-     * @param User $user
-     * @param Customer $customer
-     *
+     * @param  User  $user
+     * @param  Customer  $customer
      * @return void
      */
     public static function sendCongratMessage($user, $customer)
     {
-        if (!$user->telegram_id) {
+        if (! $user->telegram_id) {
             return;
         }
 

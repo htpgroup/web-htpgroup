@@ -26,7 +26,7 @@ class ApiResource
         foreach ($this->attributes as $key => $value) {
             $key = $this->camelCase($key);
 
-            $this->{$key} = $value ? $value : '';;
+            $this->{$key} = $value ? $value : '';
         }
     }
 

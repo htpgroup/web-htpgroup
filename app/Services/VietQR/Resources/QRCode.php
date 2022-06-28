@@ -10,10 +10,8 @@ class QRCode extends ApiResource
 
     public string $qrCode = '';
 
-
     public function __construct(array $attributes, $ohDear = null)
     {
         parent::__construct($attributes, $ohDear);
-
     }
 }

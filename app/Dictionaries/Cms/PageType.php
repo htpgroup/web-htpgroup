@@ -15,12 +15,16 @@ namespace App\Dictionaries\Cms;
 class PageType
 {
     const PRIVACY_POLICY = 1;
-    const TERM_OF_SERVICE = 2;
-    const COOKIE_POLICY = 3;
-    const TERM_AND_CONDITION = 4;
-    const RETURN_POLICY = 5;
-    const SHIPPING_POLICY = 6;
 
+    const TERM_OF_SERVICE = 2;
+
+    const COOKIE_POLICY = 3;
+
+    const TERM_AND_CONDITION = 4;
+
+    const RETURN_POLICY = 5;
+
+    const SHIPPING_POLICY = 6;
 
     public static function all()
     {

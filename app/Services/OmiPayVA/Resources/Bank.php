@@ -10,18 +10,29 @@ use Carbon\Carbon;
 class Bank extends ApiResource
 {
     public int $id;
+
     public int $condition;
+
     public int $status;
+
     public float $amount;
+
     public float $method;
+
     public string $merchantId;
+
     public string $accountVaType;
 
     public string $url;
+
     public string $accountVa;
+
     public string $timeUpdated;
+
     public string $merchantEmail;
+
     public string $timeCreated;
+
     public string $accountVaName;
 
     /**
@@ -48,20 +59,20 @@ class Bank extends ApiResource
     public function sampleData()
     {
         $sample = [
-            "accountVa" => "OMIPAY124014u0245",
-            "amount" => "500000",
-            "method" => "1",
-            "merchantEmail" => "abc@gmail.com",
-            "accountVaType" => "1",
-            "condition" => "1",
-            "merchantId" => "121442",
-            "requestId" => "5260BC063BD843D208D76A63F4642A29",
-            "timeUpdated" => "1644829316",
-            "accountVaName" => "Nguyen Van A",
-            "timeCreated" => "1644829316",
-            "error_code" => 0,
-            "id" => 1,
-            "status" => "1"
+            'accountVa' => 'OMIPAY124014u0245',
+            'amount' => '500000',
+            'method' => '1',
+            'merchantEmail' => 'abc@gmail.com',
+            'accountVaType' => '1',
+            'condition' => '1',
+            'merchantId' => '121442',
+            'requestId' => '5260BC063BD843D208D76A63F4642A29',
+            'timeUpdated' => '1644829316',
+            'accountVaName' => 'Nguyen Van A',
+            'timeCreated' => '1644829316',
+            'error_code' => 0,
+            'id' => 1,
+            'status' => '1',
         ];
 
         return $sample;
@@ -88,7 +99,6 @@ class Bank extends ApiResource
     {
         return MethodType::get($this->accountVaType);
     }
-
 
     public function getShowCondition()
     {
@@ -118,10 +128,9 @@ class Bank extends ApiResource
     /**
      * Get the uptime percentages for a site.
      *
-     * @param string $startedAt Must be in format Ymdhis
-     * @param string $endedAt Must be in format Ymdhis
-     * @param string $split Use hour, day or month
-     *
+     * @param  string  $startedAt Must be in format Ymdhis
+     * @param  string  $endedAt Must be in format Ymdhis
+     * @param  string  $split Use hour, day or month
      * @return array
      */
     public function uptime(string $startedAt, string $endedAt, string $split): array
@@ -132,9 +141,8 @@ class Bank extends ApiResource
     /**
      * Get the downtime periods for a site.
      *
-     * @param string $startedAt Must be in format Ymdhis
-     * @param string $endedAt Must be in format Ymdhis
-     *
+     * @param  string  $startedAt Must be in format Ymdhis
+     * @param  string  $endedAt Must be in format Ymdhis
      * @return array
      */
     public function downtime(string $startedAt, string $endedAt): array
@@ -162,8 +170,7 @@ class Bank extends ApiResource
         string $end,
         string $timeframe = '1m',
         string $sort = '-created_at'
-    ): array
-    {
+    ): array {
         return $this->omiPayVA->performanceRecords($this->id, $start, $end, $timeframe, $sort);
     }
 }

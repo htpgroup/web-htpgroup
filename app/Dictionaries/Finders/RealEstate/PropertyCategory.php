@@ -10,9 +10,10 @@ namespace App\Dictionaries\Finders\RealEstate;
 class PropertyCategory
 {
     const SALE = 1;
-    const RENT = 2;
-    const BUY = 3;
 
+    const RENT = 2;
+
+    const BUY = 3;
 
     public static function all()
     {

@@ -4,7 +4,6 @@ namespace App\Services\OmiPayVA\Resources;
 
 use App\Dictionaries\Domain\Merchant\AccountStatus;
 use App\Dictionaries\Domain\Merchant\AccountType;
-use App\Dictionaries\Domain\Merchant\ActiveType;
 use App\Dictionaries\Domain\Merchant\ConditionType;
 use App\Dictionaries\Domain\Merchant\MethodType;
 use Carbon\Carbon;
@@ -12,19 +11,31 @@ use Carbon\Carbon;
 class History extends ApiResource
 {
     public int $id;
+
     public int $condition;
+
     public int $status;
+
     public float $amount;
+
     public float $method;
+
     public string $merchantId;
+
     public string $modifiedTime;
+
     public string $accountVaType;
 
     public string $preAmount;
+
     public string $newAmount;
+
     public string $timeUpdated;
+
     public string $account;
+
     public string $timeCreated;
+
     public string $accountVaName;
 
     /**
@@ -51,11 +62,11 @@ class History extends ApiResource
     public function sampleData()
     {
         $sample = [
-            "preAmount" => "500000",
-            "id" => 324238,
-            "newAmount" => "500000",
-            "account" => "1000000000013",
-            "status" => "0"
+            'preAmount' => '500000',
+            'id' => 324238,
+            'newAmount' => '500000',
+            'account' => '1000000000013',
+            'status' => '0',
         ];
 
         return $sample;
@@ -92,5 +103,4 @@ class History extends ApiResource
     {
         return ConditionType::get($this->accountVaType);
     }
-
 }

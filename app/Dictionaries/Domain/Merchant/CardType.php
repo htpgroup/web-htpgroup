@@ -8,18 +8,26 @@
 
 namespace App\Dictionaries\Domain\Merchant;
 
-
 class CardType
 {
     const HAND_METHOD = 1;
+
     const API_METHOD = 2;
+
     const VISA = 1;
+
     const MASTERCARD = 2;
+
     const JCB = 3;
+
     const AMEX = 4;
+
     const VISA_DEBIT = 5;
+
     const MASTERCARD_DEBIT = 6;
+
     const JCB_DEBIT = 7;
+
     const AMEX_DEBIT = 8;
 
     public static function all()
@@ -33,15 +41,16 @@ class CardType
     public static function allItem()
     {
         $allItem = [
-            self::VISA => "VISA",
-            self::MASTERCARD => "MASTERCARD",
-            self::JCB => "JCB",
-            self::AMEX => "AMEX",
-            self::VISA_DEBIT => "VISA_DEBIT",
-            self::MASTERCARD_DEBIT => "MASTERCARD_DEBIT",
-            self::JCB_DEBIT => "JCB_DEBIT",
-            self::AMEX_DEBIT => "AMEX_DEBIT",
+            self::VISA => 'VISA',
+            self::MASTERCARD => 'MASTERCARD',
+            self::JCB => 'JCB',
+            self::AMEX => 'AMEX',
+            self::VISA_DEBIT => 'VISA_DEBIT',
+            self::MASTERCARD_DEBIT => 'MASTERCARD_DEBIT',
+            self::JCB_DEBIT => 'JCB_DEBIT',
+            self::AMEX_DEBIT => 'AMEX_DEBIT',
         ];
+
         return $allItem;
     }
 

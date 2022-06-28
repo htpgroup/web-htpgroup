@@ -47,16 +47,16 @@ class ModuleInstaller
     {
         $data = null;
         if (env('APP_ENV') === 'development') {
-            $url = 'api/marketplace/modules/' . $module . '?is_dev=1';
+            $url = 'api/marketplace/modules/'.$module.'?is_dev=1';
         } else {
-            $url = 'api/marketplace/modules/' . $module;
+            $url = 'api/marketplace/modules/'.$module;
         }
 
         $token = Setting::getSetting('api_token');
         $response = static::getRemote($url, ['timeout' => 100, 'track_redirects' => true], $token);
 
         if ($response && ($response->getStatusCode() == 401)) {
-            return (object)['success' => false, 'error' => 'invalid_token'];
+            return (object) ['success' => false, 'error' => 'invalid_token'];
         }
 
         if ($response && ($response->getStatusCode() == 200)) {
@@ -71,15 +71,15 @@ class ModuleInstaller
     public static function upload($request)
     {
         // Create temp directory
-        $temp_dir = storage_path('app/temp-' . md5(mt_rand()));
+        $temp_dir = storage_path('app/temp-'.md5(mt_rand()));
 
-        if (!File::isDirectory($temp_dir)) {
+        if (! File::isDirectory($temp_dir)) {
             File::makeDirectory($temp_dir);
         }
 
         $path = $request->file('avatar')->storeAs(
-            'temp-' . md5(mt_rand()),
-            $request->module . '.zip',
+            'temp-'.md5(mt_rand()),
+            $request->module.'.zip',
             'local'
         );
 
@@ -120,36 +120,36 @@ class ModuleInstaller
         }
 
         // Create temp directory
-        $temp_dir = storage_path('app/temp-' . md5(mt_rand()));
+        $temp_dir = storage_path('app/temp-'.md5(mt_rand()));
 
-        if (!File::isDirectory($temp_dir)) {
+        if (! File::isDirectory($temp_dir)) {
             File::makeDirectory($temp_dir);
         }
 
-        $zip_file_path = $temp_dir . '/upload.zip';
+        $zip_file_path = $temp_dir.'/upload.zip';
 
         // Add content to the Zip file
         $uploaded = is_int(file_put_contents($zip_file_path, $data)) ? true : false;
 
-        if (!$uploaded) {
+        if (! $uploaded) {
             return false;
         }
 
         return [
             'success' => true,
-            'path' => $zip_file_path
+            'path' => $zip_file_path,
         ];
     }
 
     public static function unzip($module, $zip_file_path)
     {
-        if (!file_exists($zip_file_path)) {
+        if (! file_exists($zip_file_path)) {
             throw new \Exception('Zip file not found');
         }
 
-        $temp_extract_dir = storage_path('app/temp2-' . md5(mt_rand()));
+        $temp_extract_dir = storage_path('app/temp2-'.md5(mt_rand()));
 
-        if (!File::isDirectory($temp_extract_dir)) {
+        if (! File::isDirectory($temp_extract_dir)) {
             File::makeDirectory($temp_extract_dir);
         }
         // Unzip the file
@@ -169,16 +169,16 @@ class ModuleInstaller
 
     public static function copyFiles($module, $temp_extract_dir)
     {
-        if (!File::isDirectory(base_path('Modules'))) {
+        if (! File::isDirectory(base_path('Modules'))) {
             File::makeDirectory(base_path('Modules'));
         }
 
         // Delete Existing Module directory
-        if (!File::isDirectory(base_path('Modules') . '/' . $module)) {
-            File::deleteDirectory(base_path('Modules') . '/' . $module);
+        if (! File::isDirectory(base_path('Modules').'/'.$module)) {
+            File::deleteDirectory(base_path('Modules').'/'.$module);
         }
 
-        if (!File::copyDirectory($temp_extract_dir, base_path('Modules') . '/')) {
+        if (! File::copyDirectory($temp_extract_dir, base_path('Modules').'/')) {
             return false;
         }
 

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Helpers;
-
 
 class CalendarHelper
 {
@@ -18,7 +16,7 @@ class CalendarHelper
             $m = 1;
         }
 
-        return array('y' => $y, 'm' => $m);
+        return ['y' => $y, 'm' => $m];
     }
 
     public function get_prev_month($y, $m)
@@ -33,6 +31,6 @@ class CalendarHelper
             $m = 12;
         }
 
-        return array('y' => $y, 'm' => $m);
+        return ['y' => $y, 'm' => $m];
     }
 }

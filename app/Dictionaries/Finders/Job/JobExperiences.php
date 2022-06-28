@@ -16,17 +16,27 @@ namespace App\Dictionaries\Finders\Job;
 class JobExperiences
 {
     const ONE_YEAR = 1;
+
     const TWO_YEAR = 2;
+
     const THREE_YEAR = 3;
+
     const FOUR_YEAR = 4;
+
     const FIVE_YEAR = 5;
+
     const SIX_YEAR = 6;
+
     const SEVEN_YEAR = 7;
+
     const EITGHT_YEAR = 8;
+
     const NINE_YEAR = 9;
+
     const TEN_YEAR = 10;
 
     const FRESH = 11;
+
     const Less_Than_ONE_Year = 12;
 
     public static function all()

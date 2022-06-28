@@ -8,10 +8,10 @@
 
 namespace App\Dictionaries;
 
-
 class Gender
 {
     const FEMALE = 0;
+
     const MALE = 1;
 
     public static function all()

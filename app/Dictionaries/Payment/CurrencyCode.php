@@ -10,15 +10,22 @@ namespace App\Dictionaries\Payment;
 class CurrencyCode
 {
     const  JPY = 'JPY';
-    const  KRW = 'KRW';
-    const  MYR = 'MYR';
-    const  CNY = 'CNY';
-    const  IDR = 'IDR';
-    const  PHP = 'PHP';
-    const  SGD = 'SGD';
-    const  THB = 'THB';
-    const  VND = 'VND';
 
+    const  KRW = 'KRW';
+
+    const  MYR = 'MYR';
+
+    const  CNY = 'CNY';
+
+    const  IDR = 'IDR';
+
+    const  PHP = 'PHP';
+
+    const  SGD = 'SGD';
+
+    const  THB = 'THB';
+
+    const  VND = 'VND';
 
     public static function all()
     {

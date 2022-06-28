@@ -16,7 +16,7 @@ trait DeadlineTrait
     }
 
     /**
-     * @param Int $days
+     * @param  int  $days
      * @return bool
      */
     public function isCloseToDeadline(int $days = 2): bool

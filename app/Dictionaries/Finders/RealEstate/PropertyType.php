@@ -5,10 +5,12 @@ namespace App\Dictionaries\Finders\RealEstate;
 class PropertyType
 {
     const HOUSE = 1;
-    const APARTMENT = 2;
-    const SHOPHOUSE = 3;
-    const NEAR_HOUSE = 4;
 
+    const APARTMENT = 2;
+
+    const SHOPHOUSE = 3;
+
+    const NEAR_HOUSE = 4;
 
     public static function all()
     {
