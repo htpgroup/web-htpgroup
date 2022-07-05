@@ -13,7 +13,7 @@
     </section>
     <section class="main-single">
         <div class="container">
-            <p id="breadcrumbs"><span><span><a href="https://ichigologistics.com/">{{$post->published_at->isoFormat('llll')}}</a> » <span class="breadcrumb_last" aria-current="page">Đội ngũ phát triển</span></span></span></p>
+            <p id="breadcrumbs"><span><span><a href="https://ichigologistics.com/">{{$post->published_at->isoFormat('llll')}}</a> » <span class="breadcrumb_last" aria-current="page">{{$post->category_name}}</span></span></span></p>
             <div id="primary">
                 <main id="main" class="site-main" role="main">
                     <h2 class="title-single">{{$post->name}}</h2>
