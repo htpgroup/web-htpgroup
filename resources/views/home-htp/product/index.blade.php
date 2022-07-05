@@ -18,7 +18,7 @@
             <div class="row">
                 <h1>LĨNH VỰC</h1>
                 <p class="title">HTP Group</p>
-                <p class="desc">Với mong muốn đem đến cho thị trường những sản phẩm - dịch vụ hoàn hảo với giá trị cao nhất cho khách hàng, ở bất cứ lĩnh vực nào HTP group với tinh thần dám nghĩ,
+                <p class="desc" style="width: 690px">Với mong muốn đem đến cho thị trường những sản phẩm - dịch vụ hoàn hảo với giá trị cao nhất cho khách hàng, ở bất cứ lĩnh vực nào HTP group với tinh thần dám nghĩ,
                     dám làm luôn nỗ lực nghiên cứu, tìm tòi, ứng dụng những tiến bộ khoa học kỹ thuật mới nhất, chủ dộng cả tiến, nâng cao chất lượng.</p>
 
             </div>
@@ -69,7 +69,7 @@
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Theo số liệu từ Hội môi giới Bất động sản Khánh Hòa (KAREB), số lượng giao dịch của thị trường bất động sản Nha Trang – Khánh Hòa trong quý 1/2021 chỉ mới có dấu hiệu tăng ở phân khúc chung cư, đất nền, nhà phố giá bình dân. Nguyên nhân chính là do ảnh hưởng kinh tế từ dịch Covid-19 và dư âm của công tác thanh kiểm tra các dự án sai phạm, vướng mắc về mặt pháp lý tại địa phương.      </p>
+                                                    Phương châm phát triển Bất động sản của chúng tôi luôn gắn với sống xanh, sống sinh thái, sống nghỉ dưỡng”. Chúng tôi sẵn sàng phục vụ những khách hàng có nhu cầu cao nhất về sự thụ hưởng những giá trị cảm xúc đến từ mỗi ngôi biệt thự và có tình yêu lớn với thiên nhiên. </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
@@ -77,6 +77,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if(false)
                                 <div class="carousel-item">
                                     <div class="main-content-activity">
                                         <h2 class="titleItem">BẤT ĐỘNG SẢN</h2>
@@ -113,6 +114,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -220,6 +222,7 @@
                                 <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
                             <div class="carousel-inner">
+                                @if(false)
                                 <div class="carousel-item active">
                                     <div class="main-content-activity">
                                         <h2 class="titleItem">Thương mại điện tử</h2>
@@ -257,7 +260,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
+                                @endif
+                                <div class="carousel-item active">
                                     <div class="main-content-activity">
                                         <h2 class="titleItem">Thương mại điện tử</h2>
                                         <div class="activity-content">
@@ -267,7 +271,7 @@
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
                                                 <p>
-                                                    Cụ thể hóa các mục tiêu để Hà Nội phát triển thương mại, dịch vụ hiện đại. Thành phố sẽ hỗ trợ các nhà đầu tư mở rộng quy mô, nâng cấp các dự án hạ tầng thương mại đang hoạt động hiệu quả; tạo điều kiện thuận lợi về thủ tục đầu tư, cơ chế chính sách…     </p>
+                                                    Chúng tôi tập trung mạng lưới kinh doanh thương mại phát triển nhanh, đa dạng về ngành nghề bao gồm cả thương nghiệp, nhà hàng ăn uống, trường học, dịch vụ... Mạng lưới kinh doanh mở rộng trên cả nước, tạo thành mạng trung gian kinh tế với chức năng giao lưu, trao đổi hàng hoá từ nơi sản xuất đến nơi tiêu thụ. </p>
                                                 <a href="">
                                                     XEM CHI TIẾT <-
                                                 </a>
