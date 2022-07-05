@@ -49,7 +49,7 @@
                     <div class="tab-pane fade show active" id="pills-tab-1" role="tabpanel" aria-labelledby="tab-1">
                         <div class="col-md-12 mt-2 mb-2 tab-content-description">
                             <h5>Thông tin chi tiết</h5>
-                            <p>OmiPay là một ứng dụng thanh toán trực tuyến đáp ứng xu hướng thanh toán không dùng tiền mặt đang được phát triển rộng rãi, góp phần thúc đẩy nền kinh tế xã hội một cách nhanh chóng nhờ đưa ra các giải pháp đồng bộ đảm bảo tính an toàn, bảo mật, chi phí hợp lý và mang lại sự thuận tiện, dễ dàng cho người dùng.</p>
+                            <p>Bằng sự uy tín trong kinh doanh, chúng tôi đã phát triển được thương hiệu của mình bền vững với nhiều dự án bất động sản được đánh giá cao, là đối tác chiến lược của nhiều đơn vị và là điểm đến tin cậy của đông đảo khách hàng.</p>
                         </div>
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
@@ -210,7 +210,7 @@
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <div class="col-md-12 mt-2 mb-2 tab-content-description">
                             <h5>Thông tin chi tiết</h5>
-                            <p>OmiPay là một ứng dụng thanh toán trực tuyến đáp ứng xu hướng thanh toán không dùng tiền mặt đang được phát triển rộng rãi, góp phần thúc đẩy nền kinh tế xã hội một cách nhanh chóng nhờ đưa ra các giải pháp đồng bộ đảm bảo tính an toàn, bảo mật, chi phí hợp lý và mang lại sự thuận tiện, dễ dàng cho người dùng.</p>
+                            <p>Các dịch vụ tiện ích cho khối chung cư, trường học,… được phát triển mở rộng với nhiều loại hình dịch vụ nhằm cung cấp cho đời sống cộng đồng có chất lượng hoàn hảo nhất ở thời đại công nghệ số.</p>
                         </div>
 
                         <div id="carouselExampleIndicators3" class="carousel slide" data-bs-ride="carousel">
@@ -262,7 +262,7 @@
                                         <h2 class="titleItem">Thương mại điện tử</h2>
                                         <div class="activity-content">
                                             <div class="activity-img">
-                                                <img src="{{asset('themes/htp_group_html/images/activity/Rectangle 1513 (1).png')}}" alt="">
+                                                <img src="{{asset('themes/htp_group_html/images/activity/ecommerce5.png')}}" alt="">
                                             </div>
                                             <div class="activity-info">
                                                 <h2>Thông tin</h2>
