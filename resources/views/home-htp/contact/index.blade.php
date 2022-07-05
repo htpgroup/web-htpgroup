@@ -45,6 +45,10 @@
                     </div>
                     <div class="inforcontact">
                         <p>
+                            <i class="fas fa-address-card"></i> Số A7 Lô A, Khu 5.2 ha, dự án nhà ở cho cán bộ cao cấp và cán bộ của Ban Đảng Trung Ương,
+                            Phường Yên Hoà, Quận Cầu Giấy.
+                        </p>
+                        <p>
                             <i class="fas fa-envelope"></i> support@htpgroup.com.vn
                         </p>
                         <p>

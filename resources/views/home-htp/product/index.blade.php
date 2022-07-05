@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-tab-1" role="tabpanel" aria-labelledby="tab-1">
-                        <div class="col-md-12 mt-2 mb-2 tab-content-description">
+                        <div class="col-md-12 mt-5 mb-5 tab-content-description">
                             <h5>Thông tin chi tiết</h5>
                             <p>Bằng sự uy tín trong kinh doanh, chúng tôi đã phát triển được thương hiệu của mình bền vững với nhiều dự án bất động sản được đánh giá cao, là đối tác chiến lược của nhiều đơn vị và là điểm đến tin cậy của đông đảo khách hàng.</p>
                         </div>
@@ -127,7 +127,7 @@
                     </div>
                     <!-- trung gian thanh toan-->
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="col-md-12 mt-2 mb-2 tab-content-description">
+                        <div class="col-md-12 mt-5 mb-5 tab-content-description">
                             <h5>Thông tin chi tiết</h5>
                             <p>OmiPay là một ứng dụng thanh toán trực tuyến đáp ứng xu hướng thanh toán không dùng tiền mặt đang được phát triển rộng rãi, góp phần thúc đẩy nền kinh tế xã hội một cách nhanh chóng nhờ đưa ra các giải pháp đồng bộ đảm bảo tính an toàn, bảo mật, chi phí hợp lý và mang lại sự thuận tiện, dễ dàng cho người dùng.</p>
                         </div>
@@ -208,7 +208,7 @@
                     </div>
                     <!--thuong mai dich vu-->
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        <div class="col-md-12 mt-2 mb-2 tab-content-description">
+                        <div class="col-md-12 mt-5 mb-5 tab-content-description">
                             <h5>Thông tin chi tiết</h5>
                             <p>Các dịch vụ tiện ích cho khối chung cư, trường học,… được phát triển mở rộng với nhiều loại hình dịch vụ nhằm cung cấp cho đời sống cộng đồng có chất lượng hoàn hảo nhất ở thời đại công nghệ số.</p>
                         </div>
