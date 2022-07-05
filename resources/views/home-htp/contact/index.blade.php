@@ -74,23 +74,35 @@
                             <br/>
                         @endif
 
-                        <div class="mb-2">
+                        <div class="mb-2 field-name">
                             <input type="text" name="name" class="form-control" id="name" value="{{old('name')}}" placeholder="Họ và tên">
+                            <div class="valid-feedback">
+                            </div>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2 field-company">
                             <input type="text" class="form-control" value="{{old('company')}}" name="company" id="company" placeholder="Công ty...">
+                            <div class="valid-feedback">
+                            </div>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2 field-email">
                             <input type="email" name="email" class="form-control"   value="{{old('email')}}"  id="email" placeholder="Email...">
+                            <div class="valid-feedback">
+                            </div>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2 field-phone">
                             <input type="text" name="phone" class="form-control"  value="{{old('phone')}}"  id="phone" placeholder="Số điện thoại...">
+                            <div class="valid-feedback">
+                            </div>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2 field-subject">
                             <input type="text" name="subject" class="form-control"  value="{{old('subject')}}"  id="subject" placeholder="Tiêu đề...">
+                            <div class="valid-feedback">
+                            </div>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2 field-content">
                             <textarea class="form-control" name="content" id="content" rows="3">{{old('content') }}</textarea>
+                            <div class="valid-feedback">
+                            </div>
                         </div>
                         <div class="mb-2 mt-8">
                             <div class="g-recaptcha"  data-sitekey="{{config('captcha.sitekey')}}"></div>
@@ -125,7 +137,7 @@
     <script>
         jQuery(function ($) {
 
-            jQuery('#post_form').yiiActiveForm([
+            jQuery('#contactform').yiiActiveForm([
                 {
                     "id": "name",
                     "name": "name",
