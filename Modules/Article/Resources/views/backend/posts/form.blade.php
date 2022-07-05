@@ -107,8 +107,8 @@
             $field_placeholder = __("Select an option");
             $required = "required";
             $select_options = [
-                'Article' => 'Article',
-                'Feature' => 'Feature',
+                /*'Article' => 'Article',
+                'Feature' => 'Feature',*/
                 'News' => 'News',
                 'Recruitment' => 'Recruitment',
             ];
@@ -121,7 +121,7 @@
         <div class="form-group">
             <?php
             $field_name = 'is_featured';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable = 'Nổi bật';
             $field_placeholder = __("Select an option");
             $required = "required";
             $select_options = [
@@ -198,7 +198,7 @@
         <div class="form-group">
             <?php
             $field_name = 'meta_title';
-            $field_lable = __("article::$module_name.$field_name");
+            $field_lable ='Meta title';
             $field_placeholder = $field_lable;
             $required = "";
             ?>
@@ -293,7 +293,7 @@
 
         $('.select2-category').select2({
             theme: "bootstrap",
-            placeholder: '@lang("Select an option")',
+            placeholder: '@lang("Chọn danh mục")',
             minimumInputLength: 2,
             allowClear: true,
             ajax: {
@@ -315,7 +315,7 @@
 
         $('.select2-tags').select2({
             theme: "bootstrap",
-            placeholder: '@lang("Select an option")',
+            placeholder: '@lang("Chọn thẻ")',
             minimumInputLength: 2,
             allowClear: true,
             ajax: {
