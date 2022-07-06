@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-            /*[
+            [
                 'first_name' => 'Admin',
                 'last_name' => 'Istrator',
                 'name' => 'Admin Istrator',
@@ -102,7 +102,7 @@ class UserTableSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ],*/
+            ],
         ];
 
         foreach ($users as $user_data) {
