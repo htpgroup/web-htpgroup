@@ -35,6 +35,13 @@ Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index'
 Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], function () {
     Route::get('/', [HomeHTPHomeController::class, 'index'])->name('homeWebPay');
 
+    Route::get('/clear-cache', function() {
+        $exitCode = Artisan::call('cache:clear');
+        $exitCode = Artisan::call('view:clear');
+        // return what you want
+        return '<h2>Cache facade value cleared</h2>';
+    });
+
     //Page
     Route::get('/gioi-thieu', [HomeHTPAboutController::class, 'about'])->name('aboutWebPay');
     Route::get('/gioi-thieu/supply', [HomeHTPAboutController::class, 'supply'])->name('supplyWebPay');
@@ -74,6 +81,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('home', 'FrontendController@index')->name('home');
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
+
+
 
     Route::group(['middleware' => ['auth']], function () {
         /*

@@ -72,7 +72,7 @@
                 <a href=""><img src="{{asset('themes/htp_group_html/images/icon/htp_logo.png')}}" alt="" class="logo mb-3"></a>
                 <p>2022 HTP Group</p>
                 <p>
-                    Số A7 Lô A, Khu 5.2 ha, dự án nhà ở cho cán bộ cao cấp và cán bộ của Ban Đảng Trung Ương, <br> Phường Yên Hoà, Quận Cầu Giấy.
+                    Số A7 Lô A, Khu 5.2 ha - dự án nhà ở cho cán bộ cao cấp và cán bộ của Ban Đảng Trung Ương, <br> P.Yên Hoà - Q.Cầu Giấy - Hà Nội - Việt Nam
                 </p>
             </div>
         </div>
@@ -84,7 +84,7 @@
                     <li><a href="">Lĩnh vực</a></li>
                     <li><a href="">Tin tức</a></li>
                     <li><a href="">Tuyển dụng</a></li>
-                    <li><a href="">liên hệ</a></li>
+                    <li><a href="">Liên hệ</a></li>
                 </ul>
             </div>
         </div>
