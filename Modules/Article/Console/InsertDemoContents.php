@@ -94,15 +94,15 @@ class InsertDemoContents extends Command
          * Tags.
          */
         $this->info('Inserting Tags');
-        Tag::factory()->count(10)->create();
+        Tag::factory()->count(5)->create();
 
         /**
          * Posts.
          */
         $this->info('Inserting Posts');
-        Post::factory()->count(25)->create()->each(function ($post) {
+        Post::factory()->count(3)->create()->each(function ($post) {
             $post->tags()->attach(
-                Tag::inRandomOrder()->limit(rand(5, 10))->pluck('id')->toArray()
+                Tag::inRandomOrder()->limit(rand(1, 5))->pluck('id')->toArray()
             );
         });
 
@@ -110,7 +110,7 @@ class InsertDemoContents extends Command
          * Comments.
          */
         $this->info('Inserting Comments');
-        Comment::factory()->count(25)->create();
+        Comment::factory()->count(5)->create();
 
         $this->newLine(2);
         $this->info('-- Completed --');
