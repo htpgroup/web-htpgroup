@@ -25,14 +25,14 @@ class UserTableSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        $password = 'secretz$Sk2';
+        $password = '_&oZ_\E,B=oc+2L~2_o%';
         // Add the master administrator, user id of 1
         $users = [
             [
                 'first_name' => 'Super',
                 'last_name' => 'Admin',
                 'name' => 'Super Admin',
-                'email' => 'super@admin.com',
+                'email' => 'omi@htpgroup.com.vn',
                 'password' => Hash::make($password),
                 'username' => '100001',
                 'mobile' => $faker->phoneNumber,
