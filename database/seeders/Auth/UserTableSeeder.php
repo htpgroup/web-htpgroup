@@ -47,7 +47,7 @@ class UserTableSeeder extends Seeder
                 'first_name' => 'Admin',
                 'last_name' => 'Istrator',
                 'name' => 'Admin Istrator',
-                'email' => 'admin@admin.com',
+                'email' => 'admin@admin123.com',
                 'password' => Hash::make($password),
                 'username' => '100002',
                 'mobile' => $faker->phoneNumber,
