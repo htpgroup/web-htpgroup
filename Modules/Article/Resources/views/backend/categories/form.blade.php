@@ -15,7 +15,7 @@
         <div class="form-group">
             <?php
             $field_name = 'slug';
-            $field_lable = label_case($field_name);
+            $field_lable = 'Bí danh';
             $field_placeholder = $field_lable;
             $required = "";
             ?>
