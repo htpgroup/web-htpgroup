@@ -33,8 +33,7 @@ class HomeController extends Controller
         $locale = App::currentLocale();
 
         if (App::isLocale('en')) {
-            //
-
+            // $locale = 'en';
             $this->switch('vi');
             //return redirect()->route('language.switch', ['language' => 'vi']);
         }
