@@ -3,7 +3,7 @@
         <div class="form-group">
             <?php
             $field_name = 'name';
-            $field_lable = label_case($field_name);
+            $field_lable = 'Tên';
             $field_placeholder = $field_lable;
             $required = "required";
             ?>
@@ -67,7 +67,7 @@
         <div class="form-group">
             <?php
             $field_name = 'description';
-            $field_lable = label_case($field_name);
+            $field_lable = 'Mô tả';
             $field_placeholder = $field_lable;
             $required = "";
             ?>
@@ -121,8 +121,8 @@
         <div class="form-group">
             <?php
             $field_name = 'status';
-            $field_lable = label_case($field_name);
-            $field_placeholder = "-- Select an option --";
+            $field_lable = 'Trạng thái';
+            $field_placeholder = "-- Chọn --";
             $required = "required";
             $select_options = [
                 '1'=>'Published',

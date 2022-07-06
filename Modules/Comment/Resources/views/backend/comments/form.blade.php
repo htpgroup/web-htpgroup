@@ -24,7 +24,7 @@ if (isset($$module_name_singular)){
             $field_name = 'user_id';
             $field_lable = "User";
             $field_relation = "user";
-            $field_placeholder = "-- Select an option --";
+            $field_placeholder = "-- Chọn --";
             $required = "required";
             $value = $user_id_value;
             ?>
@@ -40,7 +40,7 @@ if (isset($$module_name_singular)){
             $field_name = 'parent_id';
             $field_lable = "Parent Comment";
             $field_relation = "parent";
-            $field_placeholder = "-- Select an option --";
+            $field_placeholder = "-- Chọn --";
             $required = "required";
             $value = $parent_name;
             ?>
@@ -55,7 +55,7 @@ if (isset($$module_name_singular)){
         <div class="form-group">
             <?php
             $field_name = 'name';
-            $field_lable = label_case($field_name);
+            $field_lable = 'Tên';
             $field_placeholder = $field_lable;
             $required = "required";
             ?>
@@ -79,7 +79,7 @@ if (isset($$module_name_singular)){
         <div class="form-group">
             <?php
             $field_name = 'order';
-            $field_lable = label_case($field_name);
+            $field_lable = 'Sắp xếp';
             $field_placeholder = $field_lable;
             $required = "";
             ?>
@@ -107,8 +107,8 @@ if (isset($$module_name_singular)){
         <div class="form-group">
             <?php
             $field_name = 'status';
-            $field_lable = label_case($field_name);
-            $field_placeholder = "-- Select an option --";
+            $field_lable = 'Trạng thái';
+            $field_placeholder = "-- Chọn --";
             $required = "required";
             $select_options = [
                 '0'=>'Pending',
@@ -168,7 +168,7 @@ if (isset($$module_name_singular)){
 $(document).ready(function() {
     $('.select2-users').select2({
         theme: "bootstrap",
-        placeholder: "-- Select an option --",
+        placeholder: "-- Chọn --",
         minimumInputLength: 2,
         allowClear: true,
         ajax: {
@@ -190,7 +190,7 @@ $(document).ready(function() {
 
     $('.select2-posts').select2({
         theme: "bootstrap",
-        placeholder: "-- Select an option --",
+        placeholder: "-- Chọn --",
         minimumInputLength: 2,
         allowClear: true,
         ajax: {
