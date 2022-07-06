@@ -35,7 +35,7 @@ Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index'
 Route::group(['namespace' => 'App\Http\Controllers\Web', 'as' => 'HomeHTP.'], function () {
     Route::get('/', [HomeHTPHomeController::class, 'index'])->name('homeWebPay');
 
-    Route::get('/clear-cache', function() {
+    Route::get('/clear-cache', function () {
         $exitCode = Artisan::call('cache:clear');
         $exitCode = Artisan::call('view:clear');
         // return what you want
@@ -82,8 +82,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
 
-
-
     Route::group(['middleware' => ['auth']], function () {
         /*
         *
@@ -109,7 +107,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 * These routes need view-backend permission
 * --------------------------------------------------------------------
 */
-Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin3ds5graco8fci', 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
+
 
     /**
      * Backend Dashboard

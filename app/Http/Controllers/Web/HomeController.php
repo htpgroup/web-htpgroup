@@ -78,6 +78,7 @@ class HomeController extends Controller
 
         Carbon::setLocale($language);
     }
+
     /*
     * Get cookie
     * */
