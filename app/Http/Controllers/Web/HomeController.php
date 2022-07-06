@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Helpers\TimeHelper;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
@@ -33,7 +34,9 @@ class HomeController extends Controller
 
         if (App::isLocale('en')) {
             //
-            return redirect()->route('language.switch', ['language' => 'vi']);
+
+            $this->switch('vi');
+            //return redirect()->route('language.switch', ['language' => 'vi']);
         }
         /*Redis::set('name', 'Taylor');
         Redis::get('name');
@@ -66,6 +69,16 @@ class HomeController extends Controller
         return view('home-htp.home.home', $data);
     }
 
+    protected function switch($language)
+    {
+        app()->setLocale($language);
+
+        session()->put('locale', $language);
+
+        setlocale(LC_TIME, $language);
+
+        Carbon::setLocale($language);
+    }
     /*
     * Get cookie
     * */
