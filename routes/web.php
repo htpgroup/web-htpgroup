@@ -107,7 +107,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 * These routes need view-backend permission
 * --------------------------------------------------------------------
 */
-Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin3ds5graco8fci', 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
+//admin3ds5graco8fci
+$adminPrefix = env('ADMIN_PREFIX', 'admin');
+Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => $adminPrefix, 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
 
 
     /**

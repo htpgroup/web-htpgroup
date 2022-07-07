@@ -17,7 +17,7 @@
                 <h1>Tuyển dụng</h1>
                 <p class="title">HTP Group</p>
                 <p class="desc">Với mong muốn đem đến cho thị trường những sản phẩm - dịch vụ hoàn hảo với giá trị cao nhất cho khách hàng, ở bất cứ lĩnh vực nào HTP group với tinh thần dám nghĩ,
-                    dám làm luôn nỗ lực nghiên cứu, tìm tòi, ứng dụng những tiến bộ khoa học kỹ thuật mới nhất, chủ dộng cả tiến, nâng cao chất lượng.</p>
+                    dám làm luôn nỗ lực nghiên cứu, tìm tòi, ứng dụng những tiến bộ khoa học kỹ thuật mới nhất, chủ dộng cải tiến, nâng cao chất lượng.</p>
 
             </div>
         </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <p>Công việc đang mở: 7</p>
+                    <p>Công việc đang mở: {{$listPosts->totals()}}</p>
                 </div>
                 <div class="col-3">
                     <select class="form-select" id="listBlockCategory"  aria-label="Default select example">
@@ -54,8 +54,8 @@
                             @endphp
                         <tr class="text-dark">
                             <td class="text-dark text-title-dark"><a href="{{$details_url}}" style="color: #1a1e21">   {{$post->name}}</a></td>
-                            <td class="text-dark">Phòng công nghệ thông tin</td>
-                            <td class="text-dark">Số A7 Lô Hạ Yên Quyết Hà Nội</td>
+                            <td class="text-dark">{{$post->category_name}}</td>
+                            <td class="text-dark">Cầu Giấy, Hà Nội</td>
                         </tr>
                         @endforeach
 
