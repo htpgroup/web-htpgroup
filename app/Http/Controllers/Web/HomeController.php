@@ -24,8 +24,8 @@ class HomeController extends Controller
         //
         $arrDomain = [
             [
-                'name' => 'laptrinhphp.edu.vn',
-                'url' => 'https://laptrinhphp.edu.vn',
+                'name' => 'HTP Group',
+                'url' => 'https://htpgroup.com.vn/',
                 'active' => 1,
             ],
         ];
