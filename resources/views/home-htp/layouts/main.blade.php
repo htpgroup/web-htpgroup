@@ -56,7 +56,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 icon-social">
-                <a href="">
+                <a href="https://www.facebook.com/thanhtoanomipay/">
                     <img src="{{asset('themes/htp_group_html/images/icon/facebook.png')}}" alt="">
                 </a>
                 <a href="">

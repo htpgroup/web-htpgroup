@@ -107,7 +107,7 @@
                             <a href="">
                                 <div class="social-thumb">
                                     <img src="{{asset('themes/htp_group_html/images/intro/youtube.png')}}" alt="">
-                                    <img src="{{asset('themes/htp_group_html/images/intro/yb_hover.png')}}" class="social-thumb-hover">
+                                    <img src="{{asset('themes/htp_group_html/images/intro/yb_hover.png')}}" class="social-thumb-hover lazyload">
                                 </div>
                                 <div class="social-name">
                                     <p>youtube</p>
@@ -116,10 +116,10 @@
                             </a>
                         </div>
                         <div class="item-social">
-                            <a href="">
+                            <a href="https://www.facebook.com/thanhtoanomipay/">
                                 <div class="social-thumb">
                                     <img src="{{asset('themes/htp_group_html/images/intro/facebook.png')}}" alt="">
-                                    <img src="{{asset('themes/htp_group_html/images/intro/fb_hover.png')}}" class="social-thumb-hover">
+                                    <img src="{{asset('themes/htp_group_html/images/intro/fb_hover.png')}}" class="social-thumb-hover lazyload">
                                 </div>
                                 <div class="social-name">
                                     <p>Facebook</p>
@@ -130,7 +130,7 @@
                             <a href="">
                                 <div class="social-thumb">
                                     <img src="{{asset('themes/htp_group_html/images/intro/instagram.png')}}" alt="">
-                                    <img src="{{asset('themes/htp_group_html/images/intro/ins_hover.png')}}" class="social-thumb-hover">
+                                    <img src="{{asset('themes/htp_group_html/images/intro/ins_hover.png')}}" class="social-thumb-hover lazyload">
                                 </div>
                                 <div class="social-name">
                                     <p>Instagram</p>
