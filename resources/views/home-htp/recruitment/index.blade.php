@@ -34,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <p>Công việc đang mở: {{$listPosts->totals()}}</p>
+                    <p>Công việc đang mở: {{$listPosts->total()}}</p>
                 </div>
                 <div class="col-3">
                     <select class="form-select" id="listBlockCategory"  aria-label="Default select example">
