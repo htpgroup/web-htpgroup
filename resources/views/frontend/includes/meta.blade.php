@@ -39,7 +39,7 @@ if(!isset($meta_page_type)){
     <meta property="og:title" content="@yield('title') | {{ config('app.name') }}" />
     <meta property="og:site_name" content="{{setting('meta_site_name')}}" />
     <meta property="og:description" content="{{ setting('meta_description') }}" />
-    <meta property="og:image" content="{{ asset(setting('meta_image')) }}" />
+    <meta property="og:image" content="https://res.cloudinary.com/dfeqcehdw/v1657267462/edu/imageweb/7820228422photo2022-07-0815-05-29jpg.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -50,7 +50,7 @@ if(!isset($meta_page_type)){
     <meta name="twitter:creator" content="{{ setting('meta_twitter_creator') }}">
     <meta name="twitter:title" content="@yield('title') | {{ config('app.name') }}">
     <meta name="twitter:description" content="{{ setting('meta_description') }}">
-    <meta name="twitter:image" content="{{ asset(setting('meta_image')) }}">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dfeqcehdw/v1657267462/edu/imageweb/7820228422photo2022-07-0815-05-29jpg.jpg">
 
     <!--canonical link-->
     <link type="text/plain" rel="author" href="{{asset('humans.txt')}}" />
