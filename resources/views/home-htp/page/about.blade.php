@@ -3,7 +3,26 @@
 
     <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/intro.css')}}">
     <style>
+        @media only screen and (max-width: 600px) {
+            .introduce h1 {
+                font-size: 3.3rem;
 
+            }
+            .main-feature h1.title {
+                font-size: 2.1rem;
+
+            }
+            .htp-social {
+                height: 600px;
+            }
+            .item-social .social-thumb {
+                width: 100px;
+
+            }
+            .item-social .social-name {
+                width: 100px;
+            }
+        }
     </style>
 @endsection
 @section('content')

@@ -3,29 +3,58 @@
 
 
     <style>
-        .stackedit-button-wrapper img {
-            width: 1.6em;
-            height: 1.6em;
-            vertical-align: bottom;
-            margin-right: 0.33em;
-        }
+        @media only screen and (max-width: 600px) {
+            .introduce h1 {
+                font-size: 3.3rem;
 
-        .swal2-icon {
-            height: 3rem !important;
-            width: 3rem !important;
-            border: none !important;
-            margin: 0 !important;
-        }
+            }
+            .main-feature h1.title {
+                font-size: 2.1rem;
 
-        .iconAlarm {
-            height: 2rem !important;
-        }
+            }
+            .htp-social {
+                height: 600px;
+            }
+            .item-social .social-thumb {
+                width: 100px;
 
-        .is-valid~.valid-feedback, .is-valid~.valid-tooltip, .was-validated :valid~.valid-feedback, .was-validated :valid~.valid-tooltip {
-            display: block;
-        }
-        .valid-feedback{
-            display: block;
+            }
+            .item-social .social-name {
+                width: 100px;
+            }
+            .about-htp-title h2 {
+                font-weight: bold;
+                font-size: 2.4rem;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+
+            .about-htp-group .htp-info p.description {
+                width: 300px;
+            }
+
+            .about-htp-group .htp-info {
+                width: 80%;
+                float: right;
+                margin-right: 20px;
+                text-align: justify;
+            }
+
+            .about-omipay {
+                height: 900px;
+            }
+            .about-omipay .info {
+                width: 82%;
+
+            }
+            .about-omipay .info p.description {
+                width: 300px;
+                font-size: 14px;
+                padding-bottom: 20px;
+            }
+            .about-omipay .title-about-omipay {
+                font-size: 2.2rem;
+            }
         }
     </style>
 @endsection
@@ -198,7 +227,7 @@
             <h2>CHÚNG TÔI LÀ HTP GROUP</h2>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 col-sm-6">
                 <div class="htp-info">
                     <h4>THÁCH THỨC MỌI GIỚI HẠN</h4>
                     <p class="description">Với mong muốn đem đến cho thị trường những sản phẩm - dịch vụ hoàn hảo với giá trị cao nhất cho khách hàng, ở bất cứ lĩnh vực nào HTP group với tinh thần dám nghĩ, dám làm luôn nỗ lực nghiên cứu, tìm tòi, ứng dụng những tiến bộ khoa học kỹ thuật mới nhất, chủ dộng cả tiến, nâng cao chất lượng.</p>
@@ -209,7 +238,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-6 htp-image">
+            <div class="col-md-6 col-sm-6 htp-image">
                 <img class="lazyload" src="{{asset('themes/htp_group_html/images/business-corporate-people-working-concept 1.png')}}" alt="">
             </div>
         </div>
@@ -218,10 +247,10 @@
 <div class="about-omipay" style="background-image: url({{asset('themes/htp_group_html/images/bg_omipay.png')}});">
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <img src="{{asset('themes/htp_group_html/images/Graphics.png')}}" alt="" class=" lazyload graphics">
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="info">
                     <h1 class="title-about-omipay">TÌM HIỂU VỀ <br> OMIPAY</h1>
                     <h4>Khám phá công nghệ</h4>
