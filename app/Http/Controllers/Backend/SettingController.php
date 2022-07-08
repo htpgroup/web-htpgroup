@@ -55,6 +55,27 @@ class SettingController extends Controller
         );
     }
 
+    /*
+     * ^ array:17 [▼
+  0 => "app_name"
+  1 => "footer_text"
+  2 => "show_copyright"
+  3 => "email"
+  4 => "facebook_url"
+  5 => "twitter_url"
+  6 => "instagram_url"
+  7 => "linkedin_url"
+  8 => "youtube_url"
+  9 => "meta_site_name"
+  10 => "meta_description"
+  11 => "meta_keyword"
+  12 => "meta_image"
+  13 => "meta_fb_app_id"
+  14 => "meta_twitter_site"
+  15 => "meta_twitter_creator"
+  16 => "google_analytics"
+]
+     * */
     public function store(Request $request)
     {
         $rules = Setting::getValidationRules();
@@ -62,6 +83,7 @@ class SettingController extends Controller
 
         $validSettings = array_keys($rules);
 
+        //dd($validSettings);
         foreach ($data as $key => $val) {
             if (in_array($key, $validSettings)) {
                 Setting::add($key, $val, Setting::getDataType($key));

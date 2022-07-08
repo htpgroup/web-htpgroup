@@ -56,13 +56,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12 icon-social">
-                <a href="https://www.facebook.com/thanhtoanomipay/">
+                <a href="{{ setting('facebook_url') }}">
                     <img src="{{asset('themes/htp_group_html/images/icon/facebook.png')}}" alt="">
                 </a>
-                <a href="">
+                <a href="{{ setting('youtube_url') }}">
                     <img src="{{asset('themes/htp_group_html/images/icon/youtube.png')}}" alt="">
                 </a>
-                <a href="">
+                <a href="{{ setting('instagram_url') }}">
                     <img src="{{asset('themes/htp_group_html/images/icon/instagram.png')}}" alt="">
                 </a>
             </div>

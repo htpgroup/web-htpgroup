@@ -29,6 +29,7 @@ class HomeController extends Controller
                 'active' => 1,
             ],
         ];
+        //dd(setting('facebook_url'));
 
         $locale = App::currentLocale();
 
