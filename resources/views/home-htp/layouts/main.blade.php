@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Htp Group</title>
+    <title>HTP Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/style.css')}}">
     <link rel="icon" type="image/x-icon" href="{{asset('themes/htp_group_html/images/favicon.ico')}}" />
