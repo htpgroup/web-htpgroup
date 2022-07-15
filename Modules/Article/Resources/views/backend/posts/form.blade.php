@@ -110,6 +110,7 @@
                 /*'Article' => 'Article',
                 'Feature' => 'Feature',*/
                 'News' => 'News',
+                'NewsOmipay' => 'NewsOmipay',
                 'Recruitment' => 'Recruitment',
             ];
             ?>
