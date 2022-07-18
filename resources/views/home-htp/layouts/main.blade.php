@@ -8,6 +8,7 @@
     <title>HTP Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('themes/htp_group_html/css/custom.css')}}">
     <link rel="icon" type="image/x-icon" href="{{asset('themes/htp_group_html/images/favicon.ico')}}" />
     <link rel="icon"  href="{{asset('themes/htp_group_html/images/favicon.ico')}}" />
     <!-- CSRF Token -->
@@ -28,10 +29,13 @@
 <body>
 <nav class="flex-div">
     <div class="nav-left flex-div">
+        <div class="icon-menu-mobile">
+            <img src="{{asset('themes/htp_group_html/images/menu/menu.png')}}" alt="icon" width="30">
+        </div>
         <div class="menu-mobile"></div>
-        <img src="{{asset('themes/htp_group_html/images/menu.png')}}" alt="menu" class="menu-icon-mobile">
+        <img src="https://htpgroup.com.vn/themes/htp_group_html/images/menu.png" alt="menu" class="menu-icon-mobile" data-pagespeed-url-hash="1922647615" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
         <div class="menu-mobile-cancel hide"></div>
-        <img src="{{asset('themes/htp_group_html/images/icon/htp_logo.png')}}" id="imgHomeLogo" alt="" class="logo">
+        <img src="https://htpgroup.com.vn/themes/htp_group_html/images/icon/htp_logo.png" id="imgHomeLogo" alt="" class="logo" data-pagespeed-url-hash="1644643994" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
     </div>
     <div class="nav-middle">
         <ul>
@@ -42,6 +46,9 @@
             <li class="{{ Route::is('HomeHTP.recruitmentWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.recruitmentWebPay')}}">Tuyển dụng</a></li>
             <li class="{{ Route::is('HomeHTP.contactWebPay') ? 'active' : null }}"><a href="{{route('HomeHTP.contactWebPay')}}">liên hệ</a></li>
         </ul>
+    </div>
+    <div class="close-menu-mobile">
+        <img src="{{asset('themes/htp_group_html/images/menu/close.png')}}" alt="icon" width="30">
     </div>
     <div class="nav-right flex-div">
         <ul>
@@ -79,12 +86,12 @@
         <div class="row">
             <div class="col-12 category-footer">
                 <ul>
-                    <li><a href="">Trang chủ</a></li>
-                    <li><a href="">Giới thiệu</a></li>
-                    <li><a href="">Lĩnh vực</a></li>
-                    <li><a href="">Tin tức</a></li>
-                    <li><a href="">Tuyển dụng</a></li>
-                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="{{route('HomeHTP.homeWebPay')}}">Trang chủ</a></li>
+                    <li><a href="{{route('HomeHTP.aboutWebPay')}}">Giới thiệu</a></li>
+                    <li><a href="{{route('HomeHTP.productWebPay')}}">Lĩnh vực</a></li>
+                    <li><a href="{{route('HomeHTP.newWebPay')}}">Tin tức</a></li>
+                    <li><a href="{{route('HomeHTP.recruitmentWebPay')}}">Tuyển dụng</a></li>
+                    <li><a href="{{route('HomeHTP.contactWebPay')}}">Liên hệ</a></li>
                 </ul>
             </div>
         </div>
@@ -93,6 +100,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{{asset('themes/htp_group_html/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('themes/htp_group_html/js/main.js')}}"></script>
+<script src="{{asset('themes/htp_group_html/js/custom.js')}}"></script>
 <script>
     $(document).ready(function(){
         $("#imgHomeLogo").click(function(){
