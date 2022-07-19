@@ -38,7 +38,7 @@ class IpVN extends CallableRule
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function passes($attribute, $value): bool
     {
@@ -46,7 +46,7 @@ class IpVN extends CallableRule
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function message(): string
     {

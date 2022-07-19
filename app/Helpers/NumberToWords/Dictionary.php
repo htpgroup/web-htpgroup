@@ -75,7 +75,7 @@ class Dictionary implements DictionaryInterface
     ];
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function zero(): string
     {
@@ -83,7 +83,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function minus(): string
     {
@@ -91,7 +91,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function separator(): string
     {
@@ -99,7 +99,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function tripletTenSeparator(): string
     {
@@ -107,7 +107,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function specialTripletUnitOne(): string
     {
@@ -115,7 +115,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function specialTripletUnitFour(): string
     {
@@ -123,7 +123,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function specialTripletUnitFive(): string
     {
@@ -131,7 +131,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function fraction(): string
     {
@@ -139,7 +139,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getTripletUnit(int $unit): string
     {
@@ -151,7 +151,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getTripletTen(int $ten): string
     {
@@ -163,7 +163,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getTripletHundred(int $hundred): string
     {
@@ -175,7 +175,7 @@ class Dictionary implements DictionaryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getExponent(int $power): string
     {

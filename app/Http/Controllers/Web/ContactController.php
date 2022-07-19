@@ -86,7 +86,7 @@ class ContactController extends Controller
                 'phone' => $input['phone'],
                 'subject' => $input['subject'],
                 'content' => $input['content'],
-            ], function ($message) use ($request , $adminValueEmail, $mailTitle) {
+            ], function ($message) use ($request, $adminValueEmail, $mailTitle) {
                 $message->from($request->email);
                 $message->to($adminValueEmail, 'Admin')->subject($mailTitle);
             });

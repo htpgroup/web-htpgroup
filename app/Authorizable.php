@@ -10,17 +10,17 @@ trait Authorizable
      * List of default method names of the Controllers and the related permission.
      */
     private $abilities = [
-        'index'     => 'view',
-        'index_data'=> 'view',
-        'index_list'=> 'view',
-        'edit'      => 'edit',
-        'show'      => 'view',
-        'update'    => 'edit',
-        'create'    => 'add',
-        'store'     => 'add',
-        'destroy'   => 'delete',
-        'restore'   => 'restore',
-        'trashed'   => 'restore',
+        'index' => 'view',
+        'index_data' => 'view',
+        'index_list' => 'view',
+        'edit' => 'edit',
+        'show' => 'view',
+        'update' => 'edit',
+        'create' => 'add',
+        'store' => 'add',
+        'destroy' => 'delete',
+        'restore' => 'restore',
+        'trashed' => 'restore',
     ];
 
     /**

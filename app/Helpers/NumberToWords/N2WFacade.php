@@ -23,7 +23,7 @@ class N2WFacade extends Facade
     public static $dictionary;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected static function getFacadeAccessor(): Transformer
     {

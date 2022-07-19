@@ -111,7 +111,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 $adminPrefix = env('ADMIN_PREFIX', 'admin');
 Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => $adminPrefix, 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
 
-
     /**
      * Backend Dashboard
      * Namespaces indicate folder structure.

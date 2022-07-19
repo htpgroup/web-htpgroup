@@ -18,7 +18,7 @@ use PHPViet\Validation\Validator;
 class IdVN extends CallableRule
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function passes($attribute, $value): bool
     {
@@ -26,7 +26,7 @@ class IdVN extends CallableRule
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function message(): string
     {

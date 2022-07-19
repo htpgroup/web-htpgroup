@@ -106,13 +106,12 @@ class UserTableSeeder extends Seeder
         ];
 
         foreach ($users as $user_data) {
-            $userExitst= User::where('email', $user_data['email'])->first();
-            if ($userExitst == false){
+            $userExitst = User::where('email', $user_data['email'])->first();
+            if ($userExitst == false) {
                 $user = User::create($user_data);
 
                 event(new UserCreated($user));
             }
-
         }
 
         Schema::enableForeignKeyConstraints();

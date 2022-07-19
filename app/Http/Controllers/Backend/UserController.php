@@ -154,7 +154,7 @@ class UserController extends Controller
 
         foreach ($query_data as $row) {
             $$module_name[] = [
-                'id'   => $row->id,
+                'id' => $row->id,
                 'text' => $row->name.' (Email: '.$row->email.')',
             ];
         }
@@ -205,10 +205,10 @@ class UserController extends Controller
         $module_action = 'Details';
 
         $request->validate([
-            'first_name'=> 'required|min:3|max:191',
+            'first_name' => 'required|min:3|max:191',
             'last_name' => 'required|min:3|max:191',
-            'email'     => 'required|email|regex:/(.+)@(.+)\.(.+)/i|max:191|unique:users',
-            'password'  => 'required|confirmed|min:4',
+            'email' => 'required|email|regex:/(.+)@(.+)\.(.+)/i|max:191|unique:users',
+            'password' => 'required|confirmed|min:4',
         ]);
 
         $data_array = $request->except('_token', 'roles', 'permissions', 'password_confirmation');
@@ -375,10 +375,10 @@ class UserController extends Controller
         $module_action = 'Edit Profile';
 
         $this->validate($request, [
-            'avatar'    => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'first_name'=> 'required|min:3|max:191',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'first_name' => 'required|min:3|max:191',
             'last_name' => 'required|min:3|max:191',
-            'email'     => 'email',
+            'email' => 'email',
         ]);
 
         if (! auth()->user()->can('edit_users')) {

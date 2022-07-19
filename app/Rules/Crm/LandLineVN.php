@@ -18,7 +18,7 @@ use PHPViet\Validation\Validator;
 class LandLineVN extends CallableRule
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function passes($attribute, $value): bool
     {
@@ -26,7 +26,7 @@ class LandLineVN extends CallableRule
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function message(): string
     {

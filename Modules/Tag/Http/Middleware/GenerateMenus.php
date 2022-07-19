@@ -29,9 +29,9 @@ class GenerateMenus
                 'class' => 'nav-item',
             ])
             ->data([
-                'order'         => 84,
+                'order' => 84,
                 'activematches' => ['admin/tags*'],
-                'permission'    => ['view_tags'],
+                'permission' => ['view_tags'],
             ])
             ->link->attr([
                 'class' => 'nav-link',

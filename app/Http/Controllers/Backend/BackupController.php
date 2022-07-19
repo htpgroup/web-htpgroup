@@ -57,13 +57,13 @@ class BackupController extends Controller
             // only take the zip files into account
             if (substr($f, -4) == '.zip' && $disk->exists($f)) {
                 $$module_name[] = [
-                    'file_path'               => $f,
-                    'file_name'               => str_replace(str_replace(' ', '-', config('backup.backup.name')).'/', '', $f),
-                    'file_size_byte'          => $disk->size($f),
-                    'file_size'               => humanFilesize($disk->size($f)),
+                    'file_path' => $f,
+                    'file_name' => str_replace(str_replace(' ', '-', config('backup.backup.name')).'/', '', $f),
+                    'file_size_byte' => $disk->size($f),
+                    'file_size' => humanFilesize($disk->size($f)),
                     'last_modified_timestamp' => $disk->lastModified($f),
-                    'date_created'            => Carbon::createFromTimestamp($disk->lastModified($f))->isoFormat('llll'),
-                    'date_ago'                => Carbon::createFromTimestamp($disk->lastModified($f))->diffForHumans(Carbon::now()),
+                    'date_created' => Carbon::createFromTimestamp($disk->lastModified($f))->isoFormat('llll'),
+                    'date_ago' => Carbon::createFromTimestamp($disk->lastModified($f))->diffForHumans(Carbon::now()),
                 ];
             }
         }
@@ -121,8 +121,8 @@ class BackupController extends Controller
             return \Response::stream(function () use ($stream) {
                 fpassthru($stream);
             }, 200, [
-                'Content-Type'        => $fs->getMimetype($file),
-                'Content-Length'      => $fs->getSize($file),
+                'Content-Type' => $fs->getMimetype($file),
+                'Content-Length' => $fs->getSize($file),
                 'Content-disposition' => 'attachment; filename="'.basename($file).'"',
             ]);
         } else {
